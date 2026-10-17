@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Informativa privacy — Sciamn</title>
+<!-- Pagina a sé (guida 2.3): niente menu né link alla pagina di download. Stile minimo in linea,
+     indipendente dal Tailwind di pagina.css. Si aggiorna PRIMA di ogni release che aggiunge un dato. -->
+<style>
+  :root { --bg: #faf7f3; --ink: #1a1a1a; --ink-2: #4a4a4a; --line: #e2ddd6; --accent: #b3121b; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #121212; --ink: #ececec; --ink-2: #b5b5b5; --line: #2c2c2c; --accent: #ff6b6b; } }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem 4rem; }
+  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .25rem; }
+  h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+  p, li { color: var(--ink); }
+  .meta { color: var(--ink-2); margin: 0 0 1.5rem; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: .5rem .5rem .5rem 0; border-bottom: 1px solid var(--line); }
+  th { color: var(--ink-2); font-weight: 600; }
+  @media (max-width: 30rem) { table, tbody, tr, td, th { display: block; } thead { display: none; } td { border: 0; padding: .15rem 0; } tr { border-bottom: 1px solid var(--line); padding: .5rem 0; } td:first-child { font-weight: 600; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Informativa privacy di Sciamn</h1>
+  <p class="meta">App non ufficiale, non collegata all'Università di Bari né al Politecnico di Bari. Aggiornata l'11 ottobre 2026.</p>
+
+  <p>In breve: l'app funziona senza account e senza mandarmi niente. I tuoi corsi, le note e le impostazioni restano sul telefono. Mi arriva qualcosa solo se mi scrivi tu da <em>Segnala</em>, e solo quello che scrivi.</p>
+
+  <h2>Chi è il titolare</h2>
+  <p>Mario Monterisi, che ha fatto l'app da solo, come privato. Contatto: <a href="mailto:mariomonterisi.dev@gmail.com">mariomonterisi.dev@gmail.com</a>.</p>
+
+  <h2>Cosa resta sul tuo telefono</h2>
+  <p>Corsi scelti, filtri, iniziale del cognome, colori, note sui corsi, promemoria, orari già scaricati e impostazioni sono salvati solo nella memoria dell'app sul telefono. Non li ricevo e non li vede nessun altro. Se disinstalli l'app spariscono.</p>
+
+  <h2>A chi si collega l'app, senza passare da me</h2>
+  <ul>
+    <li><strong>Orari delle lezioni</strong>: il telefono li chiede direttamente al sistema pubblico degli orari dell'ateneo (Cineca, "University Planner"). Come per qualunque sito, quel servizio vede l'indirizzo IP del telefono.</li>
+    <li><strong>Aggiornamenti dell'app</strong>: il telefono controlla e scarica gli aggiornamenti da GitHub, che vede l'indirizzo IP come per qualunque download.</li>
+  </ul>
+  <p>Promemoria, silenzioso a lezione e copia nel calendario funzionano sul telefono, senza Internet e senza mandare dati a nessuno.</p>
+
+  <h2>Le segnalazioni (Opzioni › Informazioni › Segnala)</h2>
+  <table>
+    <thead><tr><th>Cosa</th><th>Perché e su quale base</th><th>Per quanto</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Il tipo (problema, corso mancante, idea) e il testo che scrivi</td>
+        <td>Capire il problema o l'idea e migliorare l'app. Base: il tuo consenso, che dai inviando (art. 6.1.a GDPR) e che puoi ritirare chiedendo la cancellazione.</td>
+        <td>12 mesi, poi cancellati</td>
+      </tr>
+      <tr>
+        <td>Il contatto, <em>solo se lo scrivi</em> (email, Instagram…)</td>
+        <td>Risponderti. Base: il tuo consenso (art. 6.1.a).</td>
+        <td>12 mesi, poi cancellato</td>
+      </tr>
+      <tr>
+        <td>Versione dell'app e dell'APK, se usi Android o il web, e codici dei corsi scelti, <em>solo se lasci acceso «Allega»</em></td>
+        <td>Capire su quale versione e su quale orario si presenta un problema. Base: il tuo consenso (art. 6.1.a).</td>
+        <td>12 mesi, poi cancellati</td>
+      </tr>
+      <tr>
+        <td>Indirizzo IP del telefono</td>
+        <td>Solo per frenare chi manda troppi messaggi di fila (al massimo pochi al minuto). Non lo salvo e non lo leggo. Base: il legittimo interesse a tenere il servizio usabile (art. 6.1.f).</td>
+        <td>Non conservato</td>
+      </tr>
+      <tr>
+        <td>Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza testo, contatto né IP)</td>
+        <td>Accorgermi se le segnalazioni smettono di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
+        <td>3 giorni</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Non raccolgo nome, posizione, contatti della rubrica né identificativi del telefono. Per favore non scrivere nel testo dati sensibili, tuoi o di altri (salute, opinioni, numeri di documenti…): non servono per segnalare un problema.</p>
+
+  <h2>Chi altro tocca questi dati</h2>
+  <ul>
+    <li><strong>Cloudflare</strong> (Cloudflare, Inc.): fa girare il piccolo server che riceve le segnalazioni e le conserva nel suo database, a cui accedo solo io dopo aver fatto l'accesso. Tratta i dati per mio conto, come responsabile del trattamento, secondo il suo accordo sul trattamento dei dati.</li>
+    <li><strong>GitHub</strong> (GitHub, Inc.): ospita questa pagina, la pagina di download e gli aggiornamenti dell'app. A ogni apertura l'app gli chiede se c'è un aggiornamento, quindi GitHub vede l'indirizzo IP del telefono, come per qualunque download; io non ricevo quei dati. È anche lo strumento, privato, in cui tengo l'elenco delle cose da sistemare: quando una segnalazione diventa un lavoro da fare, ci copio il testo che hai scritto e, se li hai allegati, versione dell'app e corsi, <em>mai il contatto</em>. Anche lì vale il limite dei 12 mesi dalla segnalazione: entro quella data elimino la voce.</li>
+  </ul>
+  <p>Sono tutte società statunitensi: i dati possono essere trasferiti negli Stati Uniti sulla base dell'EU-U.S. Data Privacy Framework e delle clausole contrattuali standard, come indicano le loro informative. Sulla validità del Data Privacy Framework è pendente un ricorso davanti alla Corte di giustizia dell'UE (causa C-703/25 P).</p>
+  <p>Non vendo né cedo dati a nessuno, e non uso pubblicità né sistemi di statistiche.</p>
+
+  <h2>I tuoi diritti</h2>
+  <p>Puoi chiedermi di vedere, correggere o cancellare quello che mi hai mandato, opporti al trattamento e ritirare il consenso, scrivendo a <a href="mailto:mariomonterisi.dev@gmail.com">mariomonterisi.dev@gmail.com</a>. Se non hai lasciato un contatto, dimmi il giorno e cosa avevi scritto, così trovo il messaggio. Rispondo entro un mese.</p>
+  <p>Se pensi che i tuoi dati siano trattati male puoi presentare reclamo al <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a>.</p>
+
+  <h2>Cambi a questa pagina</h2>
+  <p>Se una versione nuova dell'app tratta dati in più, questa pagina cambia prima che esca, con la data aggiornata in alto.</p>
+</main>
+</body>
+</html>
