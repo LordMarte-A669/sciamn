@@ -4,115 +4,135 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#faf7f3" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#050506" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#1c3478">
+<script>document.documentElement.classList.add('js');</script>
 <title>Sciamn — scarica l'app</title>
 <meta name="description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico sul telefono Android. App non ufficiale.">
 <meta property="og:title" content="Sciamn — scarica l'app">
 <meta property="og:description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico sul telefono Android. App non ufficiale.">
 <meta property="og:image" content="https://lordmarte-a669.github.io/sciamn/icon-512.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="pagina.css">
 </head>
 <body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink">
-<main class="mx-auto grid max-w-lg gap-9 px-4 pt-8 pb-12 lg:max-w-6xl lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:grid-rows-[auto_1fr] lg:gap-x-20 lg:pt-16">
+<main>
 
-  <header class="grid gap-4 lg:col-start-1 lg:row-start-1">
-    <div class="flex items-center gap-3 text-lg font-extrabold tracking-tight">
-      <img src="icon.svg" alt="" class="size-10 block">Sciamn
-    </div>
-    <h1 class="text-[clamp(2.25rem,9vw,3.5rem)] leading-none font-extrabold tracking-tighter">L'orario delle lezioni, sul telefono.</h1>
-    <p class="max-w-[30rem] text-ink-2">Per tutti i corsi dell'Università di Bari che lo pubblicano online e per il Politecnico di Bari. Ti dice anche a che ora uscire per arrivare in tempo.</p>
-  </header>
+  <div class="overflow-hidden bg-campo text-on-campo">
+    <header class="mx-auto grid max-w-6xl gap-8 px-4 pt-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:gap-x-20 lg:px-8 lg:pt-16">
+      <div class="grid content-start gap-6 pb-2 lg:content-center lg:pb-16">
+        <div class="flex items-center gap-3 font-titolo text-2xl tracking-wide uppercase">
+          <img src="icon.svg" alt="" class="block size-10">Sciamn
+        </div>
+        <h1 class="rivela m-0 font-titolo text-[clamp(3rem,13vw,6.5rem)] leading-[0.92] tracking-tight uppercase">L'orario, sul telefono.</h1>
+        <p class="rivela m-0 max-w-[32rem] text-lg text-on-campo-2">L'orario delle lezioni per tutti i corsi dell'Università di Bari che lo pubblicano online e per il Politecnico di Bari. Ti dice anche a che ora uscire per arrivare in tempo.</p>
+        <div class="rivela grid justify-items-start gap-3">
+          <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk"
+             class="premi flex min-h-14 w-full items-center justify-center gap-2.5 bg-on-campo px-6 py-3 text-lg font-extrabold text-campo no-underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-on-campo sm:w-auto sm:min-w-72">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="size-[1.375rem] shrink-0 fill-none stroke-current stroke-2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android
+          </a>
+          <p class="m-0 text-base text-on-campo-2">Versione 1.3.3 del 23 ottobre 2026, 5,0 MB. Serve Android 7 o successivo; su iPhone non c'è ancora.</p>
+        </div>
+      </div>
+      <picture class="rivela block self-end">
+        <source media="(prefers-color-scheme: dark)" srcset="schermate/oggi-scuro.webp">
+        <img src="schermate/oggi-chiaro.webp" width="786" height="1704" alt="La schermata Oggi: l'avviso per uscire da Bari Centrale e le lezioni del giorno con ora, aula e piano." class="mx-auto block aspect-[393/520] w-[78%] max-w-[22rem] rounded-t-[2rem] object-cover object-top lg:w-full lg:max-w-none">
+      </picture>
+    </header>
+  </div>
 
-  <section aria-roledescription="carosello" aria-label="Le schermate dell'app" class="min-w-0 lg:col-start-2 lg:row-span-2 lg:row-start-1">
-    <ul id="galleria" tabindex="0" aria-label="Schermate: scorri di lato" class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-4 pb-1 [scrollbar-width:none] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink lg:mx-0 lg:px-0 [&::-webkit-scrollbar]:hidden">
-      <li class="w-[64%] max-w-[16rem] shrink-0 snap-center lg:snap-start">
-        <figure class="m-0 grid gap-3">
-          <picture>
-            <source media="(prefers-color-scheme: dark)" srcset="schermate/oggi-scuro.webp">
-            <img src="schermate/oggi-chiaro.webp" width="786" height="1704" alt="La schermata Oggi: l'avviso per uscire da Bari Centrale e le lezioni del giorno con ora, aula e piano." class="block aspect-[393/852] w-full rounded-[1.75rem] ring-1 ring-hair">
-          </picture>
-          <figcaption class="text-sm text-ink-2"><b class="text-ink">Oggi.</b> Le lezioni del giorno e a che ora uscire da Bari Centrale per arrivare in tempo.</figcaption>
-        </figure>
-      </li>
-      <li class="w-[64%] max-w-[16rem] shrink-0 snap-center lg:snap-start">
-        <figure class="m-0 grid gap-3">
+  <section aria-roledescription="carosello" aria-label="Le schermate dell'app" class="mx-auto max-w-6xl px-4 py-16 lg:px-8 lg:py-28">
+    <h2 class="rivela m-0 mb-8 max-w-3xl font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase lg:mb-12">La settimana, l'aula, il tuo corso.</h2>
+    <ul id="galleria" tabindex="0" aria-label="Schermate: scorri di lato" class="-mx-4 m-0 flex list-none snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth p-0 px-4 pb-1 [scrollbar-width:none] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink md:mx-0 md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:px-0 [&::-webkit-scrollbar]:hidden">
+      <li class="rivela w-[68%] max-w-[17rem] shrink-0 snap-center md:w-auto md:max-w-none">
+        <figure class="m-0 grid gap-4">
           <picture>
             <source media="(prefers-color-scheme: dark)" srcset="schermate/settimana-scuro.webp">
-            <img src="schermate/settimana-chiaro.webp" width="786" height="1704" loading="lazy" alt="La schermata Settimana: i giorni della settimana con le lezioni, un colore per ogni corso." class="block aspect-[393/852] w-full rounded-[1.75rem] ring-1 ring-hair">
+            <img src="schermate/settimana-chiaro.webp" width="786" height="1704" loading="lazy" alt="La schermata Settimana: i giorni della settimana con le lezioni, un colore per ogni corso." class="block aspect-[393/852] w-full rounded-[1.75rem]">
           </picture>
-          <figcaption class="text-sm text-ink-2"><b class="text-ink">Settimana.</b> Tutta la settimana in un colpo d'occhio, un colore per corso.</figcaption>
+          <figcaption><b class="font-titolo text-xl tracking-wide uppercase">Settimana</b><br>Tutta la settimana in un colpo d'occhio, un colore per corso.</figcaption>
         </figure>
       </li>
-      <li class="w-[64%] max-w-[16rem] shrink-0 snap-center lg:snap-start">
-        <figure class="m-0 grid gap-3">
+      <li class="rivela w-[68%] max-w-[17rem] shrink-0 snap-center md:w-auto md:max-w-none">
+        <figure class="m-0 grid gap-4">
           <picture>
             <source media="(prefers-color-scheme: dark)" srcset="schermate/mappa-scuro.webp">
-            <img src="schermate/mappa-chiaro.webp" width="786" height="1704" loading="lazy" alt="La mappa del piano con l'aula evidenziata." class="block aspect-[393/852] w-full rounded-[1.75rem] ring-1 ring-hair">
+            <img src="schermate/mappa-chiaro.webp" width="786" height="1704" loading="lazy" alt="La mappa del piano con l'aula evidenziata." class="block aspect-[393/852] w-full rounded-[1.75rem]">
           </picture>
-          <figcaption class="text-sm text-ink-2"><b class="text-ink">Mappa.</b> Tocchi l'aula e la vedi sulla pianta del piano.</figcaption>
+          <figcaption><b class="font-titolo text-xl tracking-wide uppercase">Mappa</b><br>Tocchi l'aula e la vedi sulla pianta del piano.</figcaption>
         </figure>
       </li>
-      <li class="w-[64%] max-w-[16rem] shrink-0 snap-center lg:snap-start">
-        <figure class="m-0 grid gap-3">
+      <li class="rivela w-[68%] max-w-[17rem] shrink-0 snap-center md:w-auto md:max-w-none">
+        <figure class="m-0 grid gap-4">
           <picture>
             <source media="(prefers-color-scheme: dark)" srcset="schermate/scegli-scuro.webp">
-            <img src="schermate/scegli-chiaro.webp" width="786" height="1704" loading="lazy" alt="La ricerca del corso: scrivi le prime lettere e scegli il tuo." class="block aspect-[393/852] w-full rounded-[1.75rem] ring-1 ring-hair">
+            <img src="schermate/scegli-chiaro.webp" width="786" height="1704" loading="lazy" alt="La ricerca del corso: scrivi le prime lettere e scegli il tuo." class="block aspect-[393/852] w-full rounded-[1.75rem]">
           </picture>
-          <figcaption class="text-sm text-ink-2"><b class="text-ink">Il tuo corso.</b> Lo cerchi per nome, all'Università di Bari o al Politecnico.</figcaption>
+          <figcaption><b class="font-titolo text-xl tracking-wide uppercase">Il tuo corso</b><br>Lo cerchi per nome, all'Università di Bari o al Politecnico.</figcaption>
         </figure>
       </li>
-      <li class="w-[64%] max-w-[16rem] shrink-0 snap-center lg:snap-start">
-        <figure class="m-0 grid gap-3">
+      <li class="rivela w-[68%] max-w-[17rem] shrink-0 snap-center md:w-auto md:max-w-none">
+        <figure class="m-0 grid gap-4">
           <picture>
             <source media="(prefers-color-scheme: dark)" srcset="schermate/opzioni-scuro.webp">
-            <img src="schermate/opzioni-chiaro.webp" width="786" height="1704" loading="lazy" alt="Le Opzioni: promemoria, silenzioso a lezione, treno e calendario." class="block aspect-[393/852] w-full rounded-[1.75rem] ring-1 ring-hair">
+            <img src="schermate/opzioni-chiaro.webp" width="786" height="1704" loading="lazy" alt="Le Opzioni: promemoria, silenzioso a lezione, treno e calendario." class="block aspect-[393/852] w-full rounded-[1.75rem]">
           </picture>
-          <figcaption class="text-sm text-ink-2"><b class="text-ink">Opzioni.</b> Promemoria, silenzioso automatico a lezione e treno.</figcaption>
+          <figcaption><b class="font-titolo text-xl tracking-wide uppercase">Opzioni</b><br>Promemoria, silenzioso automatico a lezione e treno.</figcaption>
         </figure>
       </li>
     </ul>
-    <div id="comandi" hidden class="mt-4 flex items-center justify-between">
-      <button type="button" id="prec" aria-label="Schermata precedente" class="grid size-11 place-items-center border border-ink text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <div id="comandi" hidden class="mt-6 flex items-center justify-between md:hidden">
+      <button type="button" id="prec" aria-label="Schermata precedente" class="grid size-12 place-items-center bg-panel text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
         <svg viewBox="0 0 24 24" class="size-5 fill-none stroke-current stroke-2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
       </button>
       <ol id="punti" class="m-0 flex list-none gap-2 p-0" aria-hidden="true"></ol>
-      <button type="button" id="succ" aria-label="Schermata successiva" class="grid size-11 place-items-center border border-ink text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      <button type="button" id="succ" aria-label="Schermata successiva" class="grid size-12 place-items-center bg-panel text-ink focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
         <svg viewBox="0 0 24 24" class="size-5 fill-none stroke-current stroke-2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
       </button>
     </div>
   </section>
 
-  <div class="grid content-start gap-9 lg:col-start-1 lg:row-start-2">
-    <section class="grid gap-2.5">
-      <div class="mb-3 hidden items-center gap-6 lg:[@media(hover:hover)]:flex">
-        <img src="qr-apk.svg" alt="QR code: inquadralo col telefono per scaricare l'app" class="size-44 shrink-0 bg-white p-2">
-        <p class="m-0 max-w-64 text-[0.9375rem] text-ink-2">Inquadra il codice col telefono: parte il download dell'app. Android ti chiede di consentire a Chrome di installare app: tocca <b class="text-ink">Impostazioni › Consenti</b>.</p>
+  <div class="bg-panel">
+    <section class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:grid-cols-2 lg:gap-x-20 lg:px-8 lg:py-28">
+      <div class="grid content-start gap-6">
+        <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Si installa in tre tocchi.</h2>
+        <ol class="rivela m-0 grid max-w-[34rem] list-decimal gap-3 pl-6 text-lg">
+          <li>Tocca <b>Scarica l'app per Android</b> e apri il file quando ha finito.</li>
+          <li>Android chiede di consentire l'installazione da questa fonte (il browser): <b>Impostazioni › Consenti</b>, poi torna indietro e tocca <b>Installa</b>.</li>
+          <li>Apri Sciamn e scegli il tuo corso. Da lì in poi si aggiorna da sola.</li>
+        </ol>
       </div>
-      <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk"
-         class="flex min-h-14 items-center justify-center gap-2.5 bg-accent px-5 py-3 text-lg font-extrabold text-on-accent no-underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink lg:min-w-72 lg:justify-self-start">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-[1.375rem] shrink-0 fill-none stroke-current stroke-2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android
-      </a>
-      <p class="m-0 text-[0.9375rem] text-ink-2">Versione 1.3.3 del 23 ottobre 2026, 5,0 MB.</p>
-      <p class="m-0 text-[0.9375rem] text-ink-2">Serve Android 7 o successivo. Su iPhone non c'è ancora.</p>
+      <div class="rivela hidden content-center justify-items-start gap-6 lg:[@media(hover:hover)]:grid">
+        <img src="qr-apk.svg" alt="QR code: inquadralo col telefono per scaricare l'app" class="size-56 bg-white p-3">
+        <p class="m-0 max-w-[26rem] text-lg">Dal computer: inquadra il codice col telefono e parte il download. Android ti chiede di consentire a Chrome di installare app: tocca <b>Impostazioni › Consenti</b>.</p>
+      </div>
     </section>
-
-    <section>
-      <h2 class="mb-3 text-xl leading-tight font-extrabold tracking-tight">Come si installa</h2>
-      <ol class="m-0 grid list-decimal gap-2 pl-[1.375rem]">
-        <li>Tocca <b>Scarica l'app per Android</b> e apri il file quando ha finito.</li>
-        <li>Android chiede di consentire l'installazione da questa fonte (il browser): <b>Impostazioni › Consenti</b>, poi torna indietro e tocca <b>Installa</b>.</li>
-        <li>Apri Sciamn e scegli il tuo corso. Da lì in poi si aggiorna da sola.</li>
-      </ol>
-    </section>
-
   </div>
 
-  <div class="grid gap-9 lg:col-span-2 lg:grid-cols-2 lg:gap-x-20">
-    <section>
-      <h2 class="mb-3 text-xl leading-tight font-extrabold tracking-tight">Novità della 1.3.3</h2>
-      <ul class="m-0 grid list-disc gap-2 pl-[1.125rem]">
+  <div class="mx-auto grid max-w-6xl gap-16 px-4 py-16 lg:grid-cols-2 lg:gap-x-20 lg:px-8 lg:py-28">
+    <section class="rivela self-start lg:order-2">
+      <h2 class="m-0 mb-6 font-titolo text-4xl leading-none tracking-tight uppercase">Se qualcosa non va</h2>
+      <div class="grid gap-2">
+        <details class="bg-panel px-5 py-4">
+          <summary class="min-h-6 cursor-pointer text-lg font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Play Protect avvisa</summary>
+          <p class="mt-3 mb-0">Succede con tutte le app che non vengono dal Play Store. Tocca “Altri dettagli › Installa comunque”.</p>
+        </details>
+        <details class="bg-panel px-5 py-4">
+          <summary class="min-h-6 cursor-pointer text-lg font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">“App non installata” o conflitto con un pacchetto esistente</summary>
+          <p class="mt-3 mb-0">Hai una versione di prima del 28 settembre: disinstallala e riprova.</p>
+        </details>
+        <details class="bg-panel px-5 py-4">
+          <summary class="min-h-6 cursor-pointer text-lg font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Verifica che il file sia autentico</summary>
+          <p class="mt-3 mb-0">L'app è firmata con una chiave che resta la stessa a ogni versione. Prima di installare puoi confrontare questa impronta con quella che stampa <code class="font-mono text-ink">apksigner verify --print-certs uniplanner.apk</code> (riga “certificate SHA-256 digest”), o con quella che mostra l'app AppVerifier.</p>
+          <p class="mt-3 mb-0">Certificato di firma, SHA-256:<br><code class="font-mono text-sm break-all text-ink">b308fd67 e787dbb3 2368f9dd 268ab3e9 645b09e0 72cae7be 410775ac d368bb5b</code></p>
+          <p class="mt-3 mb-0">File della 1.3.3, SHA-256:<br><code class="font-mono text-sm break-all text-ink">c122327deaf0f379fa95989fc84a1a4abbb2e420ff8df143cc595089078179f9</code></p>
+        </details>
+      </div>
+    </section>
+
+    <section class="rivela lg:order-1">
+      <h2 class="m-0 mb-6 font-titolo text-4xl leading-none tracking-tight uppercase">Novità della 1.3.3</h2>
+      <ul class="m-0 grid list-disc gap-3 pl-5 text-lg">
           <li>Cambia l&#39;aspetto: testata e barra blu, lezioni più compatte, interruttori tondi.</li>
           <li>Giorno e Settimana si scelgono con l&#39;interruttore in alto; per cambiare giorno si scorre col dito.</li>
           <li>Per aggiornare l&#39;orario trascini la lista verso il basso: il tasto Aggiorna non c&#39;è più.</li>
@@ -120,41 +140,27 @@
           <li>«Prima della lezione», «Arrivo in aula» e «Riepilogo del mattino» hanno «Altro» per scegliere il valore che vuoi.</li>
           <li>Con TalkBack e con la tastiera cambi settimana e aggiorni dalla testata.</li>
       </ul>
-      <p class="mt-3.5 mb-0 text-[0.9375rem]"><a href="https://github.com/LordMarte-A669/sciamn/releases" class="underline underline-offset-[0.18em]">Tutte le versioni e le novità precedenti</a></p>
-    </section>
-
-    <section class="self-start">
-      <h2 class="mb-3 text-xl leading-tight font-extrabold tracking-tight">Se qualcosa non va</h2>
-      <details class="border-t border-hair py-3">
-        <summary class="min-h-6 cursor-pointer font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Play Protect avvisa</summary>
-        <p class="mt-2 mb-0 text-[0.9375rem] text-ink-2">Succede con tutte le app che non vengono dal Play Store. Tocca “Altri dettagli › Installa comunque”.</p>
-      </details>
-      <details class="border-t border-hair py-3">
-        <summary class="min-h-6 cursor-pointer font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">“App non installata” o conflitto con un pacchetto esistente</summary>
-        <p class="mt-2 mb-0 text-[0.9375rem] text-ink-2">Hai una versione di prima del 28 settembre: disinstallala e riprova.</p>
-      </details>
-      <details class="border-b border-hair py-3">
-        <summary class="min-h-6 cursor-pointer font-bold focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Verifica che il file sia autentico</summary>
-        <p class="mt-2 mb-0 text-[0.9375rem] text-ink-2">L'app è firmata con una chiave che resta la stessa a ogni versione. Prima di installare puoi confrontare questa impronta con quella che stampa <code class="font-mono text-ink">apksigner verify --print-certs uniplanner.apk</code> (riga “certificate SHA-256 digest”), o con quella che mostra l'app AppVerifier.</p>
-        <p class="mt-2 mb-0 text-[0.9375rem] text-ink-2">Certificato di firma, SHA-256:<br><code class="font-mono text-sm break-all text-ink">b308fd67 e787dbb3 2368f9dd 268ab3e9 645b09e0 72cae7be 410775ac d368bb5b</code></p>
-        <p class="mt-2 mb-0 text-[0.9375rem] text-ink-2">File della 1.3.3, SHA-256:<br><code class="font-mono text-sm break-all text-ink">c122327deaf0f379fa95989fc84a1a4abbb2e420ff8df143cc595089078179f9</code></p>
-      </details>
+      <p class="mt-6 mb-0"><a href="https://github.com/LordMarte-A669/sciamn/releases" class="inline-flex min-h-12 items-center bg-panel px-5 py-3 font-bold text-ink no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Tutte le versioni e le novità precedenti</a></p>
     </section>
   </div>
 
-  <footer class="border-t-[3px] border-ink pt-3.5 text-[0.8125rem] text-ink-2 lg:col-span-2">
-    <p class="m-0">Fatta da <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="underline underline-offset-[0.18em]">Mario Monterisi</a>. App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro.</p>
+  <footer class="overflow-hidden bg-campo text-on-campo">
+    <div class="mx-auto max-w-6xl px-4 pt-12 pb-8 lg:px-8 lg:pt-20">
+      <p class="m-0 max-w-2xl text-base text-on-campo-2">Fatta da <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-on-campo underline underline-offset-[0.18em]">Mario Monterisi</a>. App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro.</p>
+      <p class="mt-10 mb-0 font-titolo text-[clamp(5rem,27vw,17rem)] leading-[0.8] tracking-tight uppercase" aria-hidden="true">Sciamn</p>
+    </div>
   </footer>
 </main>
 
 <script>
-  // Comandi del carosello: senza JavaScript resta lo scorrimento di lato (tocco, tastiera, rotella).
+  // Comandi del carosello (solo sotto lg, dove la galleria scorre di lato): senza JavaScript resta lo
+  // scorrimento col tocco, la tastiera e la rotella.
   (function () {
     var g = document.getElementById('galleria'), c = document.getElementById('comandi'), p = document.getElementById('punti');
     if (!g || !c || !('IntersectionObserver' in window)) return;
     var slide = Array.prototype.slice.call(g.children), punti = [];
-    slide.forEach(function () { var li = document.createElement('li'); li.className = 'size-2 bg-hair'; p.appendChild(li); punti.push(li); });
-    function acceso(i) { punti.forEach(function (li, k) { li.className = 'size-2 ' + (k === i ? 'bg-ink' : 'bg-hair'); }); }
+    slide.forEach(function () { var li = document.createElement('li'); li.className = 'size-2 bg-panel'; p.appendChild(li); punti.push(li); });
+    function acceso(i) { punti.forEach(function (li, k) { li.className = 'size-2 ' + (k === i ? 'bg-ink' : 'bg-panel'); }); }
     acceso(0);
     var io = new IntersectionObserver(function (voci) {
       voci.forEach(function (v) { if (v.isIntersecting) acceso(slide.indexOf(v.target)); });
@@ -168,6 +174,16 @@
     document.getElementById('prec').addEventListener('click', function () { vai(-1); });
     document.getElementById('succ').addEventListener('click', function () { vai(1); });
     c.hidden = false;
+  })();
+
+  // Entrata delle parti: una volta, quando entrano nello schermo.
+  (function () {
+    var el = Array.prototype.slice.call(document.querySelectorAll('.rivela'));
+    if (!('IntersectionObserver' in window)) { el.forEach(function (e) { e.classList.add('dentro'); }); return; }
+    var io = new IntersectionObserver(function (voci) {
+      voci.forEach(function (v) { if (v.isIntersecting) { v.target.classList.add('dentro'); io.unobserve(v.target); } });
+    }, { threshold: 0.15 });
+    el.forEach(function (e) { io.observe(e); });
   })();
 </script>
 </body>
