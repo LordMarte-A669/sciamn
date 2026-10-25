@@ -77,6 +77,25 @@ function dalAl(lunedi, ultimo) {
   return 'dal ' + primo + ' al ' + dataLunga(ultimo);
 }
 
+/** 'AAAA-MM-GG' → «Lun»: la striscia dei giorni sul telefono. */
+function giornoBreve(ymd) {
+  return GIORNI[aGiorno(ymd).getUTCDay()].slice(0, 3);
+}
+
+/** 'AAAA-MM-GG' → 26. */
+function numeroGiorno(ymd) {
+  return aGiorno(ymd).getUTCDate();
+}
+
+/** Da lunedì a `ultimo` → «26–30 ottobre», «28 settembre – 2 ottobre»: il nome di una settimana nei
+ *  pulsanti, dove l'anno lo dice già la testata. */
+function dalAlBreve(lunedi, ultimo) {
+  const a = aGiorno(lunedi);
+  const b = aGiorno(ultimo);
+  const fine = b.getUTCDate() + ' ' + MESI[b.getUTCMonth()];
+  return a.getUTCMonth() === b.getUTCMonth() ? a.getUTCDate() + '–' + fine : a.getUTCDate() + ' ' + MESI[a.getUTCMonth()] + ' – ' + fine;
+}
+
 /** Un canale è un intervallo di iniziali del cognome ('A-K'); il resto non divide per lettera. */
 function eCanale(p) {
   return /^[A-Z]-[A-Z]$/.test(String(p || '').toUpperCase());
@@ -119,5 +138,5 @@ function giorniDellaSettimana(eventi, lunedi) {
   }));
 }
 
-return { giornoRoma, oraRoma, piuGiorni, primoLunedi, intervallo, etichettaGiorno, dataLunga, dalAl, canaleDi, canali, raggruppa };
+return { giornoRoma, oraRoma, piuGiorni, primoLunedi, intervallo, etichettaGiorno, giornoBreve, numeroGiorno, dataLunga, dalAl, dalAlBreve, canaleDi, canali, raggruppa };
 });

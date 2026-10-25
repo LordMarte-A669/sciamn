@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#1c3478">
+<meta name="theme-color" content="#faf7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080b14" media="(prefers-color-scheme: dark)">
 <script>document.documentElement.classList.add('js');</script>
 <title>Orario lezioni Università di Bari — tutti i corsi</title>
 <meta name="description" content="Orario delle lezioni di tutti i corsi dell&#39;Università di Bari che lo pubblicano online: 111 corsi, dal 26 ottobre al 6 novembre 2026, con aule e docenti. Aggiornato ogni mattina.">
@@ -16,815 +17,736 @@
 <meta property="og:site_name" content="Sciamn">
 <link rel="canonical" href="https://lordmarte-a669.github.io/sciamn/orari/">
 <link rel="icon" href="../icon.svg" type="image/svg+xml">
-<link rel="preload" href="../fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../pagina.css">
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="pagina.css">
 </head>
 <body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink">
-<main>
-<div class="bg-campo text-on-campo">
-  <nav aria-label="Principale" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-4 pt-5 lg:px-8">
-    <a href="../index.html" class="flex min-h-11 items-center gap-3 font-titolo text-2xl tracking-wide text-on-campo uppercase no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">
-      <img src="../icon.svg" alt="" class="block size-9">Sciamn
-    </a>
-    <ul class="m-0 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
-      <li><a href="../orari/" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Orari</a></li>
-      <li><a href="../funzioni.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Funzioni</a></li>
-      <li><a href="../guida.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Guida</a></li>
-      <li><a href="../novita.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Novità</a></li>
-    </ul>
-  </nav>
-</div>
-<div class="bg-campo text-on-campo">
-  <header class="mx-auto max-w-3xl px-4 pt-6 pb-8 lg:px-8 lg:pt-14 lg:pb-12">
-    <h1 class="m-0 font-titolo text-[clamp(2.75rem,12vw,5.5rem)] leading-[0.92] tracking-tight uppercase">Orario delle lezioni</h1>
-    <p class="mt-4 mb-0 max-w-[34rem] text-lg text-on-campo-2">Università di Bari, 111 corsi con le lezioni dal 26 ottobre al 6 novembre 2026. Scegli il tuo corso: trovi giorno, ora, aula e docente.</p>
-    <div id="ricerca" hidden class="mt-7 grid max-w-[34rem] gap-2">
-      <label for="cerca" class="text-base font-bold">Cerca il tuo corso</label>
-      <input id="cerca" type="search" autocomplete="off" spellcheck="false" placeholder="Es. informatica, giurisprudenza" class="min-h-13 w-full border-0 bg-on-campo px-4 text-lg text-campo placeholder:text-campo/70 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">
-      <p id="esito" role="status" class="m-0 min-h-[1.6em] text-base text-on-campo-2"></p>
-    </div>
+<header class="border-b border-filetto">
+  <div class="mx-auto flex h-16 max-w-[75rem] items-center justify-between gap-6 px-4 lg:px-8">
+    <a href="../index.html" class="flex min-h-11 items-center gap-2.5 font-titolo text-xl tracking-wide text-ink uppercase no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink"><img src="../icon.svg" alt="" class="block size-8">Sciamn</a>
+    <nav aria-label="Principale" class="ml-auto max-md:hidden"><ul class="m-0 flex list-none gap-x-6 p-0 text-base font-bold">
+      <li><a href="./" aria-current="page" class="flex min-h-11 items-center text-ink no-underline underline-offset-[0.25em] hover:underline aria-[current=page]:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Orari</a></li><li><a href="../funzioni.html" class="flex min-h-11 items-center text-ink no-underline underline-offset-[0.25em] hover:underline aria-[current=page]:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Funzioni</a></li><li><a href="../guida.html" class="flex min-h-11 items-center text-ink no-underline underline-offset-[0.25em] hover:underline aria-[current=page]:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Guida</a></li><li><a href="../novita.html" class="flex min-h-11 items-center text-ink no-underline underline-offset-[0.25em] hover:underline aria-[current=page]:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Novità</a></li>
+    </ul></nav>
+    <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk" class="premi flex items-center justify-center gap-2 bg-ink font-bold text-bg no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink min-h-11 px-4 text-base"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-current stroke-2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app</a>
+  </div>
+</header>
+<main class="mx-auto max-w-[75rem] px-4 pb-16 lg:px-8">
+  <header class="pt-6 lg:pt-10">
+    <h1 class="m-0 font-titolo text-2xl leading-[1.05] tracking-tight uppercase lg:text-[2rem]">Orario delle lezioni</h1>
+    <p class="mt-1.5 mb-0 text-base text-ink-2">Università di Bari, 111 corsi con le lezioni dal 26 ottobre al 6 novembre 2026. Scegli il tuo corso: trovi giorno, ora, aula e docente.</p>
   </header>
-</div>
-<div class="mx-auto max-w-3xl px-4 pb-16 lg:px-8">
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Biomedicina Traslazionale e Neuroscienze (DiBraiN)</h2>
-  <p class="-mt-1 mb-3 text-[0.9375rem] text-ink-2">Corsi triennali</p>
-  <ul class="m-0 list-none p-0">
+  <div id="ricerca" hidden class="mt-6 grid max-w-[40rem] gap-1.5">
+    <label for="cerca" class="text-base font-bold">Cerca il tuo corso</label>
+    <input id="cerca" type="search" autocomplete="off" spellcheck="false" placeholder="Es. informatica, giurisprudenza" class="min-h-13 w-full border-2 border-ink bg-bg px-4 text-lg text-ink placeholder:text-ink-2 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <p id="esito" role="status" class="m-0 min-h-[1.6em] text-base text-ink-2"></p>
+  </div>
+  <p id="ultimo" hidden class="m-0 mb-4"><a id="riprendi" href="#" class="inline-flex min-h-11 items-center gap-2 font-bold text-ink underline underline-offset-[0.25em]">Riprendi: <span></span></a></p>
+  <div id="elenco" data-vista="elenco" class="mt-2 grid gap-10 lg:grid-cols-[19rem_minmax(0,1fr)] lg:gap-16">
+<nav id="dipartimenti" aria-labelledby="t-dip" hidden class="lg:sticky lg:top-6 lg:self-start">
+  <h2 id="t-dip" class="m-0 mb-2 text-base font-bold text-ink-2 lg:px-3">Dipartimenti</h2>
+  <ul class="m-0 list-none p-0 text-base"><li><a href="#d-biomedicina-traslazionale-e-neuroscienze-dibrain" data-dip="d-biomedicina-traslazionale-e-neuroscienze-dibrain" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Biomedicina Traslazionale e Neuroscienze (DiBraiN)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-bioscienze-biotecnologie-e-ambiente-dbba" data-dip="d-bioscienze-biotecnologie-e-ambiente-dbba" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Bioscienze, Biotecnologie e Ambiente (DBBA)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-chimica" data-dip="d-chimica" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Chimica</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-economia-e-finanza" data-dip="d-economia-e-finanza" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Economia e Finanza</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-economia-management-e-diritto-dell-impresa" data-dip="d-economia-management-e-diritto-dell-impresa" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Economia, Management e Diritto dell&#39;Impresa</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-farmacia-scienze-del-farmaco" data-dip="d-farmacia-scienze-del-farmaco" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Farmacia - Scienze del Farmaco</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-fisica-interuniversitario" data-dip="d-fisica-interuniversitario" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Fisica (interuniversitario)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-giurisprudenza" data-dip="d-giurisprudenza" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Giurisprudenza</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-informatica" data-dip="d-informatica" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Informatica</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-interdisciplinare-di-medicina-dim" data-dip="d-interdisciplinare-di-medicina-dim" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Interdisciplinare di Medicina (DIM)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-jonico-in-sistemi-giuridici-ed-economici-del-mediterraneo-societa-ambiente-culture" data-dip="d-jonico-in-sistemi-giuridici-ed-economici-del-mediterraneo-societa-ambiente-culture" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Jonico in Sistemi Giuridici ed Economici del Mediterraneo: società, ambiente, culture</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-matematica" data-dip="d-matematica" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Matematica</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-medicina-di-precisione-e-rigenerativa-e-area-jonica-dimepre-j" data-dip="d-medicina-di-precisione-e-rigenerativa-e-area-jonica-dimepre-j" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Medicina di Precisione e Rigenerativa e Area Jonica - (DiMePRe-J)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-medicina-veterinaria" data-dip="d-medicina-veterinaria" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Medicina Veterinaria</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-ricerca-e-innovazione-umanistica" data-dip="d-ricerca-e-innovazione-umanistica" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Ricerca e Innovazione Umanistica</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-scienze-del-suolo-della-pianta-e-degli-alimenti" data-dip="d-scienze-del-suolo-della-pianta-e-degli-alimenti" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Scienze del Suolo, della Pianta e degli Alimenti</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-scienze-della-formazione-psicologia-comunicazione-for-psi-com" data-dip="d-scienze-della-formazione-psicologia-comunicazione-for-psi-com" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Scienze della Formazione, Psicologia, Comunicazione (For.Psi.Com.)</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-scienze-della-terra-e-geoambientali" data-dip="d-scienze-della-terra-e-geoambientali" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Scienze della Terra e Geoambientali</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-scienze-politiche" data-dip="d-scienze-politiche" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Scienze Politiche</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li><li><a href="#d-altri-corsi" data-dip="d-altri-corsi" class="flex min-h-12 items-center justify-between gap-3 border-t border-filetto py-2.5 text-ink no-underline lg:min-h-10 lg:border-0 lg:px-3 lg:py-2 lg:hover:bg-panel lg:aria-[current=true]:bg-panel lg:aria-[current=true]:font-bold focus-visible:outline-3 focus-visible:-outline-offset-3 focus-visible:outline-ink"><span class="leading-snug">Altri corsi</span><span class="lg:hidden"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg></span></a></li></ul>
+</nav>
+    <div id="corsi" class="min-w-0">
+<section id="d-biomedicina-traslazionale-e-neuroscienze-dibrain" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Biomedicina Traslazionale e Neuroscienze (DiBraiN)</h2>
+  <p class="m-0 mt-1 text-[0.9375rem] text-ink-2">Corsi triennali</p>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="educazione professionale">
-  <a href="uniba-educazione-professionale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Educazione professionale</span>
+  <a href="uniba-educazione-professionale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Educazione professionale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="igiene dentale">
-  <a href="uniba-igiene-dentale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Igiene dentale</span>
+  <a href="uniba-igiene-dentale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Igiene dentale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="logopedia">
-  <a href="uniba-logopedia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Logopedia</span>
+  <a href="uniba-logopedia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Logopedia</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecnica della riabilitazione psichiatrica">
-  <a href="uniba-tecnica-della-riabilitazione-psichiatrica.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecnica della riabilitazione psichiatrica</span>
+  <a href="uniba-tecnica-della-riabilitazione-psichiatrica.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecnica della riabilitazione psichiatrica</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche audiometriche">
-  <a href="uniba-tecniche-audiometriche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche audiometriche</span>
+  <a href="uniba-tecniche-audiometriche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche audiometriche</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche audioprotesiche">
-  <a href="uniba-tecniche-audioprotesiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche audioprotesiche</span>
+  <a href="uniba-tecniche-audioprotesiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche audioprotesiche</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche ortopediche">
-  <a href="uniba-tecniche-ortopediche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche ortopediche</span>
+  <a href="uniba-tecniche-ortopediche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche ortopediche</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Bioscienze, Biotecnologie e Ambiente (DBBA)</h2>
-  <p class="-mt-1 mb-3 text-[0.9375rem] text-ink-2">Corsi triennali</p>
-  <ul class="m-0 list-none p-0">
+<section id="d-bioscienze-biotecnologie-e-ambiente-dbba" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Bioscienze, Biotecnologie e Ambiente (DBBA)</h2>
+  <p class="m-0 mt-1 text-[0.9375rem] text-ink-2">Corsi triennali</p>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="biotecnologie industriali per lo sviluppo sostenibile">
-  <a href="uniba-biss.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Biotecnologie industriali per lo sviluppo sostenibile</span>
+  <a href="uniba-biss.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Biotecnologie industriali per lo sviluppo sostenibile</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="biotecnologie mediche e farmaceutiche">
-  <a href="uniba-biotecnologie-mediche-e-farmaceutiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Biotecnologie mediche e farmaceutiche</span>
+  <a href="uniba-biotecnologie-mediche-e-farmaceutiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Biotecnologie mediche e farmaceutiche</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Chimica</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-chimica" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Chimica</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="chimica">
-  <a href="uniba-chimica.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Chimica</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-chimica.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Chimica</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="chimica industriale">
-  <a href="uniba-chimica-industriale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Chimica industriale</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-chimica-industriale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Chimica industriale</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="materials science and technology">
-  <a href="uniba-materials-science-and-technology-it.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Materials science and technology</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-materials-science-and-technology-it.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Materials science and technology</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze chimiche">
-  <a href="uniba-scienze-chimiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze chimiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-chimiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze chimiche</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Economia e Finanza</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-economia-e-finanza" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Economia e Finanza</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="economia e commercio">
-  <a href="uniba-economia-e-commercio.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia e commercio</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-economia-e-commercio.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia e commercio</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia e management delle pubbliche amministrazioni">
-  <a href="uniba-economia-management-pubbliche-amministrazioni.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia e management delle pubbliche amministrazioni</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-economia-management-pubbliche-amministrazioni.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia e management delle pubbliche amministrazioni</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia e strategie per i mercati internazionali">
-  <a href="uniba-esmi.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia e strategie per i mercati internazionali</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-esmi.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia e strategie per i mercati internazionali</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia, finanza e impresa">
-  <a href="uniba-mec.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia, finanza e impresa</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-mec.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia, finanza e impresa</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="gestione strategica e marketing digitale">
-  <a href="uniba-gestione-strategica-marketing-digitale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Gestione strategica e marketing digitale</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-gestione-strategica-marketing-digitale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Gestione strategica e marketing digitale</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze statistiche">
-  <a href="uniba-scienze-statistiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze statistiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-statistiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze statistiche</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="statistica e metodi per l&#39;economia e la finanza">
-  <a href="uniba-smef.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Statistica e metodi per l&#39;economia e la finanza</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-smef.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Statistica e metodi per l&#39;economia e la finanza</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Economia, Management e Diritto dell&#39;Impresa</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-economia-management-e-diritto-dell-impresa" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Economia, Management e Diritto dell&#39;Impresa</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="consulenza professionale per le aziende">
-  <a href="uniba-consulenza-professionale-per-le-aziende.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Consulenza professionale per le aziende</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-consulenza-professionale-per-le-aziende.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Consulenza professionale per le aziende</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia aziendale">
-  <a href="uniba-economia-aziendale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia aziendale</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-economia-aziendale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia aziendale</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia aziendale (brindisi)">
-  <a href="uniba-economia-aziendale-brindisi.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia aziendale (Brindisi)</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-economia-aziendale-brindisi.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia aziendale (Brindisi)</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia degli intermediari e dei mercati finanziari">
-  <a href="uniba-economia-intermediari-e-mercati-finanziari.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia degli intermediari e dei mercati finanziari</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-economia-intermediari-e-mercati-finanziari.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia degli intermediari e dei mercati finanziari</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="economia e management">
-  <a href="uniba-economia-e-management.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia e management</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-economia-e-management.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia e management</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="innovazione, governance e sostenibilità">
-  <a href="uniba-innovazione-governance-e-sostenibilita.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Innovazione, governance e sostenibilità</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-innovazione-governance-e-sostenibilita.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Innovazione, governance e sostenibilità</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="marketing e comunicazione d&#39;azienda">
-  <a href="uniba-marketing-comunicazione-azienda-l18.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Marketing e comunicazione d&#39;azienda</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-marketing-comunicazione-azienda-l18.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Marketing e comunicazione d&#39;azienda</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="progettazione e management dei sistemi turistici e culturali">
-  <a href="uniba-progettazione-e-management-dei-sistemi-turistici-e-culturali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Progettazione e management dei sistemi turistici e culturali</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-progettazione-e-management-dei-sistemi-turistici-e-culturali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Progettazione e management dei sistemi turistici e culturali</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Farmacia - Scienze del Farmaco</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-farmacia-scienze-del-farmaco" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Farmacia - Scienze del Farmaco</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="chimica e tecnologia farmaceutiche">
-  <a href="uniba-chimica-tecnologia-farmaceutiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Chimica e tecnologia farmaceutiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-chimica-tecnologia-farmaceutiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Chimica e tecnologia farmaceutiche</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="farmacia (codice 8173)">
-  <a href="uniba-farmacia-8173.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Farmacia (codice 8173)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-farmacia-8173.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Farmacia (codice 8173)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="farmacia (codice 8174)">
-  <a href="uniba-farmacia-8174.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Farmacia (codice 8174)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-farmacia-8174.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Farmacia (codice 8174)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="farmacia (taranto)">
-  <a href="uniba-farmacia-taranto.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Farmacia (Taranto)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-farmacia-taranto.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Farmacia (Taranto)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze erboristiche e nutraceutiche">
-  <a href="uniba-scienze-erboristiche-nutraceutiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze erboristiche e nutraceutiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-erboristiche-nutraceutiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze erboristiche e nutraceutiche</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Fisica (interuniversitario)</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-fisica-interuniversitario" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Fisica (interuniversitario)</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="decision science">
-  <a href="uniba-decision-science.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Decision science</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-decision-science.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Decision science</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="fisica">
-  <a href="uniba-triennale-fisica.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Fisica</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-triennale-fisica.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Fisica</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="physics">
-  <a href="uniba-magistrale-physics.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Physics</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-magistrale-physics.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Physics</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienza e tecnologia dei materiali">
-  <a href="uniba-scienza-tecnologia-dei-materiali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienza e tecnologia dei materiali</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienza-tecnologia-dei-materiali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienza e tecnologia dei materiali</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Giurisprudenza</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-giurisprudenza" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Giurisprudenza</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="consulente del lavoro e operatore di impresa">
-  <a href="uniba-consulente-del-lavoro-e-operatore-di-impresa.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Consulente del lavoro e operatore di impresa</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-consulente-del-lavoro-e-operatore-di-impresa.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Consulente del lavoro e operatore di impresa</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="consulenza del lavoro e management delle risorse umane">
-  <a href="uniba-consulenza-lavoro-management-risorse-umane.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Consulenza del lavoro e management delle risorse umane</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-consulenza-lavoro-management-risorse-umane.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Consulenza del lavoro e management delle risorse umane</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="diritto dello sviluppo sostenibile">
-  <a href="uniba-diritto-sviluppo-sostenibile.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Diritto dello sviluppo sostenibile</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-diritto-sviluppo-sostenibile.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Diritto dello sviluppo sostenibile</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="giurisprudenza (codice 6001)">
-  <a href="uniba-giurisprudenza-6001.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Giurisprudenza (codice 6001)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-giurisprudenza-6001.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Giurisprudenza (codice 6001)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="giurisprudenza (codice 6002)">
-  <a href="uniba-giurisprudenza-6002.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Giurisprudenza (codice 6002)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-giurisprudenza-6002.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Giurisprudenza (codice 6002)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze dei servizi giuridici">
-  <a href="uniba-scienze-servizi-giuridici.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze dei servizi giuridici</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-servizi-giuridici.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze dei servizi giuridici</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Informatica</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-informatica" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Informatica</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="computer science">
-  <a href="uniba-computer-science.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Computer science</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-computer-science.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Computer science</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="data science">
-  <a href="uniba-data-science.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Data science</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-data-science.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Data science</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="informatica">
-  <a href="uniba-informatica.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Informatica</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-informatica.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Informatica</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="informatica e tecnologie dell&#39;informazione (taranto)">
-  <a href="uniba-informatica-tecnologie-informazione-taranto.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Informatica e tecnologie dell&#39;informazione (Taranto)</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-informatica-tecnologie-informazione-taranto.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Informatica e tecnologie dell&#39;informazione (Taranto)</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="informatica e tecnologie per la produzione del software">
-  <a href="uniba-informatica-tecnologie-produzione-software.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Informatica e tecnologie per la produzione del software</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-informatica-tecnologie-produzione-software.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Informatica e tecnologie per la produzione del software</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="sicurezza informatica (taranto)">
-  <a href="uniba-sicurezza-informatica-taranto.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Sicurezza informatica (Taranto)</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-sicurezza-informatica-taranto.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Sicurezza informatica (Taranto)</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Interdisciplinare di Medicina (DIM)</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-interdisciplinare-di-medicina-dim" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Interdisciplinare di Medicina (DIM)</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="medicina e chirurgia">
-  <a href="uniba-medicina-chirurgia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Medicina e chirurgia</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-medicina-chirurgia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Medicina e chirurgia</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="medicina e chirurgia (taranto)">
-  <a href="uniba-medicina-e-chirurgia-taranto.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Medicina e chirurgia (Taranto)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-medicina-e-chirurgia-taranto.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Medicina e chirurgia (Taranto)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="medicine and surgery - medicina e chirurgia in lingua inglese">
-  <a href="uniba-medicina-chirurgia-bemc.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Medicine and surgery - medicina e chirurgia in lingua inglese</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-medicina-chirurgia-bemc.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Medicine and surgery - medicina e chirurgia in lingua inglese</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche della prevenzione nell&#39;ambiente e nei luoghi di lavoro">
-  <a href="uniba-tecniche-prevenzione-ambiente-lavoro.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche della prevenzione nell&#39;ambiente e nei luoghi di lavoro</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale · nessuna lezione in queste settimane</span>
+  <a href="uniba-tecniche-prevenzione-ambiente-lavoro.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche della prevenzione nell&#39;ambiente e nei luoghi di lavoro</span><span class="text-[0.9375rem] text-ink-2">Triennale · nessuna lezione in queste settimane</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche di radiologia medica, per immagini e radioterapia">
-  <a href="uniba-tecniche-di-radiologia-medica-per-immagini-e-radioterapia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche di radiologia medica, per immagini e radioterapia</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-tecniche-di-radiologia-medica-per-immagini-e-radioterapia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche di radiologia medica, per immagini e radioterapia</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Jonico in Sistemi Giuridici ed Economici del Mediterraneo: società, ambiente, culture</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-jonico-in-sistemi-giuridici-ed-economici-del-mediterraneo-societa-ambiente-culture" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Jonico in Sistemi Giuridici ed Economici del Mediterraneo: società, ambiente, culture</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="economia e amministrazione delle aziende">
-  <a href="uniba-economia-amministrazione-aziende.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Economia e amministrazione delle aziende</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-economia-amministrazione-aziende.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Economia e amministrazione delle aziende</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="giurisprudenza (taranto)">
-  <a href="uniba-giurisprudenza-taranto.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Giurisprudenza (Taranto)</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-giurisprudenza-taranto.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Giurisprudenza (Taranto)</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze e gestione delle attività marittime">
-  <a href="uniba-scienze-gestione-attivita-marittime.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze e gestione delle attività marittime</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-gestione-attivita-marittime.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze e gestione delle attività marittime</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze giuridiche per l’immigrazione e l’interculturalità nelle pubbliche amministrazioni">
-  <a href="uniba-scienze-giuridiche-per-limmigrazione-e-linterculturalita-nelle-pubbliche-amministrazioni.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze giuridiche per l’immigrazione e l’interculturalità nelle pubbliche amministrazioni</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-giuridiche-per-limmigrazione-e-linterculturalita-nelle-pubbliche-amministrazioni.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze giuridiche per l’immigrazione e l’interculturalità nelle pubbliche amministrazioni</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze strategiche marittimo-portuali">
-  <a href="uniba-scienze-strategico-marittime-portuali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze strategiche marittimo-portuali</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-strategico-marittime-portuali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze strategiche marittimo-portuali</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="strategie d&#39;impresa e management">
-  <a href="uniba-strategie-impresa-management.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Strategie d&#39;impresa e management</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-strategie-impresa-management.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Strategie d&#39;impresa e management</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Matematica</h2>
-  <p class="-mt-1 mb-3 text-[0.9375rem] text-ink-2">Triennale</p>
-  <ul class="m-0 list-none p-0">
+<section id="d-matematica" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Matematica</h2>
+  <p class="m-0 mt-1 text-[0.9375rem] text-ink-2">Triennale</p>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="matematica">
-  <a href="uniba-matematica-l35.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Matematica</span>
+  <a href="uniba-matematica-l35.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Matematica</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Medicina di Precisione e Rigenerativa e Area Jonica - (DiMePRe-J)</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-medicina-di-precisione-e-rigenerativa-e-area-jonica-dimepre-j" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Medicina di Precisione e Rigenerativa e Area Jonica - (DiMePRe-J)</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="odontoiatria e protesi dentaria">
-  <a href="uniba-odontoiatria-e-protesi-dentaria.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Odontoiatria e protesi dentaria</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-odontoiatria-e-protesi-dentaria.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Odontoiatria e protesi dentaria</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="ostetricia">
-  <a href="uniba-ostetricia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Ostetricia</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-ostetricia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Ostetricia</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Medicina Veterinaria</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-medicina-veterinaria" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Medicina Veterinaria</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="medicina veterinaria">
-  <a href="uniba-medicina-veterinaria.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Medicina veterinaria</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-medicina-veterinaria.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Medicina veterinaria</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze animali">
-  <a href="uniba-scienze-animali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze animali</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-animali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze animali</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="sicurezza degli alimenti di origine animale e salute">
-  <a href="uniba-sicurezza-alimenti-origine-animale-salute.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Sicurezza degli alimenti di origine animale e salute</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-sicurezza-alimenti-origine-animale-salute.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Sicurezza degli alimenti di origine animale e salute</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Ricerca e Innovazione Umanistica</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-ricerca-e-innovazione-umanistica" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Ricerca e Innovazione Umanistica</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="archeologia">
-  <a href="uniba-archeologia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Archeologia</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-archeologia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Archeologia</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="cims - culture e industrie dei media e dello spettacolo">
-  <a href="uniba-cims.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Cims - culture e industrie dei media e dello spettacolo</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-cims.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Cims - culture e industrie dei media e dello spettacolo</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="dams - discipline dell&#39;audiovisivo, della musica e dello spettacolo">
-  <a href="uniba-dams.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Dams - discipline dell&#39;audiovisivo, della musica e dello spettacolo</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-dams.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Dams - discipline dell&#39;audiovisivo, della musica e dello spettacolo</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="filologia moderna">
-  <a href="uniba-filologia-moderna.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Filologia moderna</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-filologia-moderna.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Filologia moderna</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="filologia, letterature e storia dell&#39;antichità">
-  <a href="uniba-filologia-letterature-storia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Filologia, letterature e storia dell&#39;antichità</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-filologia-letterature-storia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Filologia, letterature e storia dell&#39;antichità</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="filosofia">
-  <a href="uniba-filosofia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Filosofia</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-filosofia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Filosofia</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="lettere">
-  <a href="uniba-lettere.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Lettere</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-lettere.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Lettere</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="lingue e culture per il turismo e la mediazione internazionale">
-  <a href="uniba-lingue-culture-turismo-mediazione-internazionale.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Lingue e culture per il turismo e la mediazione internazionale</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-lingue-culture-turismo-mediazione-internazionale.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Lingue e culture per il turismo e la mediazione internazionale</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="lingue e letterature moderne">
-  <a href="uniba-lingue-e-letterature-moderne.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Lingue e letterature moderne</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-lingue-e-letterature-moderne.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Lingue e letterature moderne</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="lingue, culture e letterature moderne">
-  <a href="uniba-lingue-culture-letterature-moderne.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Lingue, culture e letterature moderne</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-lingue-culture-letterature-moderne.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Lingue, culture e letterature moderne</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="nuovi turismi">
-  <a href="uniba-nuovi-turismi.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Nuovi turismi</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-nuovi-turismi.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Nuovi turismi</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="patrimonio digitale. musei, archivi, biblioteche">
-  <a href="uniba-patrimonio-digitale-musei-archivi-biblioteche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Patrimonio digitale. musei, archivi, biblioteche</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-patrimonio-digitale-musei-archivi-biblioteche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Patrimonio digitale. musei, archivi, biblioteche</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze dei beni culturali">
-  <a href="uniba-scienze-beni-culturali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze dei beni culturali</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-beni-culturali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze dei beni culturali</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze filosofiche">
-  <a href="uniba-scienze-filosofiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze filosofiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-filosofiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze filosofiche</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze storiche e sociali">
-  <a href="uniba-scienze-storiche-sociali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze storiche e sociali</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-storiche-sociali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze storiche e sociali</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="storia">
-  <a href="uniba-storia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Storia</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-storia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Storia</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="storia dell&#39;arte">
-  <a href="uniba-storia-arte.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Storia dell&#39;arte</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-storia-arte.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Storia dell&#39;arte</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="traduzione specialistica">
-  <a href="uniba-traduzione-specialistica.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Traduzione specialistica</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-traduzione-specialistica.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Traduzione specialistica</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Scienze del Suolo, della Pianta e degli Alimenti</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-scienze-del-suolo-della-pianta-e-degli-alimenti" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Scienze del Suolo, della Pianta e degli Alimenti</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="biotecnologie per la qualità e la sicurezza dell&#39;alimentazione">
-  <a href="uniba-biotecnologie-qualita-sicurezza-alimentazione.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Biotecnologie per la qualità e la sicurezza dell&#39;alimentazione</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-biotecnologie-qualita-sicurezza-alimentazione.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Biotecnologie per la qualità e la sicurezza dell&#39;alimentazione</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="gestione degli spazi verdi, dei boschi e delle aree protette">
-  <a href="uniba-gestione-spazi-verdi-boschi-aree-protette.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Gestione degli spazi verdi, dei boschi e delle aree protette</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-gestione-spazi-verdi-boschi-aree-protette.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Gestione degli spazi verdi, dei boschi e delle aree protette</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="innovation development in agri-food systems">
-  <a href="uniba-international-master-agrifood-systems.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Innovation development in agri-food systems</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-international-master-agrifood-systems.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Innovation development in agri-food systems</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="medicina delle piante">
-  <a href="uniba-medicina-piante.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Medicina delle piante</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-medicina-piante.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Medicina delle piante</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze agro-ambientali e territoriali">
-  <a href="uniba-scienze-agro-ambientali-territoriali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze agro-ambientali e territoriali</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-agro-ambientali-territoriali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze agro-ambientali e territoriali</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze e tecnologie agrarie">
-  <a href="uniba-scienze-tecnologie-agrarie.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze e tecnologie agrarie</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-tecnologie-agrarie.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze e tecnologie agrarie</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze e tecnologie alimentari (codice 7003)">
-  <a href="uniba-scienze-tecnologie-alimentari-lm-70-7003.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze e tecnologie alimentari (codice 7003)</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-tecnologie-alimentari-lm-70-7003.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze e tecnologie alimentari (codice 7003)</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze e tecnologie alimentari (codice 8004)">
-  <a href="uniba-scienze-tecnologie-alimentari-lm-70-8004.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze e tecnologie alimentari (codice 8004)</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-tecnologie-alimentari-lm-70-8004.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze e tecnologie alimentari (codice 8004)</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze per la valorizzazione del patrimonio gastronomico">
-  <a href="uniba-scienze-patrimonio-gastronomico.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze per la valorizzazione del patrimonio gastronomico</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-patrimonio-gastronomico.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze per la valorizzazione del patrimonio gastronomico</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="tecniche per l&#39;agricoltura sostenibile">
-  <a href="uniba-tecniche-agricoltura-sostenibile.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Tecniche per l&#39;agricoltura sostenibile</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-tecniche-agricoltura-sostenibile.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Tecniche per l&#39;agricoltura sostenibile</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Scienze della Formazione, Psicologia, Comunicazione (For.Psi.Com.)</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-scienze-della-formazione-psicologia-comunicazione-for-psi-com" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Scienze della Formazione, Psicologia, Comunicazione (For.Psi.Com.)</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="psicologia">
-  <a href="uniba-psicologia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Psicologia</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-psicologia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Psicologia</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze dell&#39;educazione e della formazione">
-  <a href="uniba-scienze-educazione-formazione.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze dell&#39;educazione e della formazione</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-educazione-formazione.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze dell&#39;educazione e della formazione</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze della comunicazione">
-  <a href="uniba-scienze-comunicazione.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze della comunicazione</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-comunicazione.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze della comunicazione</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze della comunicazione pubblica, sociale e d&#39;impresa">
-  <a href="uniba-scienze-comunicazione-pubblica-sociale-impresa.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze della comunicazione pubblica, sociale e d&#39;impresa</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-comunicazione-pubblica-sociale-impresa.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze della comunicazione pubblica, sociale e d&#39;impresa</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze della formazione primaria">
-  <a href="uniba-scienze-formazione-primaria.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze della formazione primaria</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-scienze-formazione-primaria.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze della formazione primaria</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze e tecniche psicologiche">
-  <a href="uniba-scienze-tecniche-psicologiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze e tecniche psicologiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-tecniche-psicologiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze e tecniche psicologiche</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze pedagogiche">
-  <a href="uniba-scienze-pedagogiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze pedagogiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-pedagogiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze pedagogiche</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Scienze della Terra e Geoambientali</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-scienze-della-terra-e-geoambientali" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Scienze della Terra e Geoambientali</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="conservazione e restauro dei beni culturali">
-  <a href="uniba-conservazione-e-restauro-dei-beni-culturali.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Conservazione e restauro dei beni culturali</span>
-    <span class="text-[0.9375rem] text-ink-2">Ciclo unico</span>
+  <a href="uniba-conservazione-e-restauro-dei-beni-culturali.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Conservazione e restauro dei beni culturali</span><span class="text-[0.9375rem] text-ink-2">Ciclo unico</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="earth system and global changes">
-  <a href="uniba-earth-system-and-global-changes.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Earth system and global changes</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-earth-system-and-global-changes.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Earth system and global changes</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="geoscienze e tecnologie per lo studio e la gestione sostenibile del sistema terra">
-  <a href="uniba-geoscienze.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Geoscienze e tecnologie per lo studio e la gestione sostenibile del sistema terra</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-geoscienze.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Geoscienze e tecnologie per lo studio e la gestione sostenibile del sistema terra</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze geologiche">
-  <a href="uniba-scienze-geologiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze geologiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-geologiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze geologiche</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Scienze Politiche</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-scienze-politiche" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Scienze Politiche</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="relazioni internazionali e studi europei">
-  <a href="uniba-relazioni-internazionali-studi-europei.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Relazioni internazionali e studi europei</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-relazioni-internazionali-studi-europei.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Relazioni internazionali e studi europei</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="ricerca, innovazione sociale e politiche di inclusione">
-  <a href="uniba-ricerca-innovazione-sociale-e-politiche-di-inclusione.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Ricerca, innovazione sociale e politiche di inclusione</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-ricerca-innovazione-sociale-e-politiche-di-inclusione.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Ricerca, innovazione sociale e politiche di inclusione</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze del servizio sociale e sociologia">
-  <a href="uniba-scienze-servizio-sociale-sociologia.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze del servizio sociale e sociologia</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-servizio-sociale-sociologia.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze del servizio sociale e sociologia</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze delle amministrazioni">
-  <a href="uniba-scienze-amministrazioni.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze delle amministrazioni</span>
-    <span class="text-[0.9375rem] text-ink-2">Magistrale</span>
+  <a href="uniba-scienze-amministrazioni.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze delle amministrazioni</span><span class="text-[0.9375rem] text-ink-2">Magistrale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze politiche">
-  <a href="uniba-scienze-politiche.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze politiche</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-politiche.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze politiche</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
 <li class="voce border-t border-filetto" data-cerca="scienze politiche, economiche e amministrative">
-  <a href="uniba-scienze-politiche-economiche-amministrative.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Scienze politiche, economiche e amministrative</span>
-    <span class="text-[0.9375rem] text-ink-2">Triennale</span>
+  <a href="uniba-scienze-politiche-economiche-amministrative.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Scienze politiche, economiche e amministrative</span><span class="text-[0.9375rem] text-ink-2">Triennale</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-<section class="dipartimento mt-12">
-  <h2 class="m-0 mb-3 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Altri corsi</h2>
-  <ul class="m-0 list-none p-0">
+<section id="d-altri-corsi" class="dipartimento mt-10 first:mt-0 [.js_&]:mt-0">
+  <a href="#dipartimenti" data-torna class="mb-2 hidden min-h-11 items-center gap-1 font-bold text-ink no-underline [.js_&]:inline-flex lg:[.js_&]:hidden">‹ Tutti i dipartimenti</a>
+  <h2 class="m-0 text-[1.375rem] leading-tight font-extrabold text-balance">Altri corsi</h2>
+  <ul class="m-0 mt-4 list-none p-0">
 <li class="voce border-t border-filetto" data-cerca="semestre filtro medicina lm41 lm46 lm42">
-  <a href="uniba-semestre-filtro-medicina-lm41-lm46-lm42.html" class="grid min-h-14 content-center gap-0.5 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
-    <span class="text-lg leading-snug font-bold">Semestre filtro medicina lm41 lm46 lm42</span>
+  <a href="uniba-semestre-filtro-medicina-lm41-lm46-lm42.html" class="flex min-h-14 items-center justify-between gap-4 py-3 text-ink no-underline hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+    <span class="grid gap-0.5"><span class="text-[1.0625rem] leading-snug font-bold">Semestre filtro medicina lm41 lm46 lm42</span></span><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-ink-2 stroke-2"><path d="m9 5 7 7-7 7"/></svg>
   </a>
 </li>
   </ul>
 </section>
-  <p class="mt-12 mb-0 max-w-[40rem] text-base text-ink-2">Dal calendario pubblico dell'Università di Bari, aggiornato il 25 ottobre 2026 alle 15:59. Il Politecnico di Bari non c'è ancora: il suo calendario pubblico non ha le prossime settimane.</p>
-</div>
-<div class="bg-panel">
-  <section class="mx-auto grid max-w-3xl gap-5 px-4 py-14 lg:px-8 lg:py-20">
-    <h2 class="m-0 font-titolo text-[clamp(2.25rem,8vw,3.5rem)] leading-[0.95] tracking-tight uppercase">Solo le tue lezioni, sul telefono.</h2>
-    <p class="m-0 max-w-[36rem] text-lg">Sciamn tiene il tuo anno, il tuo canale e i corsi che segui davvero. Ti avvisa prima di ogni lezione, ti mostra l'aula sulla pianta del piano e mette il telefono in silenzioso quando sei in aula.</p>
+    </div>
+  </div>
+  <p class="mt-12 mb-0 max-w-[40rem] text-base text-ink-2">Dal calendario pubblico dell'Università di Bari, aggiornato il 25 ottobre 2026 alle 17:19. Il Politecnico di Bari non c'è ancora: il suo calendario pubblico non ha le prossime settimane.</p>
+</main>
+<section class="bg-panel" aria-labelledby="t-app">
+  <div class="mx-auto grid max-w-[75rem] gap-6 px-4 py-12 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-16 lg:px-8">
+    <div class="grid gap-3">
+      <h2 id="t-app" class="m-0 font-titolo text-[1.75rem] leading-none tracking-tight uppercase">Solo le tue lezioni, sul telefono</h2>
+      <p class="m-0 max-w-[40rem] text-lg">Sciamn tiene il tuo anno, il tuo canale e i corsi che segui davvero. Ti avvisa prima di ogni lezione, ti mostra l'aula sulla pianta del piano e mette il telefono in silenzioso quando sei in aula.</p>
+      <p class="m-0 text-base text-ink-2">Gratis, per Android 7 o successivo; su iPhone non c'è ancora.</p>
+    </div>
     <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-      <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk" class="premi flex min-h-14 items-center justify-center gap-2.5 bg-campo px-6 py-3 text-lg font-extrabold text-on-campo no-underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="size-[1.375rem] shrink-0 fill-none stroke-current stroke-2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android
-      </a>
+      <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk" class="premi flex items-center justify-center gap-2 bg-ink font-bold text-bg no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink min-h-14 px-6 text-lg"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-current stroke-2"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android</a>
       <a href="../" class="flex min-h-11 items-center font-bold text-ink underline underline-offset-[0.25em]">Com'è fatta l'app</a>
     </div>
-    <p class="m-0 text-base text-ink-2">Gratis, per Android 7 o successivo; su iPhone non c'è ancora.</p>
-  </section>
-</div>
+  </div>
+</section>
 <footer class="overflow-hidden bg-campo text-on-campo">
   <div class="mx-auto max-w-6xl px-4 pt-12 pb-8 lg:px-8 lg:pt-20">
     <ul class="m-0 mb-6 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
@@ -839,22 +761,64 @@
     <p class="mt-10 mb-0 font-titolo text-[clamp(5rem,27vw,17rem)] leading-[0.8] tracking-tight uppercase" aria-hidden="true">Sciamn</p>
   </div>
 </footer>
-</main>
 <script>
   (function () {
+    var radice = document.getElementById('elenco');
     var campo = document.getElementById('cerca');
+    var esito = document.getElementById('esito');
     var voci = Array.prototype.slice.call(document.querySelectorAll('li.voce'));
     var gruppi = Array.prototype.slice.call(document.querySelectorAll('section.dipartimento'));
-    var esito = document.getElementById('esito');
+    var link = Array.prototype.slice.call(document.querySelectorAll('[data-dip]'));
+    var ultimo = null;
     function pulito(s) { return s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim(); }
+    function telefono() { return !window.matchMedia('(min-width: 64rem)').matches; }
+    function apri(id) {
+      gruppi.forEach(function (g) { g.classList.toggle('scelto', g.id === id); });
+      link.forEach(function (a) { a.setAttribute('aria-current', String(a.getAttribute('data-dip') === id)); });
+    }
+    function predefinito() {
+      var g = ultimo && ultimo.closest('section.dipartimento');
+      return g ? g.id : (gruppi[0] ? gruppi[0].id : '');
+    }
+    function daIndirizzo() {
+      var id = location.hash.slice(1);
+      var c = gruppi.some(function (g) { return g.id === id; });
+      radice.setAttribute('data-vista', c ? 'corsi' : 'elenco');
+      apri(c ? id : predefinito());
+    }
     function filtra() {
       var q = pulito(campo.value), n = 0;
-      voci.forEach(function (li) { var si = !q || pulito(li.getAttribute('data-cerca')).indexOf(q) >= 0; li.hidden = !si; if (si) n++; });
-      gruppi.forEach(function (g) { g.hidden = !g.querySelector('li.voce:not([hidden])'); });
-      esito.textContent = q ? (n ? n + (n === 1 ? ' corso' : ' corsi') : 'Nessun corso con questo nome: prova con una parola sola.') : '';
+      if (!q) { voci.forEach(function (li) { li.hidden = false; }); esito.textContent = ''; daIndirizzo(); return; }
+      voci.forEach(function (li) { var si = pulito(li.getAttribute('data-cerca')).indexOf(q) >= 0; li.hidden = !si; if (si) n++; });
+      gruppi.forEach(function (g) { g.classList.toggle('scelto', !!g.querySelector('li.voce:not([hidden])')); });
+      link.forEach(function (a) { a.setAttribute('aria-current', 'false'); });
+      radice.setAttribute('data-vista', 'cerca');
+      esito.textContent = n ? n + (n === 1 ? ' corso' : ' corsi') : 'Nessun corso con questo nome: prova con una parola sola.';
     }
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('[data-dip], [data-torna]') : null;
+      if (!a) return;
+      e.preventDefault();
+      if (campo.value) { campo.value = ''; filtra(); }
+      history.pushState(null, '', a.hasAttribute('data-torna') ? location.pathname : '#' + a.getAttribute('data-dip'));
+      daIndirizzo();
+      if (telefono() && radice.getBoundingClientRect().top < 0) radice.scrollIntoView({ block: 'start' });
+    });
+    window.addEventListener('popstate', daIndirizzo);
     campo.addEventListener('input', filtra);
+    try {
+      var u = localStorage.getItem('sciamn-ultimo-corso') || '';
+      ultimo = /^uniba-[a-z0-9-]+\.html$/.test(u) ? document.querySelector('li.voce a[href="' + u + '"]') : null;
+    } catch (e) { ultimo = null; }
+    if (ultimo) {
+      var r = document.getElementById('riprendi');
+      r.href = ultimo.getAttribute('href');
+      r.querySelector('span').textContent = ultimo.querySelector('span span').textContent;
+      document.getElementById('ultimo').hidden = false;
+    }
     document.getElementById('ricerca').hidden = false;
+    document.getElementById('dipartimenti').hidden = false;
+    daIndirizzo();
   })();
 </script>
 </body>
