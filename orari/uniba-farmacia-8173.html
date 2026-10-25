@@ -41,20 +41,20 @@
       <li><a href="./" class="text-on-campo underline underline-offset-[0.2em]">Orari</a></li><li aria-hidden="true">›</li><li>Università di Bari</li><li aria-hidden="true">›</li><li>Ciclo unico</li>
     </ol></nav>
     <h1 class="m-0 mt-3 font-titolo text-[clamp(2.25rem,9vw,4rem)] leading-[0.95] tracking-tight text-balance uppercase">Farmacia (codice 8173)</h1>
-    <p class="mt-3 mb-0 text-lg text-on-campo-2">Orario delle lezioni dal 26 ottobre al 6 novembre 2026</p>
-    
+    <p class="mt-3 mb-0 text-lg text-on-campo-2">Orario delle lezioni <span id="periodo">dal 26 ottobre al 6 novembre 2026</span></p>
+    <div id="schede"></div>
   </header>
 </div>
-<div id="canale" hidden class="bg-panel">
+<div id="fascia"><div id="canale" hidden class="bg-panel">
   <div class="mx-auto flex max-w-3xl flex-wrap items-center justify-between gap-x-4 gap-y-2 px-4 py-2 lg:px-8">
     <span id="canale-nome" class="text-base">Canale<span class="sr-only">, per iniziale del cognome</span></span>
     <div role="group" aria-labelledby="canale-nome" class="flex flex-wrap gap-0.5">
       <button type="button" data-scegli-canale="" aria-pressed="true" class="min-h-11 bg-bg px-3.5 font-semibold text-ink aria-pressed:bg-ink aria-pressed:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Tutti</button><button type="button" data-scegli-canale="A-E" aria-pressed="false" class="min-h-11 bg-bg px-3.5 font-semibold text-ink aria-pressed:bg-ink aria-pressed:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">A–E</button><button type="button" data-scegli-canale="F-N" aria-pressed="false" class="min-h-11 bg-bg px-3.5 font-semibold text-ink aria-pressed:bg-ink aria-pressed:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">F–N</button><button type="button" data-scegli-canale="O-Z" aria-pressed="false" class="min-h-11 bg-bg px-3.5 font-semibold text-ink aria-pressed:bg-ink aria-pressed:text-bg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">O–Z</button>
     </div>
   </div>
-</div>
+</div></div>
 <div class="mx-auto max-w-3xl px-4 pb-16 lg:px-8">
-<section id="anno-5" class="anno scroll-mt-4" aria-labelledby="t-anno-5">
+<div id="agenda"><section id="anno-5" class="anno scroll-mt-4" aria-labelledby="t-anno-5">
   <h2 id="t-anno-5" class="sr-only">5° anno</h2>
 <section class="settimana">
   <h3 class="sr-only">Settimana dal 26 al 30 ottobre 2026</h3>
@@ -368,8 +368,8 @@
   </ol>
 </section>
 </section>
-</section>
-<p class="mt-8 mb-0 max-w-[40rem] text-base text-ink-2">Dal calendario pubblico dell'Università di Bari, aggiornato il 25 ottobre 2026 alle 15:23. Fa fede la <a href="https://www.uniba.it/it/corsi/cdl-farmacia" class="text-ink underline underline-offset-[0.18em]">pagina del corso su uniba.it</a>. Sciamn non è dell'Università: se una lezione cambia all'ultimo, l'avviso del docente arriva prima di qui.</p>
+</section></div>
+<p class="mt-8 mb-0 max-w-[40rem] text-base text-ink-2">Dal calendario pubblico dell'Università di Bari, <span id="aggiornato">aggiornato il 25 ottobre 2026 alle 15:59</span>. Fa fede la <a href="https://www.uniba.it/it/corsi/cdl-farmacia" class="text-ink underline underline-offset-[0.18em]">pagina del corso su uniba.it</a>. Sciamn non è dell'Università: se una lezione cambia all'ultimo, l'avviso del docente arriva prima di qui.</p>
 </div>
 <div class="bg-panel">
   <section class="mx-auto grid max-w-3xl gap-5 px-4 py-14 lg:px-8 lg:py-20">
@@ -399,18 +399,26 @@
   </div>
 </footer>
 </main>
+<script type="application/json" id="dati-corso">{"corsoIds":["62f1185b9634ca0026d2e66a"],"impronta":"1ndjhhx"}</script>
+<script src="js/config.js"></script>
+<script src="js/core.js"></script>
+<script src="js/settimane.js"></script>
+<script src="js/righe.js"></script>
 <script>
   (function () {
-    var schede = Array.prototype.slice.call(document.querySelectorAll('.scheda-anno'));
-    var sezioni = Array.prototype.slice.call(document.querySelectorAll('section.anno'));
+    var corrente = '';
+    function tutti(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
     function mostra(id, scorri) {
-      var trovata = sezioni.some(function (s) { return s.id === id; });
-      if (!trovata) return;
+      var sezioni = tutti('section.anno');
+      if (!sezioni.some(function (s) { return s.id === id; })) return;
+      corrente = id;
       sezioni.forEach(function (s) { s.hidden = s.id !== id; });
-      schede.forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'); });
+      tutti('.scheda-anno').forEach(function (a) { a.setAttribute('aria-current', a.getAttribute('href') === '#' + id ? 'true' : 'false'); });
       if (scorri) document.getElementById(id).scrollIntoView({ block: 'start' });
     }
-    if (schede.length) {
+    function collegaAnni(inizio, scorri) {
+      var schede = tutti('.scheda-anno');
+      if (!schede.length) return;
       schede.forEach(function (a) {
         a.addEventListener('click', function (e) {
           e.preventDefault();
@@ -419,24 +427,77 @@
           history.replaceState(null, '', '#' + id);
         });
       });
-      mostra(location.hash.slice(1) || sezioni[0].id, !!location.hash);
+      mostra(inizio, scorri);
     }
-    var fascia = document.getElementById('canale');
-    if (!fascia) return;
-    var pulsanti = Array.prototype.slice.call(fascia.querySelectorAll('[data-scegli-canale]'));
     function scegli(c) {
-      pulsanti.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-scegli-canale') === c)); });
+      tutti('[data-scegli-canale]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-scegli-canale') === c)); });
       if (c) document.body.setAttribute('data-canale-scelto', c); else document.body.removeAttribute('data-canale-scelto');
-      Array.prototype.forEach.call(document.querySelectorAll('li[data-canale]'), function (li) { li.hidden = !!c && li.getAttribute('data-canale') !== c; });
+      tutti('li[data-canale]').forEach(function (li) { li.hidden = !!c && li.getAttribute('data-canale') !== c; });
       // un giorno con solo lezioni dell'altro canale sparisce, invece di restare un titolo vuoto
-      Array.prototype.forEach.call(document.querySelectorAll('section.giorno'), function (g) { g.hidden = !g.querySelector('li:not([hidden])'); });
+      tutti('section.giorno').forEach(function (g) { g.hidden = !g.querySelector('li:not([hidden])'); });
       try { localStorage.setItem('sciamn-canale', c); } catch (e) { /* senza storage resta la scelta di questa visita */ }
     }
-    pulsanti.forEach(function (b) { b.addEventListener('click', function () { scegli(b.getAttribute('data-scegli-canale')); }); });
-    var salvato = '';
-    try { salvato = localStorage.getItem('sciamn-canale') || ''; } catch (e) { salvato = ''; }
-    scegli(pulsanti.some(function (b) { return b.getAttribute('data-scegli-canale') === salvato; }) ? salvato : '');
-    fascia.hidden = false;
+    function canaleSalvato(pulsanti) {
+      var salvato = '';
+      try { salvato = localStorage.getItem('sciamn-canale') || ''; } catch (e) { salvato = ''; }
+      return pulsanti.some(function (b) { return b.getAttribute('data-scegli-canale') === salvato; }) ? salvato : '';
+    }
+    function collegaCanale() {
+      var fascia = document.getElementById('canale');
+      if (!fascia) { document.body.removeAttribute('data-canale-scelto'); return; }
+      var pulsanti = tutti('[data-scegli-canale]');
+      pulsanti.forEach(function (b) { b.addEventListener('click', function () { scegli(b.getAttribute('data-scegli-canale')); }); });
+      scegli(canaleSalvato(pulsanti));
+      fascia.hidden = false;
+    }
+
+    // ---- aggiornamento dal vivo ----
+    function chiedi(url) {
+      var ctrl = new AbortController();
+      var timer = setTimeout(function () { ctrl.abort(); }, 8000);
+      return fetch(url, { signal: ctrl.signal }).then(function (r) { return r.ok ? r.json() : null; }).finally(function () { clearTimeout(timer); });
+    }
+    // Le lezioni normalizzate di tutti i corsoId, o null se una risposta non torna o tocca il tetto di
+    // Cineca (tronca in silenzio: meglio la pagina statica di un orario che sembra intero e non lo è).
+    function lezioni(corsoIds, lunedi) {
+      var r = OrariSettimane.intervallo(lunedi, 2);
+      return Promise.all(corsoIds.map(function (id) { return chiedi(Core.urlPubblico('uniba', id, r)); })).then(function (liste) {
+        var grezzo = [];
+        for (var i = 0; i < liste.length; i++) {
+          if (!Array.isArray(liste[i]) || liste[i].length >= Core.TETTO_PUBBLICA) return null;
+          grezzo = grezzo.concat(liste[i]);
+        }
+        return Core.normalizePublicResponse(grezzo, corsoIds, {});
+      });
+    }
+    function sostituisci(a) {
+      document.getElementById('agenda').innerHTML = a.html;
+      document.getElementById('schede').innerHTML = a.schede;
+      document.getElementById('fascia').innerHTML = a.fascia;
+      document.getElementById('periodo').textContent = a.periodo;
+      var primo = tutti('section.anno')[0];
+      // l'anno guardato resta, se c'è ancora; se è sparito si riparte dal primo
+      collegaAnni(document.getElementById(corrente) ? corrente : (primo ? primo.id : ''), false);
+      collegaCanale();
+    }
+    function aggiornaDalVivo() {
+      var dati;
+      try { dati = JSON.parse(document.getElementById('dati-corso').textContent); } catch (e) { return; }
+      if (typeof Core === 'undefined' || typeof OrariRighe === 'undefined' || !dati || !dati.corsoIds) return;
+      var lunedi = OrariSettimane.primoLunedi(new Date());
+      lezioni(dati.corsoIds, lunedi).then(function (eventi) {
+        if (!eventi) return;
+        var a = OrariRighe.agenda(eventi, lunedi, 2);
+        var cambiato = OrariRighe.impronta(a) !== dati.impronta;
+        if (cambiato) sostituisci(a);
+        document.getElementById('aggiornato').textContent = cambiato ? 'aggiornato ora' : 'controllato ora';
+      }).catch(function () { /* resta la pagina statica */ });
+    }
+
+    var primo = tutti('section.anno')[0];
+    if (primo) collegaAnni(location.hash.slice(1) || primo.id, !!location.hash);
+    collegaCanale();
+    aggiornaDalVivo();
   })();
 </script>
 </body>
