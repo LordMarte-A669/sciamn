@@ -6,11 +6,15 @@
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#1c3478">
 <script>document.documentElement.classList.add('js');</script>
-<title>Sciamn — scarica l'app</title>
-<meta name="description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico sul telefono Android. App non ufficiale.">
-<meta property="og:title" content="Sciamn — scarica l'app">
-<meta property="og:description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico sul telefono Android. App non ufficiale.">
+<title>Orario lezioni UniBA e Poliba sul telefono — Sciamn</title>
+<meta name="description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico di Bari sul telefono Android: il tuo corso, l'aula sulla pianta del piano, i promemoria. App gratuita e non ufficiale.">
+<meta property="og:title" content="Orario lezioni UniBA e Poliba sul telefono — Sciamn">
+<meta property="og:description" content="L'orario delle lezioni dell'Università di Bari e del Politecnico di Bari sul telefono Android: il tuo corso, l'aula sulla pianta del piano, i promemoria. App gratuita e non ufficiale.">
 <meta property="og:image" content="https://lordmarte-a669.github.io/sciamn/icon-512.png">
+<meta property="og:url" content="https://lordmarte-a669.github.io/sciamn/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Sciamn">
+<link rel="canonical" href="https://lordmarte-a669.github.io/sciamn/">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="pagina.css">
@@ -24,6 +28,7 @@
       <img src="icon.svg" alt="" class="block size-9">Sciamn
     </a>
     <ul class="m-0 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
+      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Orari</a></li>
       <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Funzioni</a></li>
       <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Guida</a></li>
       <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Novità</a></li>
@@ -34,7 +39,7 @@
   <div class="overflow-hidden bg-campo text-on-campo">
     <header class="mx-auto grid max-w-6xl gap-8 px-4 pt-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:gap-x-20 lg:px-8 lg:pt-16">
       <div class="grid content-start gap-6 pb-2 lg:content-center lg:pb-16">
-        <h1 class="rivela m-0 font-titolo text-[clamp(3rem,13vw,6.5rem)] leading-[0.92] tracking-tight uppercase">L'orario, sul telefono.</h1>
+        <h1 class="rivela m-0 font-titolo text-[clamp(2.75rem,11.5vw,5.25rem)] leading-[0.92] tracking-tight text-balance uppercase">L'orario delle lezioni, sul telefono.<span class="mt-4 block text-[clamp(1.25rem,5.4vw,2.25rem)] leading-[1.1] tracking-normal text-on-campo-2">Università&nbsp;di&nbsp;Bari · Politecnico&nbsp;di&nbsp;Bari</span></h1>
         <p class="rivela m-0 max-w-[32rem] text-lg text-on-campo-2">L'orario delle lezioni per tutti i corsi dell'Università di Bari che lo pubblicano online e per il Politecnico di Bari. Ti dice anche a che ora uscire per arrivare in tempo.</p>
         <div class="rivela grid justify-items-start gap-3">
           <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk"
@@ -157,12 +162,14 @@
   <footer class="overflow-hidden bg-campo text-on-campo">
   <div class="mx-auto max-w-6xl px-4 pt-12 pb-8 lg:px-8 lg:pt-20">
     <ul class="m-0 mb-6 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
+      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Orari dei corsi</a></li>
       <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Funzioni</a></li>
       <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Guida</a></li>
       <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Novità</a></li>
       <li><a href="privacy.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Privacy</a></li>
     </ul>
-    <p class="m-0 max-w-2xl text-base text-on-campo-2">Fatta da <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-on-campo underline underline-offset-[0.18em]">Mario Monterisi</a>. App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro.</p>
+    <p class="m-0 max-w-2xl text-base text-on-campo-2">Fatta da Mario Monterisi, studente di informatica a Bari: <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-on-campo underline underline-offset-[0.18em]">curriculum</a> e <a href="https://github.com/LordMarte-A669" class="text-on-campo underline underline-offset-[0.18em]">progetti su GitHub</a>.</p>
+    <p class="mt-2 mb-0 max-w-2xl text-base text-on-campo-2">App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro né del Politecnico di Bari.</p>
     <p class="mt-10 mb-0 font-titolo text-[clamp(5rem,27vw,17rem)] leading-[0.8] tracking-tight uppercase" aria-hidden="true">Sciamn</p>
   </div>
 </footer>
