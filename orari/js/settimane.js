@@ -77,6 +77,13 @@ function dalAl(lunedi, ultimo) {
   return 'dal ' + primo + ' al ' + dataLunga(ultimo);
 }
 
+/** 'AAAA-MM-GG' → «2026/2027»: l'anno accademico comincia il 1° settembre. */
+function annoAccademico(ymd) {
+  const [a, m] = ymd.split('-').map(Number);
+  const inizio = m >= 9 ? a : a - 1;
+  return inizio + '/' + (inizio + 1);
+}
+
 /** 'AAAA-MM-GG' → «Lun»: la striscia dei giorni sul telefono. */
 function giornoBreve(ymd) {
   return GIORNI[aGiorno(ymd).getUTCDay()].slice(0, 3);
@@ -138,5 +145,5 @@ function giorniDellaSettimana(eventi, lunedi) {
   }));
 }
 
-return { giornoRoma, oraRoma, piuGiorni, primoLunedi, intervallo, etichettaGiorno, giornoBreve, numeroGiorno, dataLunga, dalAl, dalAlBreve, canaleDi, canali, raggruppa };
+return { giornoRoma, oraRoma, piuGiorni, primoLunedi, intervallo, etichettaGiorno, giornoBreve, numeroGiorno, dataLunga, annoAccademico, dalAl, dalAlBreve, canaleDi, canali, raggruppa };
 });
