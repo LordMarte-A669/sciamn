@@ -1060,6 +1060,72 @@
     return { ok: false, msg: 'Non è andato, riprova.' };
   }
 
+  /* ---------- conteggio anonimo (guida 2.5, docs/telemetria.md) ---------- */
+
+  // Gli stessi elenchi del Worker (worker/src/attivi.js): un test li confronta.
+  const FASCE_PING = ['pre', '0', '1-6', '7-29', '30+'];
+  const FUNZIONI_PING = ['silenzioso', 'promemoria', 'riepilogo', 'calendario', 'viaggio', 'treni-visti', 'treni-dettaglio', 'treni-scelto'];
+  const SEGNALI_TRENI = ['treni-visti', 'treni-dettaglio', 'treni-scelto'];
+
+  // Data d'installazione salvata sul telefono. Chi aveva già l'app prima del ping non ne ha una: prende oggi col
+  // segno `preesistente`, altrimenti il giorno dell'aggiornamento risulterebbero tutti installazioni nuove.
+  function installazione(salvata, giaInstallata, oggi) {
+    if (salvata && typeof salvata.giorno === 'string' && /^\d{4}-\d\d-\d\d$/.test(salvata.giorno)) return salvata;
+    return { giorno: oggi, preesistente: !!giaInstallata };
+  }
+
+  // Fascia d'anzianità in giorni dall'installazione: il ping non porta date, e chi c'era già resta 'pre'.
+  // Math.round: i giorni del cambio d'ora durano 23 o 25 ore. Un orologio tornato indietro dà '0'.
+  function fasciaAnzianita(inst, oggi) {
+    if (inst.preesistente) return 'pre';
+    const giorni = Math.round((parseDayKey(oggi) - parseDayKey(inst.giorno)) / 86400000);
+    if (giorni <= 0) return '0';
+    if (giorni < 7) return '1-6';
+    return giorni < 30 ? '7-29' : '30+';
+  }
+
+  // Funzioni accese, dalle impostazioni e dai segnali dei treni registrati dall'ultimo invio. Non `treno`: è acceso
+  // di default per tutti e non direbbe niente; `viaggio` vuol dire stazione di casa scelta (piano T2a, P4).
+  function funzioniAccese(settings, segnali) {
+    const s = settings || {};
+    const accese = {
+      silenzioso: s.silenzioso === true,
+      promemoria: Number(s.avviso) > 0,
+      riepilogo: typeof s.riepilogo === 'string' && s.riepilogo !== '',
+      calendario: s.calendario === true,
+      viaggio: !!s.treno && Array.isArray(s.casa) && s.casa.length > 0
+    };
+    for (const x of SEGNALI_TRENI) accese[x] = Object.hasOwn(segnali || {}, x);
+    return FUNZIONI_PING.filter((x) => accese[x]);
+  }
+
+  // Un segnale dei treni del giorno (li accende il collegamento dei treni, P5–P6): si tiene la data dell'ultima
+  // volta, il ping lo porta al primo invio riuscito. Una chiamata sola al giorno, anche con un giorno di ritardo.
+  function registraSegnale(segnali, nome, oggi) {
+    if (!SEGNALI_TRENI.includes(nome)) return segnali || {};
+    return { ...segnali, [nome]: oggi };
+  }
+  // Dopo un invio riuscito si tolgono i segnali spediti; uno registrato di nuovo in un altro giorno mentre la
+  // richiesta era in volo resta per il prossimo.
+  function segnaliDopoInvio(attuali, inviati) {
+    const out = {};
+    for (const [k, v] of Object.entries(attuali || {})) if (inviati[k] !== v) out[k] = v;
+    return out;
+  }
+
+  // Il ping parte se il conteggio è acceso (`conteggio` assente = acceso, default della guida) e oggi non è già partito.
+  const pingDovuto = ({ oggi, ultimo, settings }) => settings?.conteggio !== false && ultimo !== oggi;
+  const corpoPing = ({ versione, inst, oggi, settings, segnali }) =>
+    ({ v: String(versione || ''), a: fasciaAnzianita(inst, oggi), f: funzioniAccese(settings, segnali) });
+  // 204 contato; 400/413 rifiutato, e riprovando non passerebbe: per oggi basta. Offline, 429 e 5xx si riprovano
+  // alla prossima apertura.
+  const pingChiuso = (status) => status === 204 || status === 400 || status === 413;
+  // stesso Worker del feedback, rotta accanto (/v1/feedback → /v1/attivi); feedback spento = niente conteggio
+  function urlPing(config) {
+    const u = config.feedback?.url;
+    return u ? new URL('attivi', u).href : '';
+  }
+
   return {
     CONFIG, CATALOGO, TIPI,
     dayKey, parseDayKey, addDays, startOfWeek, fmtTime,
@@ -1072,6 +1138,9 @@
     GIORNI_ABBR, MESI_ABBR, dataBreve, fmtSettimana, plurale,
     SOGLIA_TUTTI, statoPromemoria, statoViaggio, prossimaFinestra, fmtFinestra, tuttiMiei, statoMiei,
     LIMITI_FEEDBACK, validaFeedback, feedbackPayload, esitoFeedback,
+    FASCE_PING, FUNZIONI_PING, SEGNALI_TRENI, installazione, fasciaAnzianita, funzioniAccese, registraSegnale, segnaliDopoInvio,
+    pingDovuto, corpoPing, pingChiuso, urlPing,
+
     parseVersion, compareVersions, decideUpdate, apkDaManifest, parseChangelog, novitaNonViste, backAction
   };
 });
