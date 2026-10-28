@@ -845,12 +845,6 @@
     return s.charAt(0).toUpperCase() + s.slice(1);
   }
 
-  // Riga "Viaggio": treno acceso → stazione (+ margine in aula se > 0); spento altrimenti.
-  function statoViaggio(treno, margine) {
-    if (!treno) return 'Spento';
-    return margine > 0 ? 'Bari Centrale · ' + margine + ' min in aula prima' : 'Bari Centrale';
-  }
-
   // Prima finestra {start, end} non ancora finita rispetto a now (end oltre now), o null.
   // Stesso criterio di dndWindows (end > t): una finestra che finisce esattamente a now è passata.
   function prossimaFinestra(windows, now) {
@@ -1136,7 +1130,7 @@
     walkMinutes, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey, locateRoom,
     TINTE, luminanza, contrasto, mazzetta, nomeColore, partizioniDaMostrare, tipoDaMostrare, etichettaTipo,
     GIORNI_ABBR, MESI_ABBR, dataBreve, fmtSettimana, plurale,
-    SOGLIA_TUTTI, statoPromemoria, statoViaggio, prossimaFinestra, fmtFinestra, tuttiMiei, statoMiei,
+    SOGLIA_TUTTI, statoPromemoria, prossimaFinestra, fmtFinestra, tuttiMiei, statoMiei,
     LIMITI_FEEDBACK, validaFeedback, feedbackPayload, esitoFeedback,
     FASCE_PING, FUNZIONI_PING, SEGNALI_TRENI, installazione, fasciaAnzianita, funzioniAccese, registraSegnale, segnaliDopoInvio,
     pingDovuto, corpoPing, pingChiuso, urlPing,
