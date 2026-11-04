@@ -37,7 +37,12 @@
     // Aggiornamenti OTA del www (docs/release.md). Il repo è pubblico e contiene solo bundle
     // firmati: l'URL fisso qui sotto è una difesa in più, la garanzia vera è la firma.
     aggiornamenti: {
+      // releases/latest: lo leggono tutte le APK fino alla 1.3.x, e continua a ricevere ogni manifest
       manifest: 'https://github.com/LordMarte-A669/sciamn/releases/latest/download/manifest.json',
+      // release fissa `ota` (guida 5.5 e 5.11): la leggono le APK da `otaDa` in poi, con ripiego su latest finché
+      // lì il manifest non c'è; una release nativa ci arriva solo quando Play è al 100% (docs/release.md)
+      manifestOta: 'https://github.com/LordMarte-A669/sciamn/releases/download/ota/manifest.json',
+      otaDa: '1.4.0',
       prefissoBundle: 'https://github.com/LordMarte-A669/sciamn/releases/download/',
       // ultima APK pubblicata (la stessa della pagina di download)
       apk: 'https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk'
