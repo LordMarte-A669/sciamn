@@ -113,10 +113,7 @@
     const id = (/linkCalendarioId=([0-9a-f]{24})/i.exec(t) || [])[1] || (/^[0-9a-f]{24}$/i.test(t) ? t : null);
     if (!id) return null;
     const host = (/^https?:\/\/([^\/?#]+)/i.exec(t) || [])[1];
-    let a = null;
-    if (host) {
-      for (const k of Object.keys(CONFIG.atenei)) if (CONFIG.atenei[k].host === host.toLowerCase()) a = k;
-    } else if (ateneoDefault && own(CONFIG.atenei, ateneoDefault)) a = ateneoDefault;
+    const a = host ? Object.keys(CONFIG.atenei).filter((k) => CONFIG.atenei[k].host === host.toLowerCase()).pop() : ateneoDefault && own(CONFIG.atenei, ateneoDefault) && ateneoDefault;
     return a ? { a, l: id.toLowerCase() } : null;
   }
 
@@ -129,12 +126,15 @@
     for (let j = 1; j <= b.length; j++) d[0][j] = j;
     for (let i = 1; i <= a.length; i++) {
       for (let j = 1; j <= b.length; j++) {
-        const c = a[i - 1] === b[j - 1] ? 0 : 1;
-        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
-        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+        d[i][j] = costoCella(a, b, d, i, j);
       }
     }
     return d[a.length][b.length];
+  }
+
+  function costoCella(a, b, d, i, j) {
+    const v = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+    return i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1] ? Math.min(v, d[i - 2][j - 2] + 1) : v;
   }
 
   // La parola cercata compare nel testo, anche con un refuso? Si confronta con ogni parola del testo
@@ -178,30 +178,37 @@
   // passa ateneo e tipo: cercare scavalca i filtri.
   function cercaCorsi(query, ateneo, tipo, dip) {
     const words = senzaAccenti(query).split(/[^a-z0-9]+/).filter(Boolean);
-    const gruppi = new Map();
-    for (const c of CATALOGO.calendari || []) {
-      if (ateneo && c.a !== ateneo) continue;
-      if (tipo && (c.t || '') !== tipo) continue;
-      const pagina = PAGINE[chiaveVoce(c.k)];
-      if (dip != null && dip !== '' && (!pagina || pagina[0] !== Number(dip))) continue;
-      const g = [c.a, c.n, c.t || '', c.s || ''].join('|');
-      if (!gruppi.has(g)) gruppi.set(g, { id: g, a: c.a, n: c.n, t: c.t || '', s: c.s || '', d: pagina ? pagina[0] : -1, u: (pagina && pagina[1]) || '', varianti: [] });
-      gruppi.get(g).varianti.push(c);
-    }
     const out = [];
-    for (const g of gruppi.values()) {
-      const hay = senzaAccenti([g.n, g.t, g.s, g.varianti[0].k.split(':')[1]].join(' '));
-      const tokens = hay.split(/[^a-z0-9]+/).filter(Boolean);
-      let refusi = 0;
-      const tutte = words.every((w) => {
-        if (hay.includes(w)) return true;
-        if (!parolaTrovata(w, tokens)) return false;
-        refusi++;
-        return true;
-      });
-      if (tutte) { g.approssimato = refusi > 0; out.push(g); }
+    for (const g of gruppiCatalogo(ateneo, tipo, dip).values()) {
+      const refusi = refusiDelGruppo(g, words);
+      if (refusi >= 0) out.push(Object.assign(g, { approssimato: refusi > 0 }));
     }
     return out.sort((x, y) => (x.approssimato ? 1 : 0) - (y.approssimato ? 1 : 0) || x.n.localeCompare(y.n, 'it') || (x.s ? 1 : 0) - (y.s ? 1 : 0) || x.s.localeCompare(y.s) || x.t.localeCompare(y.t));
+  }
+
+  // Il calendario passa i filtri di ateneo, tipo e dipartimento (`pagina` = la sua voce in PAGINE)?
+  const passaFiltriCorso = (c, pagina, ateneo, tipo, dip) => !(ateneo && c.a !== ateneo) && !(tipo && (c.t || '') !== tipo) && (dip == null || dip === '' || (!!pagina && pagina[0] === Number(dip)));
+
+  // I calendari che passano i filtri, raggruppati per corso (ateneo, nome, tipo, sede).
+  function gruppiCatalogo(ateneo, tipo, dip) {
+    const gruppi = new Map();
+    for (const c of CATALOGO.calendari || []) {
+      const pagina = PAGINE[chiaveVoce(c.k)];
+      if (!passaFiltriCorso(c, pagina, ateneo, tipo, dip)) continue;
+      const g = [c.a, c.n, c.t || '', c.s || ''].join('|');
+      if (!gruppi.has(g)) gruppi.set(g, nuovoGruppo(g, c, pagina));
+      gruppi.get(g).varianti.push(c);
+    }
+    return gruppi;
+  }
+  const nuovoGruppo = (id, c, pagina) => ({ id, a: c.a, n: c.n, t: c.t || '', s: c.s || '', d: pagina ? pagina[0] : -1, u: (pagina && pagina[1]) || '', varianti: [] });
+
+  // Quante parole cercate il gruppo contiene solo con un refuso; -1 se ne manca una.
+  function refusiDelGruppo(g, words) {
+    const hay = senzaAccenti([g.n, g.t, g.s, g.varianti[0].k.split(':')[1]].join(' '));
+    const tokens = hay.split(/[^a-z0-9]+/).filter(Boolean);
+    const mancanti = words.filter((w) => !hay.includes(w));
+    return mancanti.every((w) => parolaTrovata(w, tokens)) ? mancanti.length : -1;
   }
 
   // Nella scelta del corso si vedono solo i primi MAX_RISULTATI gruppi di cercaCorsi: per gli altri si
@@ -350,6 +357,8 @@
     return Array.from(new Set(arr.filter(Boolean)));
   }
 
+  const percorsoComune = (p) => /^PDS0/i.test(String(p.codice || '')) || /^comune$/i.test(String(p.descrizione || '').replace(/\s+/g, ''));
+
   // Indirizzi (curricula/percorsi) di una lista di dettagli didattici, senza i comuni: un
   // insegnamento del piano comune (percorso "PDS0…" o "COMUNE") non appartiene a un indirizzo.
   // Nomi come gli altri testi (prettyName), senza doppioni.
@@ -357,9 +366,7 @@
     const out = [];
     for (const d of dettagli || []) {
       const p = d && d.percorso;
-      if (!p) continue;
-      if (/^PDS0/i.test(String(p.codice || ''))) continue;
-      if (/^comune$/i.test(String(p.descrizione || '').replace(/\s+/g, ''))) continue;
+      if (!p || percorsoComune(p)) continue;
       const nome = prettyName(p.descrizione);
       if (nome && !out.includes(nome)) out.push(nome);
     }
@@ -458,13 +465,12 @@
   // Le stesse regole per entrambe le API: scarta i record incompleti e le indisponibilità, toglie i
   // doppioni per id, ordina per inizio e nome. Cambia solo come si costruisce il singolo evento.
   function normalizzaLista(data, faiEvento) {
-    const arr = Array.isArray(data) ? data : data ? [data] : [];
+    const arr = Array.isArray(data) ? data : [data].filter(Boolean);
     const seen = new Set();
     const out = [];
     for (const raw of arr) {
-      if (!raw || !raw.dataInizio || !raw.dataFine) continue; // record incompleti
-      // festività e chiusure ("Tutti i Santi"): arrivano come eventi di 24 ore senza nome né corso
-      if (raw.indisponibilita === true) continue;
+      // record incompleti; festività e chiusure ("Tutti i Santi"): eventi di 24 ore senza nome né corso
+      if (!raw || !raw.dataInizio || !raw.dataFine || raw.indisponibilita === true) continue;
       const ev = faiEvento(raw);
       if (seen.has(ev.id)) continue;
       seen.add(ev.id);
@@ -509,19 +515,17 @@
     return partizioni.some((p) => rangeContains(p, letter));
   }
 
-  function passes(ev, f) {
-    f = f || {};
-    if (f.anni && f.anni.length && ev.anno != null && !f.anni.includes(ev.anno)) return false;
-    if (!partitionMatches(ev.partizioni, f.lettera)) return false;
+  const ESCLUSIONI = [
+    (ev, f) => f.anni && f.anni.length && ev.anno != null && !f.anni.includes(ev.anno),
+    (ev, f) => !partitionMatches(ev.partizioni, f.lettera),
     // una lezione senza indirizzi (comune, o della vecchia API) è di tutti
-    if (f.indirizzo && ev.indirizzi && ev.indirizzi.length && !ev.indirizzi.includes(f.indirizzo)) return false;
-    if (f.miei && f.miei.length && !f.miei.includes(ev.codice)) return false;
-    if (f.search) {
-      const q = f.search.toLowerCase();
-      const hay = [ev.nome, ev.codice, ev.docenti.join(' '), ev.aule.join(' ')].join(' ').toLowerCase();
-      if (!hay.includes(q)) return false;
-    }
-    return true;
+    (ev, f) => f.indirizzo && ev.indirizzi && ev.indirizzi.length && !ev.indirizzi.includes(f.indirizzo),
+    (ev, f) => f.miei && f.miei.length && !f.miei.includes(ev.codice),
+    (ev, f) => f.search && ![ev.nome, ev.codice, ev.docenti.join(' '), ev.aule.join(' ')].join(' ').toLowerCase().includes(f.search.toLowerCase())
+  ];
+
+  function passes(ev, f) {
+    return !ESCLUSIONI.some((esclude) => esclude(ev, f || {}));
   }
 
   function applyFilters(events, f) {
@@ -582,26 +586,25 @@
 
   const edificioDi = (ev) => (ev.luoghi && ev.luoghi[0] && ev.luoghi[0].edificio) || '';
 
+  // La pausa (e l'eventuale cambio di edificio) tra l'ultima lezione valida (`st`) e `ev`; null se non c'è.
+  function pausaTra(st, ev, places) {
+    if (ev.annullato || !st.fine) return null;
+    const min = Math.round((new Date(ev.inizio) - new Date(st.fine)) / 60000);
+    const b = edificioDi(ev), cambio = !!(b && st.edificio && b !== st.edificio);
+    if (!(min > 0) && !cambio) return null;
+    return { tipo: 'pausa', inizio: st.fine, fine: ev.inizio, minuti: Math.max(0, min), cambioEdificio: cambio, piedi: cambio ? walkMinutes(places, st.edificio, b) : 0 };
+  }
+
   // Giornata come sequenza: lezioni e, tra una lezione e la successiva, la pausa (se c'è) e il
   // cambio di edificio. Le lezioni annullate compaiono ma non contano per le pause.
   function dayPlan(events, places) {
-    const sorted = events.slice().sort((a, b) => a.inizio.localeCompare(b.inizio));
     const out = [];
-    let lastEnd = null, lastBuilding = '';
-    for (const ev of sorted) {
-      if (!ev.annullato && lastEnd) {
-        const min = Math.round((new Date(ev.inizio) - new Date(lastEnd)) / 60000);
-        const b = edificioDi(ev);
-        const cambio = !!(b && lastBuilding && b !== lastBuilding);
-        if (min > 0 || cambio) {
-          out.push({ tipo: 'pausa', inizio: lastEnd, fine: ev.inizio, minuti: Math.max(0, min), cambioEdificio: cambio, piedi: cambio ? walkMinutes(places, lastBuilding, b) : 0 });
-        }
-      }
+    let st = { fine: null, edificio: '' };
+    for (const ev of events.slice().sort((a, b) => a.inizio.localeCompare(b.inizio))) {
+      const pausa = pausaTra(st, ev, places);
+      if (pausa) out.push(pausa);
       out.push({ tipo: 'lezione', ev });
-      if (!ev.annullato) {
-        if (!lastEnd || ev.fine > lastEnd) lastEnd = ev.fine;
-        lastBuilding = edificioDi(ev) || lastBuilding;
-      }
+      if (!ev.annullato) st = { fine: !st.fine || ev.fine > st.fine ? ev.fine : st.fine, edificio: edificioDi(ev) || st.edificio };
     }
     return out;
   }
@@ -697,13 +700,17 @@
     if (typeof c === 'number') return NOMI_PALETTE[c];
     const hex = c.toLowerCase();
     for (const [nome, , toni] of TINTE) { const t = toni.indexOf(hex); if (t >= 0) return nome + ' ' + TONI[t]; }
-    const [r, g, b] = rgbDi(hex).map((v) => v / 255);
-    const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
-    if (d < 0.12) return 'Grigio';
-    let h = max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4;
-    h = (h * 60 + 360) % 360;
+    const h = tintaDi(rgbDi(hex).map((v) => v / 255));
+    if (h == null) return 'Grigio';
     if (h < 10 || h >= 345) return 'Rosso';
     return TINTE.reduce((best, x) => (Math.abs(x[1] - h) < Math.abs(best[1] - h) ? x : best))[0];
+  }
+
+  // La tinta in gradi (0-360) di un colore [r, g, b] in 0-1; null se è un grigio (poca saturazione).
+  function tintaDi([r, g, b]) {
+    const max = Math.max(r, g, b), d = max - Math.min(r, g, b);
+    if (d < 0.12) return null;
+    return ((max === r ? ((g - b) / d) % 6 : max === g ? (b - r) / d + 2 : (r - g) / d + 4) * 60 + 360) % 360;
   }
 
   // Tag di una lezione: si dice solo l'eccezione. Il gruppo di cognomi (A-K, L-Z) sparisce se c'è
@@ -781,19 +788,18 @@
 
   /* ---------- confronto tra due scaricamenti ---------- */
 
+  function cambioDi(ev, old) {
+    if (!old) return { type: 'nuova', ev };
+    if (ev.annullato && !old.annullato) return { type: 'annullata', ev, prev: old };
+    const mossa = old.inizio !== ev.inizio || old.fine !== ev.fine || old.aule.join() !== ev.aule.join();
+    return mossa ? { type: 'spostata', ev, prev: old } : null;
+  }
+
   // Cosa è cambiato tra la copia salvata e quella appena scaricata.
   function diffSchedules(prev, next) {
     const before = new Map(prev.map((e) => [e.id, e]));
     const after = new Map(next.map((e) => [e.id, e]));
-    const changes = [];
-    for (const [id, ev] of after) {
-      const old = before.get(id);
-      if (!old) changes.push({ type: 'nuova', ev });
-      else if (ev.annullato && !old.annullato) changes.push({ type: 'annullata', ev, prev: old });
-      else if (old.inizio !== ev.inizio || old.fine !== ev.fine || old.aule.join() !== ev.aule.join()) {
-        changes.push({ type: 'spostata', ev, prev: old });
-      }
-    }
+    const changes = Array.from(after, ([id, ev]) => cambioDi(ev, before.get(id))).filter(Boolean);
     for (const [id, old] of before) if (!after.has(id)) changes.push({ type: 'rimossa', ev: old });
     return changes;
   }
