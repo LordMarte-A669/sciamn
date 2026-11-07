@@ -258,8 +258,7 @@
     return { da: from.toISOString(), a: to.toISOString() };
   }
 
-  function buildRequestBody(weekStart, cal) {
-    const r = intervalloSettimana(weekStart);
+  function corpoRichiesta(cal, r) {
     return {
       mostraImpegniAnnullati: true,
       mostraIndisponibilitaTotali: true,
@@ -271,6 +270,7 @@
       dataFine: r.a
     };
   }
+  const buildRequestBody = (weekStart, cal) => corpoRichiesta(cal, intervalloSettimana(weekStart));
 
   /* ---------- nuova API pubblica (UniBA, docs/cineca-nuova.md) ---------- */
 
@@ -772,17 +772,17 @@
     return String(s || '').toLowerCase().replace(/\s+del(l')?\s*palazzo delle aule/, '').replace(/[^a-z0-9]/g, '');
   }
 
-  // Dove disegnare un luogo sulle mappe: edificio, piano e (se la pianta lo etichetta) la stanza.
+  // Edificio, piano e stanza (-1 se la pianta non la segna). Terra: Cineca «T» o «p_00», mappe «00». Omonime: vince il piano.
   function locateRoom(maps, luogo) {
     const ed = maps && luogo && maps[luogo.edificio];
     if (!ed) return null;
     const key = roomKey(luogo.aula);
-    for (const p of ed.piani) {
+    const piano = String(luogo.piano || '').replace(/^p_/, '').replace(/^T$/, '00');
+    for (const p of [...ed.piani].sort((a, b) => Number(b.codice === piano) - Number(a.codice === piano))) {
       const i = p.spazi.findIndex((s) => s.nome && roomKey(s.nome) === key);
       if (i >= 0) return { edificio: luogo.edificio, piano: p.codice, spazio: i };
     }
-    // aula non segnata sulla pianta ufficiale: si sa almeno il piano
-    const p = ed.piani.find((x) => x.codice === luogo.piano);
+    const p = ed.piani.find((x) => x.codice === piano);
     return p ? { edificio: luogo.edificio, piano: p.codice, spazio: -1 } : null;
   }
 
@@ -1130,7 +1130,7 @@
     CONFIG, CATALOGO, TIPI,
     dayKey, parseDayKey, addDays, startOfWeek, fmtTime,
     chiaveCorso, calendario, calendariValidi, etichettaCalendario, parseLinkCalendario, cercaCorsi, MAX_RISULTATI, risultatiScelta, tipiCorsi, DIPARTIMENTI, dipartimentiCorsi, paginaCorso, anniPerCalendari, endpoint,
-    buildRequestBody, intervalloSettimana, TETTO_PUBBLICA, urlPubblico, urlAula, dimezza, auleDaChiedere, eventiDelCalendario, daRicontrollare, conSospese, prettyName, titleCase, cleanPartizione, indirizziDa, normalizeEvent, normalizePublicEvent, normalizeResponse, normalizePublicResponse, mergeEvents, dndWindows,
+    buildRequestBody, corpoRichiesta, intervalloSettimana, TETTO_PUBBLICA, urlPubblico, urlAula, dimezza, auleDaChiedere, eventiDelCalendario, daRicontrollare, conSospese, prettyName, titleCase, cleanPartizione, indirizziDa, normalizeEvent, normalizePublicEvent, normalizeResponse, normalizePublicResponse, mergeEvents, dndWindows,
     rangeContains, partitionMatches, passes, applyFilters, listSubjects, listIndirizzi,
     groupByDay, nowState, minutesUntil, diffSchedules, toICS, foldLine,
     walkMinutes, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey, locateRoom,
