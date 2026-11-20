@@ -410,6 +410,7 @@
     );
     // dove si svolge: edificio e piano servono per la mappa e per i tempi a piedi
     const luoghi = (raw.aule || []).map((a) => ({
+      id: a.id || '',
       aula: a.descrizione || '',
       edificio: a.edificio && a.edificio.codice || '',
       edificioNome: a.edificio && a.edificio.descrizione || '',
@@ -443,6 +444,7 @@
     const luoghi = (raw.aule || []).map((a) => {
       const p = piani?.[a.id]?.piano || {};
       return {
+        id: a.id || '',
         aula: a.descrizione || '',
         edificio: a.edificio && a.edificio.codice || '',
         edificioNome: a.edificio && a.edificio.descrizione || '',
@@ -770,20 +772,6 @@
   // "Aula 2 del Palazzo delle Aule" e "Aula 2" sono la stessa aula: si confronta senza il nome edificio.
   function roomKey(s) {
     return String(s || '').toLowerCase().replace(/\s+del(l')?\s*palazzo delle aule/, '').replace(/[^a-z0-9]/g, '');
-  }
-
-  // Edificio, piano e stanza (-1 se la pianta non la segna). Terra: Cineca «T» o «p_00», mappe «00». Omonime: vince il piano.
-  function locateRoom(maps, luogo) {
-    const ed = maps && luogo && maps[luogo.edificio];
-    if (!ed) return null;
-    const key = roomKey(luogo.aula);
-    const piano = String(luogo.piano || '').replace(/^p_/, '').replace(/^T$/, '00');
-    for (const p of [...ed.piani].sort((a, b) => Number(b.codice === piano) - Number(a.codice === piano))) {
-      const i = p.spazi.findIndex((s) => s.nome && roomKey(s.nome) === key);
-      if (i >= 0) return { edificio: luogo.edificio, piano: p.codice, spazio: i };
-    }
-    const p = ed.piani.find((x) => x.codice === piano);
-    return p ? { edificio: luogo.edificio, piano: p.codice, spazio: -1 } : null;
   }
 
   /* ---------- confronto tra due scaricamenti ---------- */
@@ -1133,7 +1121,7 @@
     buildRequestBody, corpoRichiesta, intervalloSettimana, TETTO_PUBBLICA, urlPubblico, urlAula, dimezza, auleDaChiedere, eventiDelCalendario, daRicontrollare, conSospese, prettyName, titleCase, cleanPartizione, indirizziDa, normalizeEvent, normalizePublicEvent, normalizeResponse, normalizePublicResponse, mergeEvents, dndWindows,
     rangeContains, partitionMatches, passes, applyFilters, listSubjects, listIndirizzi,
     groupByDay, nowState, minutesUntil, diffSchedules, toICS, foldLine,
-    walkMinutes, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey, locateRoom,
+    walkMinutes, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey,
     TINTE, luminanza, contrasto, mazzetta, nomeColore, partizioniDaMostrare, tipoDaMostrare, etichettaTipo,
     GIORNI_ABBR, MESI_ABBR, dataBreve, fmtSettimana, plurale,
     SOGLIA_TUTTI, statoPromemoria, prossimaFinestra, fmtFinestra, tuttiMiei, statoMiei,
