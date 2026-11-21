@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#1c3478">
-<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#faf7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080b14" media="(prefers-color-scheme: dark)">
 <title>Novità — Sciamn</title>
 <meta name="description" content="Tutte le versioni di Sciamn, dalla più recente, con quello che è cambiato.">
 <meta property="og:title" content="Novità — Sciamn">
@@ -13,40 +13,53 @@
 <meta property="og:image" content="https://lordmarte-a669.github.io/sciamn/icon-512.png">
 <meta property="og:url" content="https://lordmarte-a669.github.io/sciamn/novita.html">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Sciamn">
 <link rel="canonical" href="https://lordmarte-a669.github.io/sciamn/novita.html">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="pagina.css">
 </head>
-<body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink">
-<main>
+<body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink antialiased hyphens-auto [overflow-wrap:anywhere]">
 
-  <div class="bg-campo text-on-campo">
-  <nav aria-label="Principale" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-4 pt-5 lg:px-8">
-    <a href="index.html" class="flex min-h-11 items-center gap-3 font-titolo text-2xl tracking-wide text-on-campo uppercase no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">
-      <img src="icon.svg" alt="" class="block size-9">Sciamn
+<a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-10 focus:rounded-xl focus:bg-ink focus:px-4 focus:py-3 focus:font-bold focus:text-bg">Vai al contenuto</a>
+<header class="px-[12px] lg:px-5"><div class="mx-auto max-w-6xl px-[20px] sm:px-8 lg:px-10">
+  <nav aria-label="Principale" class="flex flex-wrap items-center justify-between gap-x-8 gap-y-1 py-3 lg:py-4">
+    <a href="index.html" class="flex min-h-11 items-center gap-2.5 text-xl font-extrabold tracking-tight text-ink no-underline focus-visible:rounded-lg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      <img src="icon.svg" alt="" class="block size-8 rounded-lg">Sciamn
     </a>
-    <ul class="m-0 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
-      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Orari</a></li>
-      <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Funzioni</a></li>
-      <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Guida</a></li>
-      <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Novità</a></li>
+    <ul class="m-0 flex list-none flex-wrap gap-x-5 p-0 text-base font-semibold lg:gap-x-7">
+      <li><a href="orari/" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Orari</a></li>
+      <li><a href="funzioni.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Funzioni</a></li>
+      <li><a href="guida.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Guida</a></li>
+      <li><a href="novita.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Novità</a></li>
     </ul>
   </nav>
-</div>
+</div></header>
 
-  <div class="bg-campo text-on-campo">
-    <header class="mx-auto grid max-w-6xl gap-6 px-4 pt-10 pb-12 lg:px-8 lg:pt-16 lg:pb-20">
-      <h1 class="rivela m-0 font-titolo text-[clamp(3rem,13vw,6.5rem)] leading-[0.92] tracking-tight uppercase">Novità.</h1>
-      <p class="rivela m-0 max-w-[36rem] text-lg text-on-campo-2">Tutte le versioni di Sciamn, dalla più recente. Ultima: la 1.3.3, del 23 ottobre 2026.</p>
-    </header>
-  </div>
+<main id="contenuto" class="grid gap-3 px-[12px] lg:gap-5 lg:px-5">
 
-  <div class="mx-auto grid max-w-6xl gap-12 px-4 py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,18rem)] lg:gap-x-20 lg:px-8 lg:py-24">
-    <div class="grid content-start gap-4">
-      <section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.3.3 <span class="text-lg text-ink-2">23 ottobre 2026</span></h2>
+  <header class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-campo text-on-campo lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-5 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-20">
+      <h1 class="m-0 text-[clamp(2.25rem,4.2vw+1.1rem,4.25rem)] leading-[1.02] font-extrabold tracking-[-0.026em]">Novità</h1>
+      <p class="m-0 max-w-[38rem] text-lg text-on-campo-2 lg:text-xl">Tutte le versioni di Sciamn, dalla più recente. Ultima: la 1.4.0, del 21 novembre 2026.</p>
+    </div>
+  </header>
+
+  <div class="mx-auto grid w-full max-w-6xl gap-3 py-2 lg:gap-4 lg:py-4">
+    <section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.4.0 <span class="text-lg font-semibold text-ink-2">21 novembre 2026</span></h2>
+  <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
+    <li>Puoi condividere come immagine l&#39;orario del giorno o della settimana, col pulsante accanto a Giorno e Settimana.</li>
+    <li>Sotto le lezioni vedi il treno per arrivare in aula e quello per tornare a casa, dalla stazione che scegli in Opzioni › Viaggi, con il ritardo in tempo reale di Ferrotramviaria e FAL e gli scioperi che toccano i tuoi treni.</li>
+    <li>In Mappe trovi in cima l&#39;aula della prossima lezione e cerchi aule ed edifici: per 29 edifici dell&#39;Università di Bari si aprono sulla pianta del piano.</li>
+    <li>Sulla mappa di Bari tocchi una sede e apri la sua scheda. Con «Dove sono io» vedi dove sei, e la posizione resta sul telefono.</li>
+    <li>Una volta al giorno l&#39;app manda un conteggio anonimo di chi la usa e, se si è bloccata, cosa è successo. Lo spegni in Opzioni › Informazioni.</li>
+    <li>L&#39;app si apre più in fretta. I corsi del Politecnico di Bari che hanno solo la settimana tipo mostrano le lezioni di ogni settimana.</li>
+  </ul>
+</section>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.3.3 <span class="text-lg font-semibold text-ink-2">23 ottobre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Cambia l&#39;aspetto: testata e barra blu, lezioni più compatte, interruttori tondi.</li>
     <li>Giorno e Settimana si scelgono con l&#39;interruttore in alto; per cambiare giorno si scorre col dito.</li>
@@ -56,8 +69,8 @@
     <li>Con TalkBack e con la tastiera cambi settimana e aggiorni dalla testata.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.3.2 <span class="text-lg text-ink-2">23 ottobre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.3.2 <span class="text-lg font-semibold text-ink-2">23 ottobre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>L&#39;app si chiama Sciamn. Orario, notifiche e dati restano come prima.</li>
     <li>Puoi segnalare un problema, un corso mancante o un&#39;idea dalla prima riga delle Opzioni.</li>
@@ -68,8 +81,8 @@
     <li>Per i corsi con più indirizzi c&#39;è il filtro «Indirizzo» in Opzioni › Corso.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.3.1 <span class="text-lg text-ink-2">4 ottobre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.3.1 <span class="text-lg font-semibold text-ink-2">4 ottobre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Testi più leggibili e pulsanti più facili da toccare.</li>
     <li>Con il carattere grande del telefono non si taglia più niente.</li>
@@ -79,8 +92,8 @@
     <li>Il tema chiaro è su carta, meno abbagliante.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.3.0 <span class="text-lg text-ink-2">30 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.3.0 <span class="text-lg font-semibold text-ink-2">30 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Le Opzioni sono organizzate come le Impostazioni del telefono: ogni voce dice com&#39;è impostata.</li>
     <li>Ci sono anche i corsi del Politecnico di Bari.</li>
@@ -91,14 +104,14 @@
     <li>Gli interruttori vibrano quando li tocchi (serve l&#39;app nuova).</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.2.1 <span class="text-lg text-ink-2">28 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.2.1 <span class="text-lg font-semibold text-ink-2">28 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>In fondo alle Opzioni c&#39;è chi ha fatto l&#39;app e che non è ufficiale.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.2.0 <span class="text-lg text-ink-2">28 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.2.0 <span class="text-lg font-semibold text-ink-2">28 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Il tasto indietro del telefono torna indietro nell&#39;app invece di chiuderla.</li>
     <li>In orizzontale le lezioni hanno quasi tutto lo schermo.</li>
@@ -107,22 +120,22 @@
     <li>L&#39;app si scarica da una pagina con QR code.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.1.1 <span class="text-lg text-ink-2">28 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.1.1 <span class="text-lg font-semibold text-ink-2">28 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Le novità della versione sono in Opzioni › App.</li>
     <li>Dopo un aggiornamento l&#39;app dice a quale versione è passata.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.1.0 <span class="text-lg text-ink-2">28 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.1.0 <span class="text-lg font-semibold text-ink-2">28 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Una sola app per ITPS e Informatica: il corso si sceglie al primo avvio.</li>
     <li>Gli aggiornamenti arrivano da soli.</li>
   </ul>
 </section>
-<section class="rivela grid gap-3 bg-panel px-5 py-5 lg:px-8 lg:py-6">
-  <h2 class="m-0 font-titolo text-3xl leading-none tracking-tight uppercase">1.0.0 <span class="text-lg text-ink-2">23 settembre 2026</span></h2>
+<section class="grid gap-3 rounded-2xl bg-scheda px-5 py-5 lg:px-8 lg:py-7">
+  <h2 class="m-0 text-2xl leading-tight font-extrabold tracking-[-0.02em]">1.0.0 <span class="text-lg font-semibold text-ink-2">23 settembre 2026</span></h2>
   <ul class="m-0 grid list-disc gap-2 pl-5 text-lg">
     <li>Orario del giorno e della settimana, con filtri per anno, cognome e corsi.</li>
     <li>Promemoria prima delle lezioni e riepilogo del mattino.</li>
@@ -130,38 +143,26 @@
     <li>Scheda dei corsi con note e colori, copia delle lezioni nel calendario del telefono.</li>
   </ul>
 </section>
-    </div>
-    <picture class="rivela hidden self-start lg:sticky lg:top-8 lg:block">
-      <source media="(prefers-color-scheme: dark)" srcset="schermate/opzioni-scuro.webp">
-      <img src="schermate/opzioni-chiaro.webp" width="786" height="1704" loading="lazy" alt="Le Opzioni dell'app, dove si trovano le novità e «Cerca aggiornamenti»." class="block aspect-[393/852] w-full rounded-[1.75rem]">
-    </picture>
   </div>
 
-  <footer class="overflow-hidden bg-campo text-on-campo">
-  <div class="mx-auto max-w-6xl px-4 pt-12 pb-8 lg:px-8 lg:pt-20">
-    <ul class="m-0 mb-6 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
-      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Orari dei corsi</a></li>
-      <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Funzioni</a></li>
-      <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Guida</a></li>
-      <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Novità</a></li>
-      <li><a href="privacy.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Privacy</a></li>
-    </ul>
-    <p class="m-0 max-w-2xl text-base text-on-campo-2">Fatta da Mario Monterisi, studente di informatica a Bari: <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-on-campo underline underline-offset-[0.18em]">curriculum</a> e <a href="https://github.com/LordMarte-A669" class="text-on-campo underline underline-offset-[0.18em]">progetti su GitHub</a>.</p>
-    <p class="mt-2 mb-0 max-w-2xl text-base text-on-campo-2">App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro né del Politecnico di Bari.</p>
-    <p class="mt-10 mb-0 font-titolo text-[clamp(5rem,27vw,17rem)] leading-[0.8] tracking-tight uppercase" aria-hidden="true">Sciamn</p>
-  </div>
-</footer>
 </main>
-<script>
-  // Entrata delle parti: una volta, quando entrano nello schermo.
-  (function () {
-    var el = Array.prototype.slice.call(document.querySelectorAll('.rivela'));
-    if (!('IntersectionObserver' in window)) { el.forEach(function (e) { e.classList.add('dentro'); }); return; }
-    var io = new IntersectionObserver(function (voci) {
-      voci.forEach(function (v) { if (v.isIntersecting) { v.target.classList.add('dentro'); io.unobserve(v.target); } });
-    }, { threshold: 0.15 });
-    el.forEach(function (e) { io.observe(e); });
-  })();
-</script>
+
+<footer class="px-[12px] pt-6 pb-10 lg:px-5 lg:pt-10 lg:pb-14"><div class="mx-auto max-w-6xl px-[20px] sm:px-8 lg:px-10">
+  <div class="grid gap-8 border-t border-filetto pt-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-16">
+    <div class="grid content-start gap-2">
+      <p class="m-0 flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-ink"><img src="icon.svg" alt="" class="block size-8 rounded-lg">Sciamn</p>
+      <p class="m-0 max-w-xl text-base text-ink-2">In dialetto pugliese vuol dire «andiamo!»: quello che ti dici quando è ora di uscire per arrivare a lezione in tempo.</p>
+      <p class="m-0 mt-3 max-w-xl text-base text-ink-2">Fatta da Mario Monterisi, studente di informatica a Bari: <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-ink underline decoration-1 underline-offset-[0.2em] hover:decoration-2">curriculum</a> e <a href="https://github.com/LordMarte-A669" class="text-ink underline decoration-1 underline-offset-[0.2em] hover:decoration-2">progetti su GitHub</a>.</p>
+      <p class="m-0 max-w-xl text-base text-ink-2">App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro né del Politecnico di Bari.</p>
+    </div>
+    <ul class="m-0 grid list-none content-start gap-x-8 p-0 text-base font-semibold sm:grid-cols-2">
+      <li><a href="orari/" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Orari dei corsi</a></li>
+      <li><a href="funzioni.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Funzioni</a></li>
+      <li><a href="guida.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Guida</a></li>
+      <li><a href="novita.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Novità</a></li>
+      <li><a href="privacy.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Privacy</a></li>
+    </ul>
+  </div>
+</div></footer>
 </body>
 </html>

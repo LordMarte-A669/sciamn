@@ -4,185 +4,173 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta name="theme-color" content="#1c3478">
-<script>document.documentElement.classList.add('js');</script>
+<meta name="theme-color" content="#faf7f3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#080b14" media="(prefers-color-scheme: dark)">
 <title>Funzioni — Sciamn</title>
-<meta name="description" content="Cosa fa Sciamn: orario del giorno e della settimana, scelta del corso, piante delle aule, promemoria, silenzioso a lezione e calendario.">
+<meta name="description" content="Cosa fa Sciamn: orario del giorno e della settimana, treni per arrivare in aula e per tornare, scelta del corso, piante delle aule, promemoria, silenzioso a lezione e calendario.">
 <meta property="og:title" content="Funzioni — Sciamn">
-<meta property="og:description" content="Cosa fa Sciamn: orario del giorno e della settimana, scelta del corso, piante delle aule, promemoria, silenzioso a lezione e calendario.">
+<meta property="og:description" content="Cosa fa Sciamn: orario del giorno e della settimana, treni per arrivare in aula e per tornare, scelta del corso, piante delle aule, promemoria, silenzioso a lezione e calendario.">
 <meta property="og:image" content="https://lordmarte-a669.github.io/sciamn/icon-512.png">
 <meta property="og:url" content="https://lordmarte-a669.github.io/sciamn/funzioni.html">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Sciamn">
 <link rel="canonical" href="https://lordmarte-a669.github.io/sciamn/funzioni.html">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<link rel="preload" href="fonts/archivo-narrow-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="pagina.css">
 </head>
-<body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink">
-<main>
+<body class="m-0 bg-bg font-sans text-base leading-relaxed text-ink antialiased hyphens-auto [overflow-wrap:anywhere]">
 
-  <div class="bg-campo text-on-campo">
-  <nav aria-label="Principale" class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-8 gap-y-1 px-4 pt-5 lg:px-8">
-    <a href="index.html" class="flex min-h-11 items-center gap-3 font-titolo text-2xl tracking-wide text-on-campo uppercase no-underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">
-      <img src="icon.svg" alt="" class="block size-9">Sciamn
+<a href="#contenuto" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-10 focus:rounded-xl focus:bg-ink focus:px-4 focus:py-3 focus:font-bold focus:text-bg">Vai al contenuto</a>
+<header class="px-[12px] lg:px-5"><div class="mx-auto max-w-6xl px-[20px] sm:px-8 lg:px-10">
+  <nav aria-label="Principale" class="flex flex-wrap items-center justify-between gap-x-8 gap-y-1 py-3 lg:py-4">
+    <a href="index.html" class="flex min-h-11 items-center gap-2.5 text-xl font-extrabold tracking-tight text-ink no-underline focus-visible:rounded-lg focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">
+      <img src="icon.svg" alt="" class="block size-8 rounded-lg">Sciamn
     </a>
-    <ul class="m-0 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
-      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Orari</a></li>
-      <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Funzioni</a></li>
-      <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Guida</a></li>
-      <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline-offset-[0.25em] hover:underline focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-on-campo">Novità</a></li>
+    <ul class="m-0 flex list-none flex-wrap gap-x-5 p-0 text-base font-semibold lg:gap-x-7">
+      <li><a href="orari/" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Orari</a></li>
+      <li><a href="funzioni.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Funzioni</a></li>
+      <li><a href="guida.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Guida</a></li>
+      <li><a href="novita.html" class="flex min-h-11 items-center text-ink-2 no-underline decoration-2 underline-offset-[0.35em] hover:text-ink hover:underline focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-ink">Novità</a></li>
     </ul>
   </nav>
-</div>
+</div></header>
 
-  <div class="bg-campo text-on-campo">
-    <header class="mx-auto grid max-w-6xl gap-6 px-4 pt-10 pb-12 lg:px-8 lg:pt-16 lg:pb-20">
-      <h1 class="rivela m-0 font-titolo text-[clamp(3rem,13vw,6.5rem)] leading-[0.92] tracking-tight uppercase">Funzioni.</h1>
-      <p class="rivela m-0 max-w-[36rem] text-lg text-on-campo-2">Cosa fa Sciamn oggi e cosa ancora no. Prende l'orario pubblico degli atenei ed è un'app non ufficiale.</p>
-    </header>
-  </div>
+<main id="contenuto" class="grid gap-3 px-[12px] lg:gap-5 lg:px-5">
 
-  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 lg:px-8 lg:py-28">
-    <div class="grid content-start gap-6">
-      <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Oggi.</h2>
-      <p class="rivela m-0 max-w-[34rem] text-lg">Apri l'app e trovi le lezioni di oggi con ora, aula e piano. La lezione in corso mostra quanto manca alla fine, quella che sta per iniziare dice tra quanti minuti.</p>
-      <ul class="rivela m-0 grid max-w-[34rem] list-disc gap-3 pl-6 text-lg">
-        <li>Tra una lezione e l'altra vedi quanto dura la pausa e, se cambia edificio, quanti minuti servono a piedi.</li>
-        <li>Le lezioni annullate o sospese sono segnate come tali.</li>
-        <li>Per le lezioni online c'è il link per entrare.</li>
-        <li>Per cambiare giorno scorri col dito.</li>
+  <header class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-campo text-on-campo lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-5 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-20">
+      <h1 class="m-0 text-[clamp(2.25rem,4.2vw+1.1rem,4.25rem)] leading-[1.02] font-extrabold tracking-[-0.026em]">Cosa fa Sciamn</h1>
+      <p class="m-0 max-w-[38rem] text-lg text-on-campo-2 lg:text-xl">Cosa fa oggi e cosa ancora no. Prende l'orario pubblico degli atenei ed è un'app non ufficiale.</p>
+    </div>
+  </header>
+
+  <section aria-labelledby="giornata" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-scheda lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-[20px] py-12 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,19rem)] lg:gap-x-20 lg:px-10 lg:py-20">
+      <div class="grid content-start gap-5">
+        <h2 id="giornata" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">La giornata e il treno</h2>
+        <p class="m-0 max-w-[36rem] text-lg">Apri l'app e trovi le lezioni di oggi con ora, aula e piano. La lezione in corso mostra quanto manca alla fine, quella che sta per iniziare dice tra quanti minuti.</p>
+        <p class="m-0 max-w-[36rem] text-lg">Se scegli la stazione da cui parti (Opzioni › Viaggi), sopra le lezioni c'è il biglietto del treno per arrivare in tempo, con i minuti a piedi fino all'aula; sotto, i treni per tornare. Il treno proposto lo puoi cambiare: solo per oggi, per le lezioni di quell'ora o per tutti i giorni.</p>
+        <ul class="m-0 grid max-w-[36rem] list-disc gap-2.5 pl-6 text-lg text-ink-2 marker:text-ink-2">
+          <li>Orari di Trenitalia, Ferrotramviaria, Ferrovie Appulo Lucane e Ferrovie del Gargano, scaricati una volta: funzionano anche senza rete.</li>
+          <li>Per Ferrotramviaria e Ferrovie Appulo Lucane il ritardo in tempo reale, anche se il treno è soppresso.</li>
+          <li>Se c'è uno sciopero che tocca i tuoi treni, una riga sopra il biglietto te lo dice.</li>
+          <li>Tra una lezione e l'altra vedi quanto dura la pausa e, se cambia edificio, quanti minuti servono a piedi.</li>
+          <li>Le lezioni annullate o sospese sono segnate come tali; per quelle online c'è il link per entrare.</li>
+        </ul>
+      </div>
+      <div class="telefono mx-auto w-[min(18rem,72vw)] lg:w-full">
+        <picture>
+          <img src="schermate/giornata-chiaro.webp" width="786" height="1704" loading="lazy" alt="Un giovedì: il biglietto del Regionale veloce 4319 da Barletta alle 7:43, arrivo a Bari Centrale alle 8:25, l'arrivo in aula alle 8:49 e le lezioni in Aula 1 B.">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="settimana" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-scheda lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-[20px] py-12 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,19rem)] lg:gap-x-20 lg:px-10 lg:py-20">
+      <div class="grid content-start gap-5">
+        <h2 id="settimana" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">La settimana</h2>
+        <p class="m-0 max-w-[36rem] text-lg">Un interruttore in alto passa da Giorno a Settimana. Ogni corso ha il suo colore, che scegli tu da una mazzetta.</p>
+        <p class="m-0 max-w-[36rem] text-lg">Puoi filtrare per anno di corso, per iniziale del cognome (per i corsi divisi A-K / L-Z) e per indirizzo, e tenere solo i corsi che segui davvero. Ogni corso ha la sua scheda, con le note che scrivi tu.</p>
+        <p class="m-0 max-w-[36rem] text-lg">Per aggiornare l'orario trascini la lista verso il basso.</p>
+      </div>
+      <div class="telefono mx-auto w-[min(18rem,72vw)] lg:w-full">
+        <picture>
+          <img src="schermate/medicina-settimana-chiaro.webp" width="786" height="1704" loading="lazy" alt="La settimana di Medicina e chirurgia, quarto anno: le lezioni giorno per giorno con orario, aula e canale A-K.">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="aula" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-scheda lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl items-center gap-10 px-[20px] py-12 sm:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,19rem)] lg:gap-x-20 lg:px-10 lg:py-20">
+      <div class="grid content-start gap-5">
+        <h2 id="aula" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Trovare l'aula</h2>
+        <p class="m-0 max-w-[36rem] text-lg">Tocchi l'aula di una lezione e si apre la pianta del piano con l'aula evidenziata. Se due lezioni sono in edifici diversi, l'app conta i minuti a piedi tra l'uno e l'altro.</p>
+        <p class="m-0 max-w-[36rem] text-lg"><b>Per ora le piante ci sono solo per due edifici</b> del Campus Quagliariello: il Dipartimento di Informatica e il Palazzo delle Aule. Per gli altri l'app mostra il nome e l'aula, ma non la pianta.</p>
+      </div>
+      <div class="telefono mx-auto w-[min(18rem,72vw)] lg:w-full">
+        <picture>
+          <img src="schermate/aula-chiaro.webp" width="786" height="1704" loading="lazy" alt="La pianta del primo piano del Dipartimento di Informatica con l'Aula 1 B colorata.">
+        </picture>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="corso" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-scheda lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-8 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-20">
+      <div class="grid gap-4">
+        <h2 id="corso" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Il tuo corso</h2>
+        <p class="m-0 max-w-[40rem] text-lg">Il corso si cerca per nome, anche con un errore di battitura. Ci sono i corsi dell'Università di Bari che pubblicano l'orario online e quelli del Politecnico di Bari.</p>
+      </div>
+      <dl class="m-0 grid items-start gap-x-12 gap-y-7 md:grid-cols-2">
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Filtri</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Per tipo (triennale, magistrale, ciclo unico) e per dipartimento. Per UniBA c'è anche il link alla pagina del corso.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Tutto il corso o un anno</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Scegli l'intero corso oppure solo il tuo anno.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Più calendari insieme</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Fino a 3, per esempio per gli insegnamenti comuni del primo anno al Politecnico.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Il tuo corso non c'è?</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Incolla il link del suo calendario, oppure segnalalo dall'app.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="avvisi" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-scheda lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-8 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-20">
+      <h2 id="avvisi" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Gli avvisi e il resto</h2>
+      <dl class="m-0 grid items-start gap-x-12 gap-y-7 md:grid-cols-2">
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Promemoria</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Una notifica prima di ogni lezione, con i minuti che scegli tu, e il riepilogo del mattino: quante lezioni hai e dove è la prima. Su alcuni telefoni, come Xiaomi, serve togliere le restrizioni di batteria all'app.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Silenzioso a lezione</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Il telefono va in «Non disturbare» quando inizia la lezione e torna normale alla fine. Cosa lasciar passare lo decidi tu. Le pause brevi restano in silenzio, le lezioni solo online non contano, e un Non disturbare acceso da te non viene mai spento. Serve il tuo permesso.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Calendario del telefono</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Le lezioni che vedi con i tuoi filtri possono finire nel calendario del telefono, senza doppioni. Lo fa da sola a ogni scaricamento, oppure a mano quando vuoi. Le annullate non entrano.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Si aggiorna da sola</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Le novità arrivano senza scaricare di nuovo l'app. Se una versione cambia qualcosa che tocca il telefono più a fondo, la reinstalli da questo sito.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Segnalazioni</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Dalla prima riga delle Opzioni scrivi un problema, un corso che manca o un'idea. La legge chi ha fatto l'app.</dd></div>
+        <div class="grid content-start gap-1.5"><dt class="m-0 text-xl font-bold tracking-[-0.01em]">Chiaro o scuro</dt><dd class="m-0 max-w-[34rem] text-lg text-ink-2">Segue il telefono, oppure scegli tu.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section aria-labelledby="non-ancora" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-carta lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-6 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-16">
+      <h2 id="non-ancora" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Cosa non fa ancora</h2>
+      <ul class="m-0 grid list-disc content-start gap-3 pl-6 text-lg md:grid-cols-2 md:gap-x-16 marker:text-su-carta-2">
+        <li><b>La ricerca delle aule.</b> La scheda Mappe è ancora vuota.</li>
+        <li><b>Altre piante.</b> Solo due edifici hanno la pianta.</li>
+        <li><b>Il ritardo di tutti i treni.</b> In tempo reale ci sono solo Ferrotramviaria e Ferrovie Appulo Lucane; per gli altri vedi l'orario programmato.</li>
+        <li><b>iPhone.</b> Per ora c'è solo la versione per Android.</li>
       </ul>
+      <p class="m-0 max-w-[40rem] text-lg text-su-carta-2">Quando una di queste cose arriva, la trovi scritta nelle <a href="novita.html" class="font-bold text-ink underline underline-offset-[0.25em] focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Novità</a>.</p>
     </div>
-    <picture class="rivela block justify-self-center">
-      <source media="(prefers-color-scheme: dark)" srcset="schermate/oggi-scuro.webp">
-      <img src="schermate/oggi-chiaro.webp" width="786" height="1704" loading="lazy" alt="La schermata Oggi con le lezioni del giorno: ora, aula, piano e pause." class="block aspect-[393/852] w-full max-w-[17rem] rounded-[1.75rem] lg:max-w-[19rem]">
-    </picture>
   </section>
 
-  <div class="bg-panel">
-    <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 lg:px-8 lg:py-28">
-      <div class="grid content-start gap-6 md:order-2">
-        <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">La settimana.</h2>
-        <p class="rivela m-0 max-w-[34rem] text-lg">Un interruttore in alto passa da Giorno a Settimana. Ogni corso ha il suo colore, che scegli tu da una mazzetta.</p>
-        <p class="rivela m-0 max-w-[34rem] text-lg">Puoi filtrare per anno di corso, per iniziale del cognome (per i corsi divisi A-K / L-Z) e per indirizzo, e tenere solo i corsi che segui davvero. Ogni corso ha la sua scheda, con le note che scrivi tu.</p>
-        <p class="rivela m-0 max-w-[34rem] text-lg">Per aggiornare l'orario trascini la lista verso il basso.</p>
+  <section aria-labelledby="provala" class="mx-auto w-full max-w-[90rem] rounded-[2rem] bg-campo text-on-campo lg:rounded-[2.5rem]">
+    <div class="mx-auto grid max-w-6xl gap-6 px-[20px] py-12 sm:px-8 lg:px-10 lg:py-16">
+      <h2 id="provala" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Provala</h2>
+      <p class="m-0 max-w-[36rem] text-lg text-on-campo-2">Versione 1.4.0, 6,3 MB, per Android 8 o successivo; su iPhone non c'è ancora.</p>
+      <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk"
+           class="premi inline-flex min-h-14 items-center justify-center gap-2.5 rounded-xl bg-on-campo px-7 py-3 text-lg font-bold text-campo no-underline hover:bg-on-campo-2 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-on-campo"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-current stroke-[2.2]" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android</a>
+        <a href="guida.html" class="inline-flex min-h-11 items-center text-lg font-semibold text-on-campo underline decoration-1 underline-offset-[0.25em] hover:decoration-2 focus-visible:rounded focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-on-campo">Come si installa e si usa: la guida</a>
       </div>
-      <picture class="rivela block justify-self-center md:order-1">
-        <source media="(prefers-color-scheme: dark)" srcset="schermate/settimana-scuro.webp">
-        <img src="schermate/settimana-chiaro.webp" width="786" height="1704" loading="lazy" alt="La schermata Settimana: i giorni con le lezioni, un colore per ogni corso." class="block aspect-[393/852] w-full max-w-[17rem] rounded-[1.75rem] lg:max-w-[19rem]">
-      </picture>
-    </section>
-  </div>
-
-  <section class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:px-8 lg:py-28">
-    <div class="grid content-start gap-6">
-      <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Il tuo corso.</h2>
-      <p class="rivela m-0 max-w-[34rem] text-lg">Il corso si cerca per nome, anche con un errore di battitura. Ci sono i corsi dell'Università di Bari che pubblicano l'orario online e quelli del Politecnico di Bari.</p>
     </div>
-    <dl class="m-0 grid content-start gap-6 md:grid-cols-2 md:gap-x-10 lg:grid-cols-4 lg:gap-x-12">
-      <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Filtri</dt><dd class="m-0 max-w-[34rem] text-lg">Per tipo (triennale, magistrale, ciclo unico) e per dipartimento. Per UniBA c'è anche il link alla pagina del corso.</dd></div>
-      <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Tutto il corso o un anno</dt><dd class="m-0 max-w-[34rem] text-lg">Scegli l'intero corso oppure solo il tuo anno.</dd></div>
-      <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Più calendari insieme</dt><dd class="m-0 max-w-[34rem] text-lg">Fino a 3, per esempio per gli insegnamenti comuni del primo anno al Politecnico.</dd></div>
-      <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Il tuo corso non c'è?</dt><dd class="m-0 max-w-[34rem] text-lg">Incolla il link del suo calendario, oppure segnalalo dall'app.</dd></div>
-    </dl>
   </section>
 
-  <div class="bg-panel">
-    <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 lg:px-8 lg:py-28">
-      <div class="grid content-start gap-6">
-        <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Trovare l'aula.</h2>
-        <p class="rivela m-0 max-w-[34rem] text-lg">Tocchi l'aula di una lezione e si apre la pianta del piano con l'aula evidenziata. Se due lezioni sono in edifici diversi, l'app conta i minuti a piedi tra l'uno e l'altro.</p>
-        <p class="rivela m-0 max-w-[34rem] text-lg"><b>Per ora le piante ci sono solo per due edifici</b> del Campus Quagliariello: il Dipartimento di Informatica e il Palazzo delle Aule. Per gli altri l'app mostra il nome e l'aula, ma non la pianta. La scheda Mappe, con la ricerca di tutte le aule, è in preparazione e non c'è ancora.</p>
-      </div>
-      <picture class="rivela block justify-self-center">
-        <source media="(prefers-color-scheme: dark)" srcset="schermate/mappa-scuro.webp">
-        <img src="schermate/mappa-chiaro.webp" width="786" height="1704" loading="lazy" alt="La pianta di un piano con l'aula della lezione evidenziata." class="block aspect-[393/852] w-full max-w-[17rem] rounded-[1.75rem] lg:max-w-[19rem]">
-      </picture>
-    </section>
-  </div>
-
-  <section class="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-x-10 lg:gap-x-20 lg:px-8 lg:py-28">
-    <div class="grid content-start gap-8">
-      <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Gli avvisi.</h2>
-      <dl class="m-0 grid gap-6">
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Promemoria</dt><dd class="m-0 max-w-[34rem] text-lg">Una notifica prima di ogni lezione, con i minuti che scegli tu, e il riepilogo del mattino: quante lezioni hai e dove è la prima. Su alcuni telefoni, come Xiaomi, serve togliere le restrizioni di batteria all'app.</dd></div>
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Silenzioso a lezione</dt><dd class="m-0 max-w-[34rem] text-lg">Il telefono va in «Non disturbare» quando inizia la lezione e torna normale alla fine. Cosa lasciar passare lo decidi tu. Le pause brevi restano in silenzio, le lezioni solo online non contano, e un Non disturbare acceso da te non viene mai spento. Serve il tuo permesso.</dd></div>
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Quando uscire</dt><dd class="m-0 max-w-[34rem] text-lg">Con «Mostra i treni» acceso, il giorno ti dice entro che ora uscire da Bari Centrale per essere in aula in tempo e quando tornarci a fine giornata. Lo calcola dai minuti a piedi e da quanto prima vuoi arrivare in aula.</dd></div>
-      </dl>
-    </div>
-    <picture class="rivela block justify-self-center">
-      <source media="(prefers-color-scheme: dark)" srcset="schermate/opzioni-scuro.webp">
-      <img src="schermate/opzioni-chiaro.webp" width="786" height="1704" loading="lazy" alt="Le Opzioni: promemoria, silenzioso a lezione, treni e calendario." class="block aspect-[393/852] w-full max-w-[17rem] rounded-[1.75rem] lg:max-w-[19rem]">
-    </picture>
-  </section>
-
-  <div class="bg-panel">
-    <section class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:px-8 lg:py-28">
-      <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Il resto.</h2>
-      <dl class="m-0 grid content-start gap-6 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 lg:gap-y-10">
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Calendario del telefono</dt><dd class="m-0 max-w-[34rem] text-lg">Le lezioni che vedi con i tuoi filtri possono finire nel calendario del telefono, senza doppioni. Lo fa da sola a ogni scaricamento, oppure a mano quando vuoi. Le annullate non entrano.</dd></div>
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Chiaro o scuro</dt><dd class="m-0 max-w-[34rem] text-lg">Segue il telefono, oppure scegli tu.</dd></div>
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Si aggiorna da sola</dt><dd class="m-0 max-w-[34rem] text-lg">Le novità arrivano senza scaricare di nuovo l'app. Se una versione cambia qualcosa che tocca il telefono più a fondo, la reinstalli da questa pagina.</dd></div>
-        <div class="grid gap-1"><dt class="m-0 font-titolo text-2xl leading-none tracking-wide uppercase">Segnalazioni</dt><dd class="m-0 max-w-[34rem] text-lg">Dalla prima riga delle Opzioni scrivi un problema, un corso che manca o un'idea. La legge chi ha fatto l'app.</dd></div>
-      </dl>
-    </section>
-  </div>
-
-  <section class="mx-auto grid max-w-6xl gap-10 px-4 py-16 lg:px-8 lg:py-28">
-    <h2 class="rivela m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Non ancora.</h2>
-    <ul class="rivela m-0 grid list-disc content-start gap-3 pl-6 text-lg md:grid-cols-2 md:gap-x-16">
-      <li><b>I treni veri.</b> Oggi l'app calcola solo a che ora uscire da Bari Centrale. Non ti dice quale treno prendere né se è in ritardo: orari dei treni e tempo reale sono in sviluppo.</li>
-      <li><b>La ricerca delle aule.</b> La scheda Mappe è ancora vuota.</li>
-      <li><b>Altre piante.</b> Solo due edifici hanno la pianta.</li>
-    </ul>
-    <p class="rivela m-0 max-w-[34rem] text-lg">Quando una di queste cose arriva, la trovi scritta nelle <a href="novita.html" class="font-bold text-ink underline underline-offset-[0.25em] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink">Novità</a>.</p>
-  </section>
-
-  <div class="overflow-hidden bg-campo text-on-campo">
-    <section class="mx-auto grid max-w-6xl items-end gap-10 px-4 pt-16 md:grid-cols-2 md:gap-x-10 lg:px-8 lg:pt-24 lg:gap-x-20">
-      <div class="grid content-center justify-items-start gap-6 pb-2 md:pb-16 lg:pb-24">
-        <h2 class="m-0 font-titolo text-[clamp(2.25rem,8vw,4.25rem)] leading-[0.95] tracking-tight uppercase">Provala.</h2>
-        <p class="m-0 max-w-[32rem] text-lg text-on-campo-2">Versione 1.3.3, 5,0 MB, per Android 7 o successivo; su iPhone non c'è ancora.</p>
-        <div class="flex flex-wrap items-center gap-x-6 gap-y-3">
-          <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk"
-             class="premi flex min-h-14 items-center justify-center bg-on-campo px-6 py-3 text-lg font-extrabold text-campo no-underline focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-on-campo">Scarica l'app per Android</a>
-          <a href="guida.html"
-             class="flex min-h-11 items-center text-lg font-bold text-on-campo underline underline-offset-[0.25em] focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-on-campo">Come si installa e si usa: la guida</a>
-        </div>
-      </div>
-      <picture class="block self-end">
-        <source media="(prefers-color-scheme: dark)" srcset="schermate/scegli-scuro.webp">
-        <img src="schermate/scegli-chiaro.webp" width="786" height="1704" alt="La ricerca del corso: scrivi le prime lettere e scegli il tuo." class="mx-auto block aspect-[393/420] w-[78%] max-w-[22rem] rounded-t-[2rem] object-cover object-top md:w-full md:max-w-none">
-      </picture>
-    </section>
-  </div>
-
-  <footer class="overflow-hidden bg-campo text-on-campo">
-  <div class="mx-auto max-w-6xl px-4 pt-12 pb-8 lg:px-8 lg:pt-20">
-    <ul class="m-0 mb-6 flex list-none flex-wrap gap-x-6 p-0 text-base font-bold">
-      <li><a href="orari/" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Orari dei corsi</a></li>
-      <li><a href="funzioni.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Funzioni</a></li>
-      <li><a href="guida.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Guida</a></li>
-      <li><a href="novita.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Novità</a></li>
-      <li><a href="privacy.html" class="flex min-h-11 items-center text-on-campo underline underline-offset-[0.25em]">Privacy</a></li>
-    </ul>
-    <p class="m-0 max-w-2xl text-base text-on-campo-2">Fatta da Mario Monterisi, studente di informatica a Bari: <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-on-campo underline underline-offset-[0.18em]">curriculum</a> e <a href="https://github.com/LordMarte-A669" class="text-on-campo underline underline-offset-[0.18em]">progetti su GitHub</a>.</p>
-    <p class="mt-2 mb-0 max-w-2xl text-base text-on-campo-2">App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro né del Politecnico di Bari.</p>
-    <p class="mt-10 mb-0 font-titolo text-[clamp(5rem,27vw,17rem)] leading-[0.8] tracking-tight uppercase" aria-hidden="true">Sciamn</p>
-  </div>
-</footer>
 </main>
-<script>
-  // Entrata delle parti: una volta, quando entrano nello schermo.
-  (function () {
-    var el = Array.prototype.slice.call(document.querySelectorAll('.rivela'));
-    if (!('IntersectionObserver' in window)) { el.forEach(function (e) { e.classList.add('dentro'); }); return; }
-    var io = new IntersectionObserver(function (voci) {
-      voci.forEach(function (v) { if (v.isIntersecting) { v.target.classList.add('dentro'); io.unobserve(v.target); } });
-    }, { threshold: 0.15 });
-    el.forEach(function (e) { io.observe(e); });
-  })();
-</script>
+
+<footer class="px-[12px] pt-6 pb-10 lg:px-5 lg:pt-10 lg:pb-14"><div class="mx-auto max-w-6xl px-[20px] sm:px-8 lg:px-10">
+  <div class="grid gap-8 border-t border-filetto pt-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-x-16">
+    <div class="grid content-start gap-2">
+      <p class="m-0 flex items-center gap-2.5 text-xl font-extrabold tracking-tight text-ink"><img src="icon.svg" alt="" class="block size-8 rounded-lg">Sciamn</p>
+      <p class="m-0 max-w-xl text-base text-ink-2">In dialetto pugliese vuol dire «andiamo!»: quello che ti dici quando è ora di uscire per arrivare a lezione in tempo.</p>
+      <p class="m-0 mt-3 max-w-xl text-base text-ink-2">Fatta da Mario Monterisi, studente di informatica a Bari: <a href="https://lordmarte-a669.github.io/cv-mario-monterisi/" class="text-ink underline decoration-1 underline-offset-[0.2em] hover:decoration-2">curriculum</a> e <a href="https://github.com/LordMarte-A669" class="text-ink underline decoration-1 underline-offset-[0.2em] hover:decoration-2">progetti su GitHub</a>.</p>
+      <p class="m-0 max-w-xl text-base text-ink-2">App non ufficiale: non è dell'Università degli Studi di Bari Aldo Moro né del Politecnico di Bari.</p>
+    </div>
+    <ul class="m-0 grid list-none content-start gap-x-8 p-0 text-base font-semibold sm:grid-cols-2">
+      <li><a href="orari/" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Orari dei corsi</a></li>
+      <li><a href="funzioni.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Funzioni</a></li>
+      <li><a href="guida.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Guida</a></li>
+      <li><a href="novita.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Novità</a></li>
+      <li><a href="privacy.html" class="flex min-h-11 items-center text-ink underline decoration-1 underline-offset-[0.25em] hover:decoration-2">Privacy</a></li>
+    </ul>
+  </div>
+</div></footer>
 </body>
 </html>

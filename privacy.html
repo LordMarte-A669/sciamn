@@ -4,119 +4,254 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
 <title>Informativa privacy — Sciamn</title>
-<!-- Pagina a sé (guida 2.3): niente menu né link alla pagina di download. Stile minimo in linea,
-     indipendente dal Tailwind di pagina.css. Si aggiorna PRIMA di ogni release che aggiunge un dato. -->
+<!-- Pagina a sé (guida 2.3): niente menu né link alla pagina di download. Stile in linea, indipendente dal Tailwind di
+     pagina.css, con i token dell'app (www/css/tokens.css: carta, blu del pannello, Inter e Archivo Narrow). Informativa
+     «a strati» come chiedono le linee guida WP260 sulla trasparenza: in cima l'essenziale e ciò che può sorprendere,
+     poi l'indice e il dettaglio, con accanto a ogni trattamento dove si spegne. Si aggiorna PRIMA di ogni release che
+     aggiunge un dato. -->
 <style>
-  :root { --bg: #faf7f3; --ink: #1a1a1a; --ink-2: #4a4a4a; --line: #e2ddd6; --accent: #b3121b; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #121212; --ink: #ececec; --ink-2: #b5b5b5; --line: #2c2c2c; --accent: #ff6b6b; } }
-  html { -webkit-text-size-adjust: 100%; }
-  body { margin: 0; background: var(--bg); color: var(--ink); font: 1rem/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-  main { max-width: 42rem; margin: 0 auto; padding: 2rem 1rem 4rem; }
-  h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 .25rem; }
-  h2 { font-size: 1.1rem; margin: 2rem 0 .5rem; padding-top: 1rem; border-top: 1px solid var(--line); }
-  p, li { color: var(--ink); }
-  .meta { color: var(--ink-2); margin: 0 0 1.5rem; }
-  a { color: var(--accent); }
-  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
-  th, td { text-align: left; vertical-align: top; padding: .5rem .5rem .5rem 0; border-bottom: 1px solid var(--line); }
-  th { color: var(--ink-2); font-weight: 600; }
-  @media (max-width: 30rem) { table, tbody, tr, td, th { display: block; } thead { display: none; } td { border: 0; padding: .15rem 0; } tr { border-bottom: 1px solid var(--line); padding: .5rem 0; } td:first-child { font-weight: 600; } }
+  @font-face { font-family: 'Inter'; src: url('fonts/inter-latin.woff2') format('woff2'); font-weight: 100 900; font-display: swap; }
+  @font-face { font-family: 'Archivo Narrow'; src: url('fonts/archivo-narrow-700.woff2') format('woff2'); font-weight: 700; font-display: swap; }
+  /* i token di www/css/tokens.css che servono qui, con gli stessi valori: se cambiano là, si cambiano qui */
+  :root {
+    --bg: #faf7f3; --surface: #ffffff; --surface-alt: #eeeae3; --hair: #ddd7cc;
+    --ink: #101426; --ink-2: #4a4f63; --ink-3: #8b8fa0; --blu: #1c3478; --pannello: #1c3478; --su-pannello: #f6f1e6;
+    --rule-w: 2px; --f-ora: 'Archivo Narrow', 'Arial Narrow', 'Inter', sans-serif;
+    --r-s: 0.25rem; --r: 0.5rem; --r-g: 1rem;
+    --sp-1: 0.25rem; --sp-2: 0.5rem; --sp-3: 0.75rem; --sp-4: 1rem; --sp-5: 1.5rem; --gut: 1rem; --row: 3.5rem;
+    --fs-tag: 0.6875rem; --fs-1: 0.75rem; --fs-2: 0.875rem; --fs-3: 1rem; --fs-6: 2rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #080b14; --surface: #10162a; --surface-alt: #172040; --hair: #1f2947;
+      --ink: #f4f1ea; --ink-2: #aab0c6; --ink-3: #6f7690; --blu: #8fa6ff; --pannello: #14204a; --su-pannello: #f4f1ea;
+      --rule-w: 1px;
+    }
+  }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: var(--fs-3)/1.6 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  ::selection { background: color-mix(in srgb, var(--blu) 28%, transparent); }
+  a { color: var(--blu); text-underline-offset: 0.15em; }
+  a:focus-visible { outline: 2px solid var(--blu); outline-offset: 2px; border-radius: var(--r-s); }
+  svg { width: 1.25rem; height: 1.25rem; flex: none; stroke: currentColor; fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* testata: il pannello blu dell'app, angoli bassi tondi */
+  header { background: var(--pannello); color: var(--su-pannello); border-radius: 0 0 var(--r-g) var(--r-g); }
+  header div, main { max-width: 42.5rem; margin: 0 auto; padding-left: var(--gut); padding-right: var(--gut); }
+  header div { padding-top: var(--sp-5); padding-bottom: var(--sp-5); }
+  h1 { font-family: var(--f-ora); font-size: var(--fs-6); font-weight: 700; line-height: 1.1; letter-spacing: 0.01em;
+       text-transform: uppercase; text-wrap: balance; margin: 0 0 var(--sp-3); }
+  /* la data dell'informativa: un tag dell'app (bordo, maiuscolo) sul pannello; si cambia in un posto solo, <time> */
+  .agg { display: inline-block; font-size: var(--fs-tag); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+         padding: 0.125rem 0.375rem; border: 1.5px solid currentColor; border-radius: var(--r-s);
+         font-variant-numeric: tabular-nums; margin: 0 0 var(--sp-3); }
+  .meta { font-size: var(--fs-2); margin: 0; }
+
+  main { padding-top: var(--sp-5); padding-bottom: 4rem; }
+  /* titoli di sezione = intestazioni di gruppo dell'app (.g-h): Archivo maiuscolo blu col filetto sopra */
+  h2 { font-family: var(--f-ora); font-size: var(--fs-3); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+       color: var(--blu); margin: 2rem 0 var(--sp-2); padding-top: var(--sp-3); border-top: var(--rule-w) solid var(--blu);
+       scroll-margin-top: var(--sp-4); }
+  .carta { background: var(--surface); border: 1px solid var(--hair); border-radius: var(--r);
+           box-shadow: 0 1px 0 color-mix(in srgb, var(--ink) 12%, transparent); }
+  .breve { padding: var(--sp-4) var(--gut); }
+  .breve h2 { margin-top: 0; padding-top: 0; border-top: 0; }
+  .breve ul { margin: 0; padding-left: 1.25rem; }
+  .breve li + li { margin-top: var(--sp-2); }
+  /* dove si spegne o si trova, accanto al titolo: testo secondario con l'ingranaggio delle Opzioni */
+  .dove { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-2); color: var(--ink-2); margin: 0 0 var(--sp-3); }
+  .dove svg { color: var(--ink-3); }
+
+  /* indice: righe dell'app (56 px, filetto, chevron) */
+  nav ol { margin: 0; padding: 0; list-style: none; }
+  nav a { display: flex; align-items: center; gap: var(--sp-3); min-height: var(--row); padding: var(--sp-2) var(--gut);
+          box-sizing: border-box; text-decoration: none; color: var(--ink); font-weight: 600; }
+  nav a svg { margin-left: auto; color: var(--ink-3); }
+  nav a:hover, nav a:active { background: var(--surface-alt); }
+  nav li:first-child a { border-radius: var(--r) var(--r) 0 0; }
+  nav li:last-child a { border-radius: 0 0 var(--r) var(--r); }
+  nav li + li a { border-top: 1px solid var(--hair); }
+  nav a:focus-visible { outline-offset: -2px; }
+
+  ul.righe { list-style: none; margin: 0 0 var(--sp-4); padding: 0; }
+  ul.righe li { padding: var(--sp-3) var(--gut); }
+  ul.righe li + li { border-top: 1px solid var(--hair); }
+  .tab { overflow: hidden; margin-bottom: var(--sp-4); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9375rem; font-variant-numeric: tabular-nums; }
+  th, td { text-align: left; vertical-align: top; padding: var(--sp-3) var(--sp-4); }
+  th { font-size: var(--fs-1); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); background: var(--surface-alt); font-weight: 700; }
+  td { border-top: 1px solid var(--hair); }
+  @media (max-width: 40rem) {
+    td:first-child { font-weight: 600; }
+    table, tbody, tr, td { display: block; }
+    thead { display: none; }
+    tr { padding: var(--sp-3) var(--gut); }
+    tr + tr { border-top: 1px solid var(--hair); }
+    td { border: 0; padding: var(--sp-1) 0; }
+    td + td::before { content: attr(data-e); display: block; margin-top: var(--sp-2); font-size: var(--fs-1); font-weight: 700;
+                      letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); }
+  }
 </style>
 </head>
 <body>
+<header>
+  <div>
+    <h1>Informativa privacy di Sciamn</h1>
+    <!-- la data: si cambiano insieme datetime e testo, prima di ogni release che tratta dati in più -->
+    <p class="agg">Aggiornata il <time datetime="2026-11-21">21 novembre 2026</time></p>
+    <p class="meta">App non ufficiale, non collegata all'Università di Bari né al Politecnico di Bari.</p>
+  </div>
+</header>
 <main>
-  <h1>Informativa privacy di Sciamn</h1>
-  <p class="meta">App non ufficiale, non collegata all'Università di Bari né al Politecnico di Bari. Aggiornata il 27 ottobre 2026.</p>
+  <section class="carta breve" aria-labelledby="breve">
+    <h2 id="breve">In breve</h2>
+    <ul>
+      <li>L'app funziona <strong>senza account</strong>. I tuoi corsi, le note e le impostazioni restano sul telefono.</li>
+      <li>Mi arriva qualcosa solo in tre casi: se mi scrivi tu da <em>Segnala</em>, e solo quello che scrivi; una volta al giorno un <strong>conteggio anonimo</strong>, senza nessun identificativo; e, con lo stesso interruttore, un <strong>rapporto tecnico</strong> se l'app si è bloccata. L'interruttore è in Opzioni › Informazioni › Conteggio anonimo.</li>
+      <li>La <strong>posizione</strong> serve solo a disegnare il tuo punto sulla mappa: non esce dal telefono.</li>
+      <li>Niente pubblicità né statistiche di terzi, e non vendo né cedo dati a nessuno.</li>
+    </ul>
+  </section>
 
-  <p>In breve: l'app funziona senza account. I tuoi corsi, le note e le impostazioni restano sul telefono. Mi arriva qualcosa solo in due casi: se mi scrivi tu da <em>Segnala</em>, e solo quello che scrivi; e una volta al giorno un conteggio anonimo, senza nessun identificativo, che puoi spegnere.</p>
+  <h2 id="indice">In questa pagina</h2>
+  <nav class="carta" aria-labelledby="indice">
+    <ol>
+      <li><a href="#titolare"><span>Chi è il titolare</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#telefono"><span>Cosa resta sul tuo telefono</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#terzi"><span>A chi si collega l'app, senza passare da me</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#posizione"><span>La posizione</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#segnalazioni"><span>Le segnalazioni</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#conteggio"><span>Il conteggio anonimo</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#errori"><span>I rapporti sugli errori</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#altri"><span>Chi altro tocca questi dati</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#diritti"><span>I tuoi diritti</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+      <li><a href="#cambi"><span>Cambi a questa pagina</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></a></li>
+    </ol>
+  </nav>
 
-  <h2>Chi è il titolare</h2>
+  <h2 id="titolare">Chi è il titolare</h2>
   <p>Mario Monterisi, che ha fatto l'app da solo, come privato. Contatto: <a href="mailto:mariomonterisi.dev@gmail.com">mariomonterisi.dev@gmail.com</a>.</p>
 
-  <h2>Cosa resta sul tuo telefono</h2>
-  <p>Corsi scelti, filtri, iniziale del cognome, colori, note sui corsi, promemoria, orari già scaricati e impostazioni sono salvati solo nella memoria dell'app sul telefono. Non li ricevo e non li vede nessun altro. Se disinstalli l'app spariscono.</p>
+  <h2 id="telefono">Cosa resta sul tuo telefono</h2>
+  <p>Corsi scelti, filtri, iniziale del cognome, colori, note sui corsi, promemoria, orari già scaricati, stazione di casa, treni scelti, l'ultimo elenco degli scioperi e impostazioni sono salvati solo nella memoria dell'app sul telefono. Non li ricevo e non li vede nessun altro. Se disinstalli l'app spariscono.</p>
   <p>Per il conteggio anonimo (più sotto) il telefono tiene anche il giorno in cui hai installato l'app, il giorno dell'ultimo conteggio partito e, fino al conteggio successivo, il giorno in cui l'app ti ha proposto un treno, hai aperto il dettaglio di un treno o la giornata mostrava un treno scelto da te. Anche questi restano sul telefono: al server arriva solo la fascia d'anzianità, non le date.</p>
 
-  <h2>A chi si collega l'app, senza passare da me</h2>
-  <ul>
+  <h2 id="terzi">A chi si collega l'app, senza passare da me</h2>
+  <ul class="carta righe">
     <li><strong>Orari delle lezioni</strong>: il telefono li chiede direttamente al sistema pubblico degli orari dell'ateneo (Cineca, "University Planner"). Come per qualunque sito, quel servizio vede l'indirizzo IP del telefono.</li>
     <li><strong>Pagine orario del sito</strong>: anche le pagine orario del sito, se le apri, chiedono l'orario a Cineca dal tuo browser. Come per qualunque sito, quel servizio vede l'indirizzo IP del tuo dispositivo.</li>
     <li><strong>Aggiornamenti dell'app</strong>: il telefono controlla e scarica gli aggiornamenti da GitHub, che vede l'indirizzo IP come per qualunque download.</li>
+    <li><strong>Orari dei treni</strong>: a ogni apertura il telefono controlla e, se serve, scarica da GitHub gli orari programmati dei treni, le stazioni e le sedi; GitHub vede l'indirizzo IP come per qualunque download.</li>
+    <li><strong>Ritardi di Ferrotramviaria e Ferrovie Appulo Lucane</strong>: ad app aperta, nelle ore del treno che la giornata ti mostra, il telefono chiede il tempo reale direttamente ai loro siti, che vedono l'indirizzo IP e la stazione chiesta.</li>
+    <li><strong>Mappa di Bari</strong>: quando apri la mappa, il telefono scarica da GitHub le tessere e i dati degli edifici (repo pubblico <em>mappa-sedi-universitarie</em>, su GitHub Pages); GitHub vede l'indirizzo IP come per qualunque download.</li>
+    <li><strong>Scioperi</strong>: una volta al giorno il telefono legge l'elenco pubblico degli scioperi del Ministero delle infrastrutture e dei trasporti, che vede l'indirizzo IP.</li>
   </ul>
   <p>Promemoria, silenzioso a lezione e copia nel calendario funzionano sul telefono, senza Internet e senza mandare dati a nessuno.</p>
 
-  <h2>Le segnalazioni (Opzioni › Informazioni › Segnala)</h2>
-  <table>
+  <h2 id="posizione">La posizione</h2>
+  <p class="dove"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Nell'app: Mappe › Mappa di Bari › Dove sono io</span></p>
+  <p>La posizione si chiede solo quando tocchi «Dove sono io» nella mappa di Bari, e serve solo a disegnare il tuo punto sulla mappa, sul telefono. Non viene inviata a nessun server, né mio né di terzi, e non viene salvata. Il permesso lo dà Android: lo togli quando vuoi da Impostazioni › App › Sciamn › Autorizzazioni. Senza permesso la mappa funziona lo stesso.</p>
+
+  <h2 id="segnalazioni">Le segnalazioni</h2>
+  <p class="dove"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Nell'app: Opzioni › Segnala un problema o un'idea</span></p>
+  <div class="carta tab"><table>
     <thead><tr><th>Cosa</th><th>Perché e su quale base</th><th>Per quanto</th></tr></thead>
     <tbody>
       <tr>
-        <td>Il tipo (problema, corso mancante, idea) e il testo che scrivi</td>
-        <td>Capire il problema o l'idea e migliorare l'app. Base: il tuo consenso, che dai inviando (art. 6.1.a GDPR) e che puoi ritirare chiedendo la cancellazione.</td>
-        <td>12 mesi, poi cancellati</td>
+        <td data-e="Cosa">Il tipo (problema, corso mancante, idea) e il testo che scrivi</td>
+        <td data-e="Perché e su quale base">Capire il problema o l'idea e migliorare l'app. Base: il tuo consenso, che dai inviando (art. 6.1.a GDPR) e che puoi ritirare chiedendo la cancellazione.</td>
+        <td data-e="Per quanto">12 mesi, poi cancellati</td>
       </tr>
       <tr>
-        <td>Il contatto, <em>solo se lo scrivi</em> (email, Instagram…)</td>
-        <td>Risponderti. Base: il tuo consenso (art. 6.1.a).</td>
-        <td>12 mesi, poi cancellato</td>
+        <td data-e="Cosa">Il contatto, <em>solo se lo scrivi</em> (email, Instagram…)</td>
+        <td data-e="Perché e su quale base">Risponderti. Base: il tuo consenso (art. 6.1.a).</td>
+        <td data-e="Per quanto">12 mesi, poi cancellato</td>
       </tr>
       <tr>
-        <td>Versione dell'app e dell'APK, se usi Android o il web, e codici dei corsi scelti, <em>solo se lasci acceso «Allega»</em></td>
-        <td>Capire su quale versione e su quale orario si presenta un problema. Base: il tuo consenso (art. 6.1.a).</td>
-        <td>12 mesi, poi cancellati</td>
+        <td data-e="Cosa">Versione dell'app e dell'APK, se usi Android o il web, e codici dei corsi scelti, <em>solo se lasci acceso «Allega»</em></td>
+        <td data-e="Perché e su quale base">Capire su quale versione e su quale orario si presenta un problema. Base: il tuo consenso (art. 6.1.a).</td>
+        <td data-e="Per quanto">12 mesi, poi cancellati</td>
       </tr>
       <tr>
-        <td>Indirizzo IP del telefono</td>
-        <td>Solo per frenare chi manda troppi messaggi di fila (al massimo pochi al minuto). Non lo salvo e non lo leggo. Base: il legittimo interesse a tenere il servizio usabile (art. 6.1.f).</td>
-        <td>Non conservato</td>
+        <td data-e="Cosa">Indirizzo IP del telefono</td>
+        <td data-e="Perché e su quale base">Solo per frenare chi manda troppi messaggi di fila (al massimo pochi al minuto). Non lo salvo e non lo leggo. Base: il legittimo interesse a tenere il servizio usabile (art. 6.1.f).</td>
+        <td data-e="Per quanto">Non conservato</td>
       </tr>
       <tr>
-        <td>Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza testo, contatto né IP)</td>
-        <td>Accorgermi se le segnalazioni smettono di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
-        <td>3 giorni</td>
+        <td data-e="Cosa">Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza testo, contatto né IP)</td>
+        <td data-e="Perché e su quale base">Accorgermi se le segnalazioni smettono di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
+        <td data-e="Per quanto">3 giorni</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
   <p>Il database di Cloudflare tiene in automatico la cronologia degli ultimi 7 giorni, per poter tornare indietro in caso di errore. Quando una segnalazione viene cancellata, per scadenza o perché me lo chiedi, sparisce subito dalla mia pagina e non la uso più; dalla cronologia scompare da sola entro altri 7 giorni.</p>
   <p>Non raccolgo nome, posizione, contatti della rubrica né identificativi del telefono. Per favore non scrivere nel testo dati sensibili, tuoi o di altri (salute, opinioni, numeri di documenti…): non servono per segnalare un problema.</p>
 
-  <h2>Il conteggio anonimo (Opzioni › Informazioni › Conteggio anonimo)</h2>
+  <h2 id="conteggio">Il conteggio anonimo</h2>
+  <p class="dove"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Si spegne in Opzioni › Informazioni › Conteggio anonimo</span></p>
   <p>Per sapere quante persone usano l'app, se continuano a usarla e quali funzioni servono davvero, l'app Android, alla prima apertura di ogni giorno, mi manda un messaggio con tre cose sole. Il messaggio non contiene nessun identificativo, né tuo né del telefono: il server lo trasforma subito in un +1 sui contatori di quel giorno (per esempio «oggi 40 telefoni, 12 con la stazione di casa scelta») e non lo conserva. Dai contatori non si può risalire a chi li ha mandati. Dal sito e dalle pagine orario non parte mai.</p>
-  <table>
+  <div class="carta tab"><table>
     <thead><tr><th>Cosa</th><th>Perché e su quale base</th><th>Per quanto</th></tr></thead>
     <tbody>
       <tr>
-        <td>Versione dell'app; da quanto è installata, in fasce (oggi, 1–6 giorni, 7–29, 30 o più, oppure «da prima del conteggio»); quali di queste funzioni sono accese: silenzioso a lezione, promemoria, riepilogo del mattino, copia nel calendario, stazione di casa scelta, e se dall'ultimo conteggio l'app ti ha proposto un treno, hai aperto il dettaglio di un treno o la giornata mostrava un treno scelto da te</td>
-        <td>Sapere se e come l'app viene usata, e decidere cosa migliorare e cosa smettere di fare. Base: il legittimo interesse (art. 6.1.f GDPR). Puoi opporti in ogni momento spegnendo l'interruttore: da quel momento non parte più niente.</td>
-        <td>Solo come contatori del giorno, senza scadenza: non riconducono a nessuno</td>
+        <td data-e="Cosa">Versione dell'app; da quanto è installata, in fasce (oggi, 1–6 giorni, 7–29, 30 o più, oppure «da prima del conteggio»); quali di queste funzioni sono accese: silenzioso a lezione, promemoria, riepilogo del mattino, copia nel calendario, stazione di casa scelta, e se dall'ultimo conteggio l'app ti ha proposto un treno, hai aperto il dettaglio di un treno o la giornata mostrava un treno scelto da te</td>
+        <td data-e="Perché e su quale base">Sapere se e come l'app viene usata, e decidere cosa migliorare e cosa smettere di fare. Base: il legittimo interesse (art. 6.1.f GDPR). Puoi opporti in ogni momento spegnendo l'interruttore: da quel momento non parte più niente.</td>
+        <td data-e="Per quanto">Solo come contatori del giorno, senza scadenza: non riconducono a nessuno</td>
       </tr>
       <tr>
-        <td>Indirizzo IP del telefono</td>
-        <td>Solo per frenare chi manda troppi conteggi di fila (al massimo 10 al minuto). Non lo salvo e non lo leggo. Base: legittimo interesse (art. 6.1.f).</td>
-        <td>Non conservato</td>
+        <td data-e="Cosa">Indirizzo IP del telefono</td>
+        <td data-e="Perché e su quale base">Solo per frenare chi manda troppi conteggi di fila (al massimo 10 al minuto). Non lo salvo e non lo leggo. Base: legittimo interesse (art. 6.1.f).</td>
+        <td data-e="Per quanto">Non conservato</td>
       </tr>
       <tr>
-        <td>Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza fasce, funzioni né IP)</td>
-        <td>Accorgermi se il conteggio smette di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
-        <td>3 giorni</td>
+        <td data-e="Cosa">Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza fasce, funzioni né IP)</td>
+        <td data-e="Perché e su quale base">Accorgermi se il conteggio smette di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
+        <td data-e="Per quanto">3 giorni</td>
       </tr>
     </tbody>
-  </table>
+  </table></div>
 
-  <h2>Chi altro tocca questi dati</h2>
-  <ul>
-    <li><strong>Cloudflare</strong> (Cloudflare, Inc.): fa girare il piccolo server che riceve le segnalazioni e il conteggio anonimo e li conserva nel suo database, a cui accedo solo io dopo aver fatto l'accesso. Tratta i dati per mio conto, come responsabile del trattamento, secondo il suo accordo sul trattamento dei dati.</li>
+  <h2 id="errori">I rapporti sugli errori</h2>
+  <p class="dove"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg><span>Si spengono con lo stesso interruttore del conteggio anonimo</span></p>
+  <p>Se l'app Android si blocca o Android registra che è stata chiusa, al massimo una volta al giorno mi arriva un rapporto tecnico, per correggere il problema. Parte solo se il conteggio anonimo è acceso: se lo spegni, non parte più niente. Non contiene nessun identificativo, né tuo né del telefono.</p>
+  <div class="carta tab"><table>
+    <thead><tr><th>Cosa</th><th>Perché e su quale base</th><th>Per quanto</th></tr></thead>
+    <tbody>
+      <tr>
+        <td data-e="Cosa">Versione dell'app e dell'APK; per ogni errore il tipo (blocco dell'app o chiusura registrata da Android), il messaggio tecnico dell'errore e quante volte è successo</td>
+        <td data-e="Perché e su quale base">Trovare e correggere i guasti. Base: il legittimo interesse (art. 6.1.f GDPR). Puoi opporti in ogni momento spegnendo l'interruttore.</td>
+        <td data-e="Per quanto">7 giorni, poi cancellati</td>
+      </tr>
+      <tr>
+        <td data-e="Cosa">Indirizzo IP del telefono</td>
+        <td data-e="Perché e su quale base">Solo per frenare chi manda troppi rapporti di fila (al massimo 10 al minuto). Non lo salvo e non lo leggo. Base: legittimo interesse (art. 6.1.f).</td>
+        <td data-e="Per quanto">Non conservato</td>
+      </tr>
+      <tr>
+        <td data-e="Cosa">Una riga tecnica per ogni invio: esito, durata, versione dell'app (senza messaggi né IP)</td>
+        <td data-e="Perché e su quale base">Accorgermi se i rapporti smettono di funzionare. Base: legittimo interesse (art. 6.1.f).</td>
+        <td data-e="Per quanto">3 giorni</td>
+      </tr>
+    </tbody>
+  </table></div>
+
+  <h2 id="altri">Chi altro tocca questi dati</h2>
+  <ul class="carta righe">
+    <li><strong>Cloudflare</strong> (Cloudflare, Inc.): fa girare il piccolo server che riceve le segnalazioni, il conteggio anonimo e i rapporti sugli errori e li conserva nel suo database, a cui accedo solo io dopo aver fatto l'accesso. Tratta i dati per mio conto, come responsabile del trattamento, secondo il suo accordo sul trattamento dei dati.</li>
     <li><strong>GitHub</strong> (GitHub, Inc.): ospita questa pagina, la pagina di download e gli aggiornamenti dell'app. A ogni apertura l'app gli chiede se c'è un aggiornamento, quindi GitHub vede l'indirizzo IP del telefono, come per qualunque download; io non ricevo quei dati. È anche lo strumento, privato, in cui tengo l'elenco delle cose da sistemare: quando una segnalazione diventa un lavoro da fare, ci copio il testo che hai scritto e, se li hai allegati, versione dell'app e corsi, <em>mai il contatto</em>. Anche lì vale il limite dei 12 mesi dalla segnalazione: entro quella data elimino la voce.</li>
   </ul>
   <p>Sono tutte società statunitensi: i dati possono essere trasferiti negli Stati Uniti sulla base dell'EU-U.S. Data Privacy Framework e delle clausole contrattuali standard, come indicano le loro informative. Sulla validità del Data Privacy Framework è pendente un ricorso davanti alla Corte di giustizia dell'UE (causa C-703/25 P).</p>
   <p>Non vendo né cedo dati a nessuno, e non uso pubblicità né servizi di statistiche di terzi: il conteggio anonimo qui sopra è fatto da me, sul mio server.</p>
 
 
-  <h2>I tuoi diritti</h2>
-  <p>Puoi chiedermi di vedere, correggere o cancellare quello che mi hai mandato, opporti al trattamento e ritirare il consenso, scrivendo a <a href="mailto:mariomonterisi.dev@gmail.com">mariomonterisi.dev@gmail.com</a>. Se non hai lasciato un contatto, dimmi il giorno e cosa avevi scritto, così trovo il messaggio. Rispondo entro un mese.</p>
+  <h2 id="diritti">I tuoi diritti</h2>
+  <p>Puoi chiedermi di vedere, correggere o cancellare quello che mi hai mandato, di limitarne l'uso o di riceverne una copia in un formato leggibile, opporti al trattamento e ritirare il consenso, scrivendo a <a href="mailto:mariomonterisi.dev@gmail.com">mariomonterisi.dev@gmail.com</a>. Ritirare il consenso non rende illecito quello che è stato fatto prima. Se non hai lasciato un contatto, dimmi il giorno e cosa avevi scritto, così trovo il messaggio. Rispondo entro un mese.</p>
+  <p>Nessuno di questi dati è obbligatorio: senza segnalazioni e con l'interruttore del conteggio spento l'app funziona allo stesso modo. Non faccio profilazione e nessuna decisione che ti riguarda è presa in modo automatico.</p>
   <p>Se pensi che i tuoi dati siano trattati male puoi presentare reclamo al <a href="https://www.garanteprivacy.it">Garante per la protezione dei dati personali</a>.</p>
 
-  <h2>Cambi a questa pagina</h2>
+  <h2 id="cambi">Cambi a questa pagina</h2>
   <p>Se una versione nuova dell'app tratta dati in più, questa pagina cambia prima che esca, con la data aggiornata in alto.</p>
 </main>
 </body>
