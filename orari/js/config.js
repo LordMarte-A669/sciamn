@@ -45,7 +45,7 @@
       otaDa: '1.4.0',
       prefissoBundle: 'https://github.com/LordMarte-A669/sciamn/releases/download/',
       // ultima APK pubblicata (la stessa della pagina di download)
-      apk: 'https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk'
+      apk: 'https://github.com/LordMarte-A669/sciamn/releases/latest/download/sciamn.apk'
     },
     // segnalazioni dall'app (docs/feedback.md): URL pubblico del Worker, nessun segreto.
     // Vuoto = funzione nascosta (prima del deploy).
