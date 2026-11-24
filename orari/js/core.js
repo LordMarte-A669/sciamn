@@ -203,9 +203,18 @@
   }
   const nuovoGruppo = (id, c, pagina) => ({ id, a: c.a, n: c.n, t: c.t || '', s: c.s || '', d: pagina ? pagina[0] : -1, u: (pagina && pagina[1]) || '', varianti: [] });
 
-  // Quante parole cercate il gruppo contiene solo con un refuso; -1 se ne manca una.
+  // La sigla di un corso: le iniziali delle parole che contano ("Informatica e tecnologie per la produzione del
+  // software" → "itps"), come la chiamano gli studenti; articoli, preposizioni e congiunzioni non contano.
+  const PAROLE_VUOTE = new Set(['e', 'ed', 'di', 'del', 'dello', 'della', 'dei', 'degli', 'delle', 'dell', 'per', 'la', 'il', 'lo', 'le', 'l',
+    'i', 'gli', 'in', 'nel', 'nella', 'nell', 'a', 'al', 'alla', 'all', 'con', 'da', 'd', 'tra', 'fra', 'su', 'and', 'of', 'the', 'for']);
+  function siglaCorso(nome) {
+    const parole = senzaAccenti(nome).split(/[^a-z0-9]+/).filter((w) => w && !PAROLE_VUOTE.has(w));
+    return parole.length > 1 ? parole.map((w) => w[0]).join('') : '';
+  }
+
+  // Quante parole cercate il gruppo contiene solo con un refuso; -1 se ne manca una. Conta anche la sigla ("itps").
   function refusiDelGruppo(g, words) {
-    const hay = senzaAccenti([g.n, g.t, g.s, g.varianti[0].k.split(':')[1]].join(' '));
+    const hay = senzaAccenti([g.n, g.t, g.s, g.varianti[0].k.split(':')[1], siglaCorso(g.n)].join(' '));
     const tokens = hay.split(/[^a-z0-9]+/).filter(Boolean);
     const mancanti = words.filter((w) => !hay.includes(w));
     return mancanti.every((w) => parolaTrovata(w, tokens)) ? mancanti.length : -1;
@@ -522,7 +531,8 @@
     (ev, f) => !partitionMatches(ev.partizioni, f.lettera),
     // una lezione senza indirizzi (comune, o della vecchia API) è di tutti
     (ev, f) => f.indirizzo && ev.indirizzi && ev.indirizzi.length && !ev.indirizzi.includes(f.indirizzo),
-    (ev, f) => f.miei && f.miei.length && !f.miei.includes(ev.codice),
+    // f.miei = settings.seguiti: null = tutti, una lista = solo quelli (vuota = nessuno; vedi app/impostazioni.js)
+    (ev, f) => Array.isArray(f.miei) && !f.miei.includes(ev.codice),
     (ev, f) => f.search && ![ev.nome, ev.codice, ev.docenti.join(' '), ev.aule.join(' ')].join(' ').toLowerCase().includes(f.search.toLowerCase())
   ];
 
@@ -582,8 +592,16 @@
   function walkMinutes(places, a, b) {
     if (!a || !b) return null;
     if (a === b) return 0;
-    const t = places && places.piedi && (places.piedi[a + '|' + b] || places.piedi[b + '|' + a]);
+    const t = walkLeg(places, a, b);
     return t ? t.min : null;
+  }
+
+  const walkLeg = (places, a, b) => (places && places.piedi && (places.piedi[a + '|' + b] || places.piedi[b + '|' + a])) || null;
+
+  // Metri a piedi della stessa coppia; null se la coppia non è nota o non porta la distanza.
+  function walkMetres(places, a, b) {
+    const t = a && b && a !== b ? walkLeg(places, a, b) : null;
+    return t && Number.isInteger(t.m) ? t.m : null;
   }
 
   const edificioDi = (ev) => (ev.luoghi && ev.luoghi[0] && ev.luoghi[0].edificio) || '';
@@ -594,7 +612,7 @@
     const min = Math.round((new Date(ev.inizio) - new Date(st.fine)) / 60000);
     const b = edificioDi(ev), cambio = !!(b && st.edificio && b !== st.edificio);
     if (!(min > 0) && !cambio) return null;
-    return { tipo: 'pausa', inizio: st.fine, fine: ev.inizio, minuti: Math.max(0, min), cambioEdificio: cambio, piedi: cambio ? walkMinutes(places, st.edificio, b) : 0 };
+    return { tipo: 'pausa', inizio: st.fine, fine: ev.inizio, minuti: Math.max(0, min), cambioEdificio: cambio, piedi: cambio ? walkMinutes(places, st.edificio, b) : 0, metri: cambio ? walkMetres(places, st.edificio, b) : null };
   }
 
   // Giornata come sequenza: lezioni e, tra una lezione e la successiva, la pausa (se c'è) e il
@@ -860,25 +878,9 @@
     return GIORNI_ABBR[s.getDay()] + ' ' + dataBreve(s) + ' ' + range;
   }
 
-  // Pulsante "Seleziona/Deseleziona tutti" della lista "I miei corsi". Non muta gli array in ingresso.
-  // tutti = tutti i `codici` sono già in `miei` → deseleziona (toglie i codici); altrimenti
-  // seleziona (unione miei+codici, senza doppioni, i nuovi in ordine di `codici`).
-  function tuttiMiei(codici, miei) {
-    const cod = codici || [], mine = miei || [];
-    const have = new Set(mine);
-    const tutti = cod.length > 0 && cod.every((c) => have.has(c));
-    if (tutti) {
-      const rem = new Set(cod);
-      return { tutti: true, azione: 'Deseleziona tutti', dopo: mine.filter((c) => !rem.has(c)) };
-    }
-    const dopo = mine.slice();
-    for (const c of cod) if (!have.has(c)) { have.add(c); dopo.push(c); }
-    return { tutti: false, azione: 'Seleziona tutti', dopo };
-  }
-
   // Riga di conteggio della lista "I miei corsi": n spuntati su tot (singolare/plurale).
   function statoMiei(n, tot) {
-    if (!n) return 'Nessuno spuntato: li vedi tutti';
+    if (!n) return 'Nessuno spuntato: non vedi lezioni';
     return n + ' di ' + tot + ' ' + plurale(n, 'spuntato', 'spuntati');
   }
 
@@ -1117,14 +1119,14 @@
   return {
     CONFIG, CATALOGO, TIPI,
     dayKey, parseDayKey, addDays, startOfWeek, fmtTime,
-    chiaveCorso, calendario, calendariValidi, etichettaCalendario, parseLinkCalendario, cercaCorsi, MAX_RISULTATI, risultatiScelta, tipiCorsi, DIPARTIMENTI, dipartimentiCorsi, paginaCorso, anniPerCalendari, endpoint,
+    chiaveCorso, calendario, calendariValidi, etichettaCalendario, parseLinkCalendario, cercaCorsi, siglaCorso, MAX_RISULTATI, risultatiScelta, tipiCorsi, DIPARTIMENTI, dipartimentiCorsi, paginaCorso, anniPerCalendari, endpoint,
     buildRequestBody, corpoRichiesta, intervalloSettimana, TETTO_PUBBLICA, urlPubblico, urlAula, dimezza, auleDaChiedere, eventiDelCalendario, daRicontrollare, conSospese, prettyName, titleCase, cleanPartizione, indirizziDa, normalizeEvent, normalizePublicEvent, normalizeResponse, normalizePublicResponse, mergeEvents, dndWindows,
     rangeContains, partitionMatches, passes, applyFilters, listSubjects, listIndirizzi,
     groupByDay, nowState, minutesUntil, diffSchedules, toICS, foldLine,
-    walkMinutes, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey,
+    walkMinutes, walkMetres, dayPlan, commute, N_COLORI, courseColor, coloreCss, courseInfo, roomKey,
     TINTE, luminanza, contrasto, mazzetta, nomeColore, partizioniDaMostrare, tipoDaMostrare, etichettaTipo,
     GIORNI_ABBR, MESI_ABBR, dataBreve, fmtSettimana, plurale,
-    SOGLIA_TUTTI, statoPromemoria, prossimaFinestra, fmtFinestra, tuttiMiei, statoMiei,
+    SOGLIA_TUTTI, statoPromemoria, prossimaFinestra, fmtFinestra, statoMiei,
     LIMITI_FEEDBACK, validaFeedback, feedbackPayload, esitoFeedback,
     FASCE_PING, FUNZIONI_PING, SEGNALI_TRENI, installazione, fasciaAnzianita, funzioniAccese, registraSegnale, segnaliDopoInvio,
     pingDovuto, corpoPing, pingChiuso, urlPing,
