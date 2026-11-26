@@ -51,12 +51,12 @@
       <div class="grid content-start justify-items-start gap-5">
         <h2 id="installare" class="m-0 text-[clamp(1.75rem,2.2vw+1.1rem,2.75rem)] leading-[1.08] font-extrabold tracking-[-0.022em]">Installare l'app</h2>
         <p class="m-0 max-w-[30rem] text-lg">Serve un telefono con Android 8 o successivo. Ci vogliono due minuti, la prima volta.</p>
-        <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/uniplanner.apk" class="premi inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-xl bg-campo px-7 py-3 text-lg font-bold text-on-campo no-underline hover:opacity-90 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink sm:w-auto"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-current stroke-[2.2]" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android</a>
-        <p class="m-0 text-base text-ink-2">Versione 1.4.0 del 21 novembre 2026, 6,3 MB.</p>
+        <a href="https://github.com/LordMarte-A669/sciamn/releases/latest/download/sciamn.apk" class="premi inline-flex min-h-14 w-full items-center justify-center gap-2.5 rounded-xl bg-campo px-7 py-3 text-lg font-bold text-on-campo no-underline hover:opacity-90 focus-visible:outline-3 focus-visible:outline-offset-3 focus-visible:outline-ink sm:w-auto"><svg viewBox="0 0 24 24" aria-hidden="true" class="size-5 shrink-0 fill-none stroke-current stroke-[2.2]" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>Scarica l'app per Android</a>
+        <p class="m-0 text-base text-ink-2">Versione 1.4.1 del 26 novembre 2026, 6,6 MB.</p>
       </div>
       <ol class="m-0 grid list-none gap-6 p-0 text-lg">
         <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">1</span><span><span class="sr-only">Primo passo: </span>Dal telefono tocca <b>Scarica l'app per Android</b>. Da computer, inquadra il codice QR che trovi nella pagina iniziale.</span></li>
-        <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">2</span><span><span class="sr-only">Secondo passo: </span>Quando il download finisce, apri il file <b>uniplanner.apk</b> dalla notifica o dalla cartella Download.</span></li>
+        <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">2</span><span><span class="sr-only">Secondo passo: </span>Quando il download finisce, apri il file <b>sciamn.apk</b> dalla notifica o dalla cartella Download.</span></li>
         <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">3</span><span><span class="sr-only">Terzo passo: </span>La prima volta Android dice che l'installazione da questa fonte non è consentita (la fonte è il browser con cui hai scaricato). Tocca <b>Impostazioni</b>, attiva <b>Consenti da questa fonte</b> e torna indietro.</span></li>
         <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">4</span><span><span class="sr-only">Quarto passo: </span>Tocca <b>Installa</b>. Se compare l'avviso di Play Protect, vai a <a href="#problemi" class="font-semibold text-ink underline underline-offset-[0.2em]">Se qualcosa non va</a>.</span></li>
         <li class="grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-3"><span aria-hidden="true" class="font-titolo text-[2.5rem] leading-none tabular-nums text-ink-2">5</span><span><span class="sr-only">Quinto passo: </span>Apri Sciamn, cerca il tuo corso per nome e scegli l'anno. L'orario si scarica da solo.</span></li>
@@ -118,9 +118,9 @@
       </div>
       <div class="grid content-start gap-6 text-lg">
         <p class="m-0"><b>Dal telefono:</b> installa l'app AppVerifier, scegli Sciamn e confronta l'impronta del certificato con quella qui sotto.</p>
-        <p class="m-0"><b>Dal computer:</b> col file scaricato lancia <code class="font-mono text-base text-ink">apksigner verify --print-certs uniplanner.apk</code> e confronta la riga &ldquo;certificate SHA-256 digest&rdquo;.</p>
+        <p class="m-0"><b>Dal computer:</b> col file scaricato lancia <code class="font-mono text-base text-ink">apksigner verify --print-certs sciamn.apk</code> e confronta la riga &ldquo;certificate SHA-256 digest&rdquo;.</p>
         <p class="m-0">Certificato di firma, SHA-256:<br><code class="font-mono text-sm break-all text-ink">b308fd67 e787dbb3 2368f9dd 268ab3e9 645b09e0 72cae7be 410775ac d368bb5b</code></p>
-        <p class="m-0">File della 1.4.0, SHA-256:<br><code class="font-mono text-sm break-all text-ink">8c56d11633892bc3ae305a7ff8a2ba5308c186282169ac807644586eda101fcf</code></p>
+        <p class="m-0">File della 1.4.1, SHA-256:<br><code class="font-mono text-sm break-all text-ink">b3316291ba069a09c0b4cffeeea90182e1b440676b02223817e90050326908e3</code></p>
       </div>
     </div>
   </section>
